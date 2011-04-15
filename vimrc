@@ -129,18 +129,7 @@ nmap <silent> <leader>n :silent :nohlsearch<CR>
 
 
 
-" Enable line numbers
-set number
 " Toggle line numbers and fold column for easy copying:
 nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>
-
-" Use indent plugin to keep python indenting at ease
-" filetype plugin indent on
-
-" Correct syntax on python files
-" autocmd FileType python set complete+=k~/.vim/syntax/python.vim isk+=.,(
-
-syntax on
-set ts=3 sts=3 sw=3 noexpandtab
 
 color molokai
