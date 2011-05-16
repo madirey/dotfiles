@@ -25,6 +25,7 @@ set history=50               " Keep 50 history items
 set ruler                    " Always show cursor position
 set showcmd                  " Show incorrect commands
 set incsearch                " Start searching immediately
+set t_Co=256
 
 " Don't use Ex mode, use Q for formatting
 map Q gq
