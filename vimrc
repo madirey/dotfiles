@@ -91,6 +91,7 @@ endif
 
 " Preferences {{{1
 set visualbell t_vb=
+set foldmethod=marker
 set number
 set cursorline
 set tabstop=4
