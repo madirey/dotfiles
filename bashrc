@@ -75,6 +75,7 @@ alias ..='cd ..'
 alias tree='tree -C'
 alias trls='tree -C | less -R'
 alias mode='(set -o | grep emacs.*on >/dev/null 2>&1 && echo "emacs mode" || echo "vi mode")'
+alias xclip='/usr/bin/xclip -sel c'
 
 # git aliases
 alias git=hub
