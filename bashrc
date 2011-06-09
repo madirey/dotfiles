@@ -4,6 +4,9 @@
 # Enable vi mode
 set -o vi
 
+EDITOR=vim
+export EDITOR
+
 # History preferences
 HISTCONTROL=erasedups
 HISTSIZE=10000
@@ -19,6 +22,7 @@ shopt -s checkwinsize
 
 # Set current prompt
 # TODO: modify prompt to make it more me
+# TODO: determine prompt needs
 color_prompt=yes
 if [ "$color_prompt" = yes ]; then
     PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
@@ -39,6 +43,16 @@ esac
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
+# TODO: Move 2 functions to .util_funcs and write doc comments
+function leave_alert {
+    when=$1
+    # TODO: Write function to use at to call notify-send to send critical notification to leave!
+}
+
+function remind_me {
+    # TODO: Write function to accept time and note to send critical notification at specific time with reminder
+}
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -67,7 +81,12 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
+# Python Site Packages shortcuts
+export SPPATH=`python -c "from distutils.sysconfig import get_python_lib; print get_python_lib()"`
+alias sp='pushd $SPPATH'
+
 # lazy aliases
+alias vi='vim'
 alias ll='ls -alhF'
 alias la='ls -A'
 alias l='ls -CF'
@@ -75,7 +94,14 @@ alias ..='cd ..'
 alias tree='tree -C'
 alias trls='tree -C | less -R'
 alias mode='(set -o | grep emacs.*on >/dev/null 2>&1 && echo "emacs mode" || echo "vi mode")'
-alias xclip='/usr/bin/xclip -sel c'
+
+# reset shell
+alias cds='cd; clear'
+
+# If xclip is installed set to copy to system clipboard by default
+if [ -f /usr/bin/xclip ]; then
+    alias xclip='/usr/bin/xclip -sel c'
+fi
 
 # git aliases
 alias git=hub
