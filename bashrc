@@ -44,16 +44,6 @@ esac
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
-# TODO: Move 2 functions to .util_funcs and write doc comments
-function leave_alert {
-    when=$1
-    # TODO: Write function to use at to call notify-send to send critical notification to leave!
-}
-
-function remind_me {
-    # TODO: Write function to accept time and note to send critical notification at specific time with reminder
-}
-
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
@@ -94,6 +84,7 @@ alias ..='cd ..'
 alias tree='tree -C'
 alias trls='tree -C | less -R'
 alias mode='(set -o | grep emacs.*on >/dev/null 2>&1 && echo "emacs mode" || echo "vi mode")'
+alias g='gnome-open'
 
 # reset shell
 alias cds='cd; clear'
