@@ -1,6 +1,8 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
+EXTRAS_DIR=~/.bashrc.d
+
 # Enable vi mode
 set -o vi
 
@@ -51,12 +53,19 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-# source utility function into session (personal additions)
-if [ -f ~/.util_funcs ]; then
-    . ~/.util_funcs
+# If additional configurations exist in $EXTRAS_DIR, source them into session
+# Hidden files are ignored
+if [ -d $EXTRAS_DIR ]; then
+    echo "Loading additional configs..."
+    for config in $(ls $EXTRAS_DIR/)
+    do
+        . $EXTRAS_DIR/$config
+        echo "${config} loaded!"
+    done
 fi
 
 # source mve environment vars
+# TODO: move MVE config to $EXTRAS_DIR
 if [ -f ~/.mve_env ]; then
     . ~/.mve_env
 fi

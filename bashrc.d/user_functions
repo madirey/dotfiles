@@ -70,15 +70,31 @@ function fullBuild
     echo "Ready to test..."
 }
 
-# TODO: cleanup function and add persist or not option
 function pm
 {
-    app=$1
+    persist=
+    while getopts ":p" opt
+    do
+        case $opt in
+            p)
+                persist=true
+                ;;
+            *)
+                echo "Sorry, $opt is not valid.  Ignoring.."
+                ;;
+        esac
+    done
+
+    shift $((OPTIND-1))
+
+    app=$@
     outDir=/home/djohnston/man_pdfs
-    pushd $outDir
-    man -t $app | ps2pdf - "${app}.pdf"
-    /usr/bin/gnome-open "${outDir}/${app}.pdf"
-    popd
+    fn="${outDir}/${app}.pdf"
+    man -t $app | ps2pdf - $fn
+    /usr/bin/gnome-open $fn
+    if [ ! $persist ]; then
+        rm $fn
+    fi
 }
 
 # TODO: write doc comments
