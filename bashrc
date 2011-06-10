@@ -82,30 +82,3 @@ fi
 
 # Python Site Packages shortcuts
 export SPPATH=`python -c "from distutils.sysconfig import get_python_lib; print get_python_lib()"`
-alias sp='pushd $SPPATH'
-
-# lazy aliases
-alias vi='vim'
-alias ll='ls -alhF'
-alias la='ls -A'
-alias l='ls -CF'
-alias ..='cd ..'
-alias tree='tree -C'
-alias trls='tree -C | less -R'
-alias mode='(set -o | grep emacs.*on >/dev/null 2>&1 && echo "emacs mode" || echo "vi mode")'
-alias g='gnome-open'
-
-# reset shell
-alias cds='cd; clear'
-
-# If xclip is installed set to copy to system clipboard by default
-if [ -f /usr/bin/xclip ]; then
-    alias xclip='/usr/bin/xclip -sel c'
-fi
-
-# git aliases
-alias git=hub
-
-# reload .bashrc
-alias refresh='. ~/.bashrc'
-
