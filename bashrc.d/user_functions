@@ -38,35 +38,13 @@ function cdf
     cd *$1*/
 }
 
-# shortcut to kill all current ssh sessions
-# depends on psg
-# TODO: Needs to be tested on ubuntu
-function killssh 
-{ 
-    /usr/bin/which psg >/dev/null 2>&1
-    if (( $? != 0 )); then
-        echo "psg does not exist on this sytem!"
-        exit 1
-    fi
-
-    for i in $(psg ssh | grep -vE "agent|UID" | tr ' ' '_') 
-    do
-        echo "Killing PID => $(echo $i | awk -F_ '!/UID/ {if ($6 == "") print $7; else print $6; }')..." 
-        echo $i | awk -F_ '!/UID/ {if ($6 == "") print $7; else print $6; }' | xargs kill 
-    done 
-}
-
-function fullBuild
+function mvetest
 {
-    tomcat status >/dev/null 2>&1
-    if (( $? == 0 )); then
-        tomcat stop
-    fi
-
-    mypwd=$(pwd)
-    cd /home/djohnston/projects/mve
-    ./gradlew clean && ./gradlew platform:dm-mve:build && tomcat start
-    cd $mypwd
+    tomcat stop; alert
+    pushd /home/djohnston/projects/mve >/dev/null 2>&1
+    ./gradlew clean && ./gradlew platform:dm-mve:build; alert 
+    tomcat start; alert
+    popd >/dev/null 2>&1
     echo "Ready to test..."
 }
 
@@ -96,17 +74,3 @@ function pm
         rm $fn
     fi
 }
-
-# TODO: write doc comments
-function leave_alert 
-{
-    when=$1
-    # TODO: Write function to use at to call notify-send to send critical notification to leave!
-}
-
-function remind_me 
-{
-    echo 'test'
-    # TODO: Write function to accept time and note to send critical notification at specific time with reminder
-}
-
