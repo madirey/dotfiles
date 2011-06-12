@@ -46,6 +46,9 @@ esac
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
+# Python Site Packages shortcuts
+export SPPATH=`python -c "from distutils.sysconfig import get_python_lib; print get_python_lib()"`
+
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
@@ -79,6 +82,3 @@ if [ -x /usr/bin/dircolors ]; then
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
 fi
-
-# Python Site Packages shortcuts
-export SPPATH=`python -c "from distutils.sysconfig import get_python_lib; print get_python_lib()"`
