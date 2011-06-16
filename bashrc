@@ -60,7 +60,7 @@ fi
 # Hidden files are ignored
 if [ -d $EXTRAS_DIR ]; then
     echo "Loading additional configs..."
-    for config in $(ls $EXTRAS_DIR/)
+    for config in $(ls $EXTRAS_DIR/ | sort)
     do
         . $EXTRAS_DIR/$config
         echo "${config} loaded!"
