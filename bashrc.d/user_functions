@@ -38,16 +38,60 @@ function cdf
     cd *$1*/
 }
 
+# Do a clean build of mve and restart tomcat test server
+# Usage:
+#   mvetest [path-to-project-root]
+# If no project root, use default $HOME/projects/mve
 function mvetest
 {
+    loc=$1
+    if [ "X$loc" = "X" ]; then
+        loc=$MVE_HOME
+    else
+        if [ ! -d $loc ]; then
+            echo "${loc} is not a valid dir.  Using the default..."
+            echo
+            loc=$MVE_HOME
+        fi
+    fi
+
     tomcat stop; alert
-    pushd /home/djohnston/projects/mve >/dev/null 2>&1
+    pushd $loc >/dev/null 2>&1
     ./gradlew clean && ./gradlew platform:dm-mve:build; alert 
     tomcat start; alert
     popd >/dev/null 2>&1
     echo "Ready to test..."
 }
 
+# Do a clean build of core and restart tomcat test server
+# Usage:
+#   coretest [path-to-project-root]
+# If no project root, use default $HOME/projects/dm-core
+function coretest
+{
+    loc=$1
+    if [ "X$loc" = "X" ]; then
+        loc=$CORE_HOME
+    else
+        if [ ! -d $loc ]; then
+            echo "${loc} is not a valid dir.  Using the default..."
+            echo
+            loc=$CORE_HOME
+        fi
+    fi
+
+    tomcat stop; alert
+    pushd $loc >/dev/null 2>&1
+    ./gradlew clean && ./gradlew build; alert 
+    tomcat start; alert
+    popd >/dev/null 2>&1
+    echo "Ready to test..."
+}
+
+# pm - Pdf Manpage
+# Usage:
+#   pm [-p]
+# The -p option stores the pdf page permanently at $HOME/man_pdfs
 function pm
 {
     persist=
@@ -66,7 +110,7 @@ function pm
     shift $((OPTIND-1))
 
     app=$@
-    outDir=/home/djohnston/man_pdfs
+    outDir=$HOME/man_pdfs
     fn="${outDir}/${app}.pdf"
     man -t $app | ps2pdf - $fn
     /usr/bin/gnome-open $fn

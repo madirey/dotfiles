@@ -1,0 +1,13 @@
+# MVE related environment variables
+export GRADLE_OPTS="-Xmx1024m -XX:MaxPermSize=256m -XX:+CMSClassUnloadingEnabled"
+export JAVA_HOME=/usr/lib/jvm/java-6-sun-1.6.0.24
+export DM_MVE=https://wolverine.mw.lexmark.com/DevMgmt/mve/
+export DM_CORE=https://wolverine.mw.lexmark.com/DevMgmt/dm-core/
+export MVE_HOME=$HOME/projects/mve
+export CORE_HOME=$HOME/projects/dm-core
+
+# project location aliases
+alias mve='pushd ~/projects/mve'
+alias mve1.2='pushd ~/projects/mve-1.2'
+alias dm-core='pushd ~/projects/dm-core/trunk'
+
