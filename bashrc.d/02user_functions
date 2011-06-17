@@ -90,7 +90,7 @@ function coretest
 
 # pm - Pdf Manpage
 # Usage:
-#   pm [-p]
+#   pm [-p] page
 # The -p option stores the pdf page permanently at $HOME/man_pdfs
 function pm
 {
@@ -117,4 +117,44 @@ function pm
     if [ ! $persist ]; then
         rm $fn
     fi
+}
+
+# Convert hex to decimal
+# Example: 
+#   h2d 21
+# Output:
+#   33
+function h2d
+{
+    echo "ibase=16; $1" | bc
+}
+
+# Convert decimal to hex
+# Example: 
+#   d2h 33
+# Output:
+#   21
+function d2h
+{
+    echo "obase=16; $1" | bc
+}
+
+# Convert binary to decimal
+# Example: 
+#   b2d 101010
+# Output:
+#   42
+function b2d
+{
+    echo "ibase=2; $1" | bc
+}
+
+# Convert decimal to binary
+# Example: 
+#   d2b 42
+# Output:
+#   101010
+function d2b
+{
+    echo "obase=2; $1" | bc
 }
