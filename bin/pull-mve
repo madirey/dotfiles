@@ -1,0 +1,13 @@
+#!/bin/bash
+
+logfile=/home/djohnston/logs/svn-nightly.log
+>$logfile
+
+cd /home/djohnston/projects/mve-svn
+
+date +%m%d%Y >>$logfile 2>&1
+pwd >>$logfile 2>&1
+
+echo "Begin svn update" >> $logfile 
+svn up >>$logfile 2>&1
+echo "Completed svn update" >> $logfile 

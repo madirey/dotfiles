@@ -1,0 +1,133 @@
+#!/bin/bash
+#
+# SCRIPT: jhd
+# AUTHOR: David Johnston
+# DATE:   7/9/10
+#
+# REQUIREMENTS: jmap
+#		!!! This process can only be ran as UID 0 !!!
+#
+# PURPOSE: This script will do a heap dump of a running JVM.
+#          It will su to the correct user of the process and
+#          perform the operation.
+#
+# REV LIST:
+#        DATE: 
+#        BY:   
+#        MODIFICATION: 
+#
+#
+# set -n   # Uncomment to check script syntax, without execution.
+#          # NOTE: Do not forget to put the # comment back in or
+#          #       the shell script will never execute!
+# set -x   # Uncomment to debug this shell script
+#
+##########################################################
+#         DEFINE FILES AND VARIABLES HERE
+##########################################################
+
+script=$(basename $0)
+ts=`date +"%m%d%y%H%M"`
+basepath=/opt/apache-tomcat6/logs/heapdumps
+dumppath=
+pid=
+powner=
+
+##########################################################
+#              DEFINE FUNCTIONS HERE
+##########################################################
+ 
+# Test to see if given PID was a valid value
+function isNumeric()
+{
+	# Delete any character that is not 0-9
+	s=$(echo $1 | tr -d 0-9)
+	if [ -z "$s" ]; then
+		return 0
+	else
+		return 1
+	fi
+}
+
+# Display usage in case of error or if user requests it
+function usage()
+{
+	echo "$(basename $0) [-f <dumppath>] pid"
+}
+
+##########################################################
+#               BEGINNING OF MAIN
+##########################################################
+
+if (( $(id -u) != 0 ))
+then
+	echo "You must be root to run this tool!"
+	exit 5
+fi
+
+# Loop over commandline options
+while getopts ":f:" opt
+do
+	case $opt in
+		f)
+			if ! isNumeric $OPTARG ; then
+				dumppath="$OPTARG"  # If -f is given change path to use as dump file
+			else 
+				usage
+				exit
+			fi
+			;;
+		\?)
+			usage
+			exit
+			;;
+		:)
+			usage
+			exit
+			;;
+	esac
+done #! End loop over commandline options
+
+# Shift off any arguments after the flags
+shift $((OPTIND-1))
+
+# PID is required, so make sure remaining argument count is exactly 1
+if (( $# == 1 )) 
+then
+	# If PID is a valid value
+	if isNumeric $@ 
+	then
+		pid=$@ 
+	else
+		usage
+		exit
+	fi #! End if PID is valid
+else
+	usage
+	exit
+fi #! End if argument count is valid
+
+# If $dumppath was not provided, construct the default (/var/lib/tomcat6/logs/heapdumps/heap.$ts.[0-9]+.bin)
+if [ -z $dumppath ]
+then
+	# Check to see if any already exist for the given timestamp
+	ls "${basepath}/*${ts}*" >/dev/null 2>&1
+	if [ $? -eq 0 ] 
+	then
+		# If one already exists then increment the number in the third field (delimited by '.') by 1 and set to dumppath
+		dumppath=`ls -l "${basepath}/*${ts}*" | sort -r -n -t '.' -k 3 | head -n 1 | awk -F'.' '{ print $1"."$2"."$3+1"."$4 }'`
+	else
+		# If not, start the count with 1
+		dumppath="${basepath}/heap.${ts}.1.bin"
+	fi
+fi #! End if $dumppath was not provided
+
+# Set powner to the owner of the process you would like to get the dump from
+powner=`ps aux | awk -v tpid="$pid" '($2 ~ tpid) {print $1}'`
+
+# Execute the heap dump on the given PID as the owner of the process
+su - $powner -c "/opt/openjdk-1.7/j2sdk-image/bin/jmap -dump:live,file=${dumppath},format=b ${pid}"
+
+
+##!!! End of script
+
