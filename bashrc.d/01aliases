@@ -9,6 +9,7 @@ alias trls='tree -C | less -R'
 alias mode='(set -o | grep emacs.*on >/dev/null 2>&1 && echo "emacs mode" || echo "vi mode")'
 alias g='gnome-open'
 alias sp='pushd $SPPATH'
+alias scpresume="rsync --partial --progress --rsh=ssh"
 
 # reset shell
 alias cds='cd; clear'
