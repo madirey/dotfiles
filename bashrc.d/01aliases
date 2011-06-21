@@ -19,8 +19,9 @@ if [ -f /usr/bin/xclip ]; then
 fi
 
 # git aliases
-# TODO: Test that hub exists
-alias git=hub
+if [ -x ~/bin/hub ]; then
+    alias git=hub
+fi
 
 # reload .bashrc
 alias refresh='. ~/.bashrc'
