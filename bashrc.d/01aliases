@@ -11,6 +11,9 @@ alias g='gnome-open'
 alias sp='pushd $SPPATH'
 alias scpresume="rsync --partial --progress --rsh=ssh"
 
+# ssh aliases
+alias codopolis='ssh djohnston@codopolis.rds.lexmark.com'
+
 # reset shell
 alias cds='cd; clear'
 
