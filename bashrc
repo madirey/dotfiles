@@ -1,19 +1,16 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
-EXTRAS_DIR=~/.bashrc.d
-
 # Enable vi mode
 set -o vi
 
-EDITOR=vim
-export EDITOR
+export EDITOR=vim
+export PAGER=less
 
 # History preferences
 HISTCONTROL=erasedups
 HISTSIZE=10000
-# append to the history file, don't overwrite it
-shopt -s histappend
+shopt -s histappend # append instead of overwrite history
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -48,29 +45,13 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 
 # Python Site Packages shortcuts
 export SPPATH=`python -c "from distutils.sysconfig import get_python_lib; print get_python_lib()"`
+alias sp='pushd $SPPATH'
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
-fi
-
-# If additional configurations exist in $EXTRAS_DIR, source them into session
-# Hidden files are ignored
-if [ -d $EXTRAS_DIR ]; then
-    echo "Loading additional configs..."
-    for config in $(ls $EXTRAS_DIR/ | sort)
-    do
-        . $EXTRAS_DIR/$config
-        echo "${config} loaded!"
-    done
-fi
-
-# source mve environment vars
-# TODO: move MVE config to $EXTRAS_DIR
-if [ -f ~/.mve_env ]; then
-    . ~/.mve_env
 fi
 
 # enable color support of ls and also add handy aliases
@@ -81,4 +62,48 @@ if [ -x /usr/bin/dircolors ]; then
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
+fi
+
+# MVE related environment variables
+export GRADLE_OPTS="-Xmx1024m -XX:MaxPermSize=256m -XX:+CMSClassUnloadingEnabled"
+export JAVA_HOME=/usr/lib/jvm/java-6-sun-1.6.0.24
+
+# project location aliases
+alias mve='pushd ~/projects/mve'
+alias dm-core='pushd ~/projects/dm-core'
+
+# lazy aliases
+alias vi='vim'
+alias ll='ls -alhF'
+alias la='ls -A'
+alias l='ls -CF'
+alias ..='cd ..'
+alias tree='tree -C'
+alias trls='tree -C | less -R'
+alias mode='(set -o | grep emacs.*on >/dev/null 2>&1 && echo "emacs mode" || echo "vi mode")'
+alias g='gnome-open'
+
+# ssh aliases
+alias codopolis='ssh djohnston@codopolis.rds.lexmark.com'
+alias scpresume="rsync --partial --progress --rsh=ssh"
+
+# reset shell
+alias cds='cd; clear'
+
+# If xclip is installed set to copy to system clipboard by default
+if [ -f /usr/bin/xclip ]; then
+    alias xclip='/usr/bin/xclip -sel c'
+fi
+
+# git aliases
+if [ -x ~/bin/hub ]; then
+    alias git=hub
+fi
+
+# reload .bashrc
+alias refresh='. ~/.bashrc'
+
+# Source in user functions
+if [ -f ~/.user_functions ]; then
+    . ~/.user_functions
 fi
