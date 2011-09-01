@@ -158,3 +158,10 @@ function d2b
 {
     echo "obase=2; $1" | bc
 }
+
+function get-snmp
+{
+    ip=$1
+    oid=$2
+    snmpget -v2c -c public $ip $oid
+}

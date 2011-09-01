@@ -66,7 +66,7 @@ fi
 
 # MVE related environment variables
 export GRADLE_OPTS="-Xmx1024m -XX:MaxPermSize=256m -XX:+CMSClassUnloadingEnabled"
-export JAVA_HOME=/usr/lib/jvm/java-6-sun-1.6.0.24
+export JAVA_HOME=/usr/lib/jvm/java-6-sun
 
 # project location aliases
 alias mve='pushd ~/projects/mve'
