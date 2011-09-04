@@ -1,0 +1,32 @@
+#!/bin/bash
+
+function usage
+{
+    echo "Usage: $0 <original_file> [<seachr_scope>]"
+    echo 
+    echo "Default search scope is /.  Remember to use sudo if searching outside ${HOME}."
+}
+
+function main
+{
+    orig=$1
+    scope=
+
+    if [[ "X$orig" == "X-h" || "X$orig" == "X-?" || "X$orig" == "X" || -z $orig ]]; then
+        usage
+        exit
+    fi
+
+    if [[ -z $2 || "X$2" == "X" ]]; then
+        scope=/
+    else
+        scope=$2
+    fi
+
+    echo "-------------------------------------------------------------------------------------"
+    echo "Finding all links for ${orig} in $scope"
+    echo "-------------------------------------------------------------------------------------"
+    find -L $scope -samefile $orig
+}
+
+main $*
