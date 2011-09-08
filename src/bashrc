@@ -107,3 +107,10 @@ alias refresh='. ~/.bashrc'
 if [ -f ~/.user_functions ]; then
     . ~/.user_functions
 fi
+
+# functions
+function py() {
+    virtual_env=$1
+    shift
+    ~/Development/python_env/$virtual_env/bin/python2.6 $@
+}
