@@ -87,6 +87,14 @@ end
 task :default => :update
 
 def conditionally_symlink(source, destination)
+  # if on mac, create a .bash_profile instead of .bashrc
+  if RUBY_PLATFORM.downcase.include?('darwin')
+    if destination.split('/')[-1] == '.bashrc'
+      conditionally_symlink(source, destination.sub('bashrc', 'bash_profile'))
+      return
+    end
+  end
+
   source = File.expand_path(source)
   destination = File.expand_path(destination)
   if File.exist?(source)
