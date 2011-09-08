@@ -114,3 +114,7 @@ function py() {
     shift
     ~/Development/python_env/$virtual_env/bin/python2.6 $@
 }
+
+# directory aliases
+alias fsdev='cd ~/Development/fieldscope_django_31may2011/FieldScope-Server/src/fieldscope'
+
