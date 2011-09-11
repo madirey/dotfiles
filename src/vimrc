@@ -115,6 +115,9 @@ if has("autocmd")
   autocmd FileType python,javascript setlocal ts=4 sts=4 sw=4 noexpandtab list
 endif
 
+" Don't let any tabs sneak in
+autocmd BufWritePre * :%s/\t/    /g
+
 " Toggles & Switches (Leader commands) {{{1
 let mapleader = ","
 nmap <silent> <leader>l :set list!<CR>
