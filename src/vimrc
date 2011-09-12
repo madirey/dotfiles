@@ -112,11 +112,8 @@ set backupdir=~/tmp
 set directory=~/tmp
 if has("autocmd")
   autocmd FileType html,css,scss,ruby,pml,yaml,coffee,vim setlocal ts=2 sts=2 sw=2 expandtab
-  autocmd FileType python,javascript setlocal ts=4 sts=4 sw=4 noexpandtab list
+  autocmd FileType python,javascript setlocal list
 endif
-
-" Don't let any tabs sneak in
-autocmd BufWritePre * :%s/\t/    /ge
 
 " Toggles & Switches (Leader commands) {{{1
 let mapleader = ","
