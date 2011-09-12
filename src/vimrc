@@ -116,7 +116,7 @@ if has("autocmd")
 endif
 
 " Don't let any tabs sneak in
-autocmd BufWritePre * :%s/\t/    /g
+autocmd BufWritePre * :%s/\t/    /ge
 
 " Toggles & Switches (Leader commands) {{{1
 let mapleader = ","
