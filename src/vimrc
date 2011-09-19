@@ -113,6 +113,7 @@ set directory=~/tmp
 if has("autocmd")
   autocmd FileType html,css,scss,ruby,pml,yaml,coffee,vim setlocal ts=2 sts=2 sw=2 expandtab
   autocmd FileType python,javascript setlocal list
+  autocmd FileType python setlocal omnifunc=pysmell#Complete
 endif
 
 " Toggles & Switches (Leader commands) {{{1
