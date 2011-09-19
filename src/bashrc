@@ -69,8 +69,7 @@ export GRADLE_OPTS="-Xmx1024m -XX:MaxPermSize=256m -XX:+CMSClassUnloadingEnabled
 export JAVA_HOME=/usr/lib/jvm/java-6-sun
 
 # project location aliases
-alias mve='pushd ~/projects/mve'
-alias dm-core='pushd ~/projects/dm-core'
+alias fsdev='cd ~/Development/fieldscope_django_31may2011/FieldScope-Server/src/fieldscope'
 
 # lazy aliases
 alias vi='vim'
@@ -85,7 +84,6 @@ alias mode='(set -o | grep emacs.*on >/dev/null 2>&1 && echo "emacs mode" || ech
 alias g='gnome-open'
 
 # ssh aliases
-alias codopolis='ssh djohnston@codopolis.rds.lexmark.com'
 alias scpresume="rsync --partial --progress --rsh=ssh"
 
 # reset shell
@@ -115,7 +113,4 @@ function py() {
     shift
     ~/Development/python_env/$virtual_env/bin/python2.6 $@
 }
-
-# directory aliases
-alias fsdev='cd ~/Development/fieldscope_django_31may2011/FieldScope-Server/src/fieldscope'
 
