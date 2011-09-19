@@ -7,6 +7,8 @@ set -o vi
 export EDITOR=vim
 export PAGER=less
 
+export PATH=/usr/local/bin:$PATH
+
 # History preferences
 HISTCONTROL=erasedups
 HISTSIZE=10000
@@ -69,6 +71,7 @@ export GRADLE_OPTS="-Xmx1024m -XX:MaxPermSize=256m -XX:+CMSClassUnloadingEnabled
 export JAVA_HOME=/usr/lib/jvm/java-6-sun
 
 # project location aliases
+alias dotfiles='cd ~/Development/dotfiles'
 alias fsdev='cd ~/Development/fieldscope_django_31may2011/FieldScope-Server/src/fieldscope'
 
 # lazy aliases
@@ -82,6 +85,7 @@ alias tree='tree -C'
 alias trls='tree -C | less -R'
 alias mode='(set -o | grep emacs.*on >/dev/null 2>&1 && echo "emacs mode" || echo "vi mode")'
 alias g='gnome-open'
+alias df='df -h'
 
 # ssh aliases
 alias scpresume="rsync --partial --progress --rsh=ssh"
