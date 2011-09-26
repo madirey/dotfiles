@@ -90,6 +90,8 @@ alias df='df -h'
 # ssh aliases
 alias scpresume="rsync --partial --progress --rsh=ssh"
 
+alias mercator='ssh mercator.fieldscope.org'
+
 # reset shell
 alias cds='cd; clear'
 
