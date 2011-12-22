@@ -1,0 +1,925 @@
+# Hungarian translation of gnu id-utils.
+# Copyright (C) 2002 Free Software Foundation, Inc.
+# Gábor István <stive@mezobereny.hu>, 2002.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: id-utils 3.2d\n"
+"Report-Msgid-Bugs-To: bug-idutils@gnu.org\n"
+"POT-Creation-Date: 2010-06-17 08:37+0200\n"
+"PO-Revision-Date: 2002-05-22 08:50GMT\n"
+"Last-Translator: Gábor István <stive@mezobereny.hu>\n"
+"Language-Team: Hungarian <translation-team-hu@lists.sourceforge.net>\n"
+"Language: hu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-2\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 0.9.5\n"
+
+#: lib/closeout.c:112
+msgid "write error"
+msgstr ""
+
+#: lib/error.c:181
+msgid "Unknown system error"
+msgstr ""
+
+#: lib/getopt.c:527 lib/getopt.c:543
+#, fuzzy, c-format
+msgid "%s: option '%s' is ambiguous\n"
+msgstr "%s: a `%s' kapcsoló nem egyértelmû\n"
+
+#: lib/getopt.c:576 lib/getopt.c:580
+#, fuzzy, c-format
+msgid "%s: option '--%s' doesn't allow an argument\n"
+msgstr "%s: a `--%s' kapcsoló nem enged meg argumentumot\n"
+
+#: lib/getopt.c:589 lib/getopt.c:594
+#, fuzzy, c-format
+msgid "%s: option '%c%s' doesn't allow an argument\n"
+msgstr "%s: a `%c%s' kapcsoló nem enged meg argumentumot\n"
+
+#: lib/getopt.c:637 lib/getopt.c:656
+#, fuzzy, c-format
+msgid "%s: option '--%s' requires an argument\n"
+msgstr "%s: a `%s' kapcsolóhoz argumentum szükséges\n"
+
+#: lib/getopt.c:694 lib/getopt.c:697
+#, fuzzy, c-format
+msgid "%s: unrecognized option '--%s'\n"
+msgstr "%s: a `--%s' kapcsoló ismeretlen\n"
+
+#: lib/getopt.c:705 lib/getopt.c:708
+#, fuzzy, c-format
+msgid "%s: unrecognized option '%c%s'\n"
+msgstr "%s: a `%c%s' kapcsoló ismeretlen\n"
+
+#: lib/getopt.c:757 lib/getopt.c:760
+#, fuzzy, c-format
+msgid "%s: invalid option -- '%c'\n"
+msgstr "%s: érvénytelen kapcsoló -- %c\n"
+
+#: lib/getopt.c:810 lib/getopt.c:827 lib/getopt.c:1035 lib/getopt.c:1053
+#, fuzzy, c-format
+msgid "%s: option requires an argument -- '%c'\n"
+msgstr "%s: a kapcsolónak szüksége van egy argumentumra -- %c\n"
+
+#: lib/getopt.c:883 lib/getopt.c:899
+#, fuzzy, c-format
+msgid "%s: option '-W %s' is ambiguous\n"
+msgstr "%s: a `%s' kapcsoló nem egyértelmû\n"
+
+#: lib/getopt.c:923 lib/getopt.c:941
+#, fuzzy, c-format
+msgid "%s: option '-W %s' doesn't allow an argument\n"
+msgstr "%s: a `--%s' kapcsoló nem enged meg argumentumot\n"
+
+#: lib/getopt.c:962 lib/getopt.c:980
+#, fuzzy, c-format
+msgid "%s: option '-W %s' requires an argument\n"
+msgstr "%s: a `%s' kapcsolóhoz argumentum szükséges\n"
+
+#: lib/obstack.c:423 lib/obstack.c:425 lib/xalloc-die.c:34
+msgid "memory exhausted"
+msgstr ""
+
+#: lib/openat-die.c:34
+#, fuzzy, c-format
+msgid "unable to record current working directory"
+msgstr "nem érem el a munka könyvtárat"
+
+#: lib/openat-die.c:52
+#, fuzzy, c-format
+msgid "failed to return to initial working directory"
+msgstr "nem érem el a munka könyvtárat"
+
+#. TRANSLATORS:
+#. Get translations for open and closing quotation marks.
+#.
+#. The message catalog should translate "`" to a left
+#. quotation mark suitable for the locale, and similarly for
+#. "'".  If the catalog has no translation,
+#. locale_quoting_style quotes `like this', and
+#. clocale_quoting_style quotes "like this".
+#.
+#. For example, an American English Unicode locale should
+#. translate "`" to U+201C (LEFT DOUBLE QUOTATION MARK), and
+#. should translate "'" to U+201D (RIGHT DOUBLE QUOTATION
+#. MARK).  A British English Unicode locale should instead
+#. translate these to U+2018 (LEFT SINGLE QUOTATION MARK)
+#. and U+2019 (RIGHT SINGLE QUOTATION MARK), respectively.
+#.
+#. If you don't know what to put here, please see
+#. <http://en.wikipedia.org/wiki/Quotation_mark#Glyphs>
+#. and use glyphs suitable for your language.
+#: lib/quotearg.c:272
+msgid "`"
+msgstr ""
+
+#: lib/quotearg.c:273
+msgid "'"
+msgstr ""
+
+#: lib/regcomp.c:134
+msgid "Success"
+msgstr ""
+
+#: lib/regcomp.c:137
+msgid "No match"
+msgstr ""
+
+#: lib/regcomp.c:140
+msgid "Invalid regular expression"
+msgstr ""
+
+#: lib/regcomp.c:143
+msgid "Invalid collation character"
+msgstr ""
+
+#: lib/regcomp.c:146
+msgid "Invalid character class name"
+msgstr ""
+
+#: lib/regcomp.c:149
+msgid "Trailing backslash"
+msgstr ""
+
+#: lib/regcomp.c:152
+msgid "Invalid back reference"
+msgstr ""
+
+#: lib/regcomp.c:155
+msgid "Unmatched [ or [^"
+msgstr ""
+
+#: lib/regcomp.c:158
+msgid "Unmatched ( or \\("
+msgstr ""
+
+#: lib/regcomp.c:161
+msgid "Unmatched \\{"
+msgstr ""
+
+#: lib/regcomp.c:164
+msgid "Invalid content of \\{\\}"
+msgstr ""
+
+#: lib/regcomp.c:167
+msgid "Invalid range end"
+msgstr ""
+
+#: lib/regcomp.c:170
+msgid "Memory exhausted"
+msgstr ""
+
+#: lib/regcomp.c:173
+msgid "Invalid preceding regular expression"
+msgstr ""
+
+#: lib/regcomp.c:176
+msgid "Premature end of regular expression"
+msgstr ""
+
+#: lib/regcomp.c:179
+msgid "Regular expression too big"
+msgstr ""
+
+#: lib/regcomp.c:182
+msgid "Unmatched ) or \\)"
+msgstr ""
+
+#: lib/regcomp.c:703
+msgid "No previous regular expression"
+msgstr ""
+
+#: libidu/fnprint.c:137
+#, fuzzy, c-format
+msgid "invalid `--separator' style: `%s'"
+msgstr "érvénytelen '--key' stílus %s"
+
+#: libidu/idfile.c:106
+#, c-format
+msgid "can't determine the io_size of a string!"
+msgstr "nem lehet meghatározni az  io_size sztringet!"
+
+#: libidu/idread.c:49 src/lid.c:600 src/mkid.c:589 src/xtokid.c:340
+#, c-format
+msgid "can't open `%s'"
+msgstr "nem lehet megnyitni a %s"
+
+#: libidu/idread.c:68
+#, c-format
+msgid "`%s' is not an ID file! (bad magic #)"
+msgstr "%s nem ID fájl(rossz mágikus szám)"
+
+#: libidu/idread.c:70
+#, c-format
+msgid "`%s' is version %d, but I only grok version %d"
+msgstr "a %s az %d verziójú, de én csak a %d verziót ismerem"
+
+#: libidu/idread.c:190
+#, c-format
+msgid "unsupported size in io_read (): %d"
+msgstr "nem támogatott méretû  io_read (): %d"
+
+#: libidu/idread.c:200 libidu/idwrite.c:169
+#, c-format
+msgid "unknown I/O type: %d"
+msgstr "ismeretlen I/O típus: %d"
+
+#: libidu/idu-hash.c:51
+#, c-format
+msgid "can't allocate %ld bytes for hash table: memory exhausted"
+msgstr "nem lehet %ld bájtot lefoglalni a hash táblának:a memória elfogyott"
+
+#: libidu/idu-hash.c:264
+#, c-format
+msgid "Load=%ld/%ld=%.0f%%, "
+msgstr "Betöltés=%ld/%ld=%.0f%%, "
+
+#: libidu/idu-hash.c:266
+#, c-format
+msgid "Rehash=%d, "
+msgstr "Újra hash-elés=%d,"
+
+#: libidu/idu-hash.c:267
+#, c-format
+msgid "Collisions=%ld/%ld=%.0f%%"
+msgstr "Ütközések=%ld/%ld=%.0f%%"
+
+#: libidu/idwrite.c:158
+#, c-format
+msgid "unsupported size in io_write (): %d"
+msgstr "nem támogatott méretû  io_write (): %d"
+
+#: libidu/scanners.c:109
+#, c-format
+msgid "unrecognized language: `%s'"
+msgstr "ismeretlen a %s nyelv"
+
+#: libidu/scanners.c:169
+#, c-format
+msgid "can't allocate language args obstack: memory exhausted"
+msgstr "nem lehet lefoglalni a nyelv args obstack-ját: a memória elfogyott"
+
+#: libidu/scanners.c:223 libidu/scanners.c:292
+#, c-format
+msgid "can't allocate language args: memory exhausted"
+msgstr "nem lehet lefoglalni a nyelv args-ját:a memória elfogyott"
+
+#: libidu/scanners.c:231
+#, c-format
+msgid "language name expected following `%s' in file `%s'"
+msgstr "a nyelv nevét a %s-nél a %s fájlban várja"
+
+#: libidu/scanners.c:286
+#, c-format
+msgid "can't open language map file `%s'"
+msgstr "nem lehet megnyitni a %s nyelvi térkép fájlt"
+
+#: libidu/scanners.c:288
+#, c-format
+msgid "can't get size of map file `%s'"
+msgstr "nem lehet meghatározni a %s térkép fájl méretét"
+
+#: libidu/scanners.c:298
+#, c-format
+msgid "can't read language map file `%s'"
+msgstr "nem lehet olvasni a %s nyelvi térkép fájlt"
+
+#: libidu/scanners.c:301
+#, c-format
+msgid "can't read entire language map file `%s'"
+msgstr "nem lehet olvasni a %s nyelvi térkép fájl bejegyzéseit"
+
+#: libidu/scanners.c:450
+#, c-format
+msgid ""
+"C language:\n"
+"  -k,--keep=CHARS        Allow CHARS in single-token strings, keep the "
+"result\n"
+"  -i,--ignore=CHARS      Allow CHARS in single-token strings, toss the "
+"result\n"
+"  -u,--strip-underscore  Strip a leading underscore from single-token "
+"strings\n"
+msgstr ""
+"C nyelv\n"
+"  -k,--keep=CHARS        Engedélyezi a önálló jel sztringekben a CHARS-t,az "
+"eredmény megtartja\n"
+"  -i,--ignore=CHARS      Engedélyezi a önálló jel sztringekben a CHARS-t,az "
+"eredmény eldobja\n"
+"  -u,--strip-underscore  Leszedi a kezdeti aláhúzást a önálló jelekrõl\n"
+
+#: libidu/scanners.c:461
+#, fuzzy, c-format
+msgid ""
+"C++ language:\n"
+"  -k,--keep=CHARS        Allow CHARS in single-token strings, keep the "
+"result\n"
+"  -i,--ignore=CHARS      Allow CHARS in single-token strings, toss the "
+"result\n"
+"  -u,--strip-underscore  Strip a leading underscore from single-token "
+"strings\n"
+msgstr ""
+"C nyelv\n"
+"  -k,--keep=CHARS        Engedélyezi a önálló jel sztringekben a CHARS-t,az "
+"eredmény megtartja\n"
+"  -i,--ignore=CHARS      Engedélyezi a önálló jel sztringekben a CHARS-t,az "
+"eredmény eldobja\n"
+"  -u,--strip-underscore  Leszedi a kezdeti aláhúzást a önálló jelekrõl\n"
+
+#: libidu/scanners.c:472
+#, fuzzy, c-format
+msgid ""
+"Java language:\n"
+"  -k,--keep=CHARS        Allow CHARS in single-token strings, keep the "
+"result\n"
+"  -i,--ignore=CHARS      Allow CHARS in single-token strings, toss the "
+"result\n"
+"  -u,--strip-underscore  Strip a leading underscore from single-token "
+"strings\n"
+msgstr ""
+"C nyelv\n"
+"  -k,--keep=CHARS        Engedélyezi a önálló jel sztringekben a CHARS-t,az "
+"eredmény megtartja\n"
+"  -i,--ignore=CHARS      Engedélyezi a önálló jel sztringekben a CHARS-t,az "
+"eredmény eldobja\n"
+"  -u,--strip-underscore  Leszedi a kezdeti aláhúzást a önálló jelekrõl\n"
+
+#: libidu/scanners.c:755 libidu/scanners.c:1024 libidu/scanners.c:1227
+#: libidu/scanners.c:1497
+#, c-format
+msgid "junk: `%c'"
+msgstr "szemét: %c"
+
+#: libidu/scanners.c:757 libidu/scanners.c:1026 libidu/scanners.c:1229
+#: libidu/scanners.c:1499
+#, c-format
+msgid "junk: `\\%03o'"
+msgstr "szemét: \\%03o"
+
+#: libidu/scanners.c:859
+#, c-format
+msgid ""
+"Assembly language:\n"
+"  -c,--comment=CHARS     Any of CHARS starts a comment until end-of-line\n"
+"  -k,--keep=CHARS        Allow CHARS in tokens, and keep the result\n"
+"  -i,--ignore=CHARS      Allow CHARS in tokens, and toss the result\n"
+"  -u,--strip-underscore  Strip a leading underscore from tokens\n"
+"  -n,--no-cpp            Don't handle C pre-processor directives\n"
+msgstr ""
+"Assembly nyelv:\n"
+"  -c,--comment=CHARS     Az összes CHARS-al kezdõdõ sor megjegyzésnek "
+"minõsül\n"
+"  -k,--keep=CHARS        Engedélyezi a CHARS-t a jelekben és az eredményt "
+"megtartja\n"
+"  -i,--ignore=CHARS      Engedélyezi a CHARS-t a jelekben és az eredményt "
+"elhagyja\n"
+"  -u,--strip-underscore  Leszedi a kezdeti aláhúzást a jelekrõl\n"
+"  -n,--no-cpp            Nem kezeli a C pre-processor direktívákat\n"
+
+#: libidu/scanners.c:1130
+#, c-format
+msgid ""
+"Text language:\n"
+"  -i,--include=CHAR-CLASS  Treat characters of CHAR-CLASS as token "
+"constituents\n"
+"  -x,--exclude=CHAR-CLASS  Treat characters of CHAR-CLASS as token "
+"delimiters\n"
+msgstr ""
+
+#: libidu/scanners.c:1335
+#, c-format
+msgid ""
+"Perl language:\n"
+"  -i,--include=CHAR-CLASS  Treat characters of CHAR-CLASS as token "
+"constituents\n"
+"  -x,--exclude=CHAR-CLASS  Treat characters of CHAR-CLASS as token "
+"delimiters\n"
+"  -d,--dtags  Include documentation tags\n"
+msgstr ""
+
+#: libidu/scanners.c:1598
+#, c-format
+msgid "Lisp language:\n"
+msgstr ""
+
+#: libidu/walker.c:124
+#, c-format
+msgid "can't read directory `%s' (`.' from `%s')"
+msgstr "nem lehet olvasni a `%s' könyvtárat (`.'  `%s'-ból)"
+
+#: libidu/walker.c:191
+#, c-format
+msgid "notice: `%s' was a %s, but is now a %s!"
+msgstr "Megjegyzés: a %s az %s volt, de most %s!"
+
+#: libidu/walker.c:192 libidu/walker.c:193
+msgid "file"
+msgstr "fájl"
+
+#: libidu/walker.c:192 libidu/walker.c:193
+msgid "directory"
+msgstr "könyvtár"
+
+#: libidu/walker.c:322
+#, c-format
+msgid "warning: `%s' and `%s' are the same file, but yield different scans!"
+msgstr ""
+"figyelem: a %s és a %s ugyanaz a fájl, de a vizsgálat eredménye különbözõ!"
+
+#: libidu/walker.c:416
+#, c-format
+msgid "notice: scan parameters changed for `%s'"
+msgstr "megjegyzés: az ellenõrzés paraméterei megváltoztak %s-re"
+
+#: libidu/walker.c:498 libidu/walker.c:506
+#, c-format
+msgid "can't mix --include and --exclude options"
+msgstr ""
+
+#: libidu/walker.c:616
+#, c-format
+msgid "can't get working directory"
+msgstr "nem érem el a munka könyvtárat"
+
+#: libidu/walker.c:671
+#, c-format
+msgid "can't chdir to `%s'"
+msgstr "nem lehet könyvtárat váltani a %s-re"
+
+#: libidu/walker.c:676
+#, c-format
+msgid "can't chdir to `%s' from `%s'"
+msgstr "nem lehet könyvtárat váltani a %s-re a %s-rõl"
+
+#: libidu/walker.c:737
+#, c-format
+msgid "can't lstat `%s' from `%s'"
+msgstr "nem lehet megvizsgálni a %s-bõl a %s-t"
+
+#: libidu/walker.c:745
+#, c-format
+msgid "can't stat `%s' from `%s'"
+msgstr "nem lehet megvizsgálni a %s-bõl a %s-t"
+
+#: src/fid.c:72 src/fnid.c:51 src/lid.c:241 src/mkid.c:130 src/xtokid.c:55
+#, c-format
+msgid "Try `%s --help' for more information.\n"
+msgstr "Próbáld a `%s --help'-et.\n"
+
+#: src/fid.c:80
+#, c-format
+msgid "Usage: %s [OPTION] FILENAME [FILENAME2]\n"
+msgstr "Használat: %s [OPCIÓ] FÁJLNÉV [FÁJLNÉV]\n"
+
+#: src/fid.c:83
+#, c-format
+msgid ""
+"List identifiers that occur in FILENAME, or if FILENAME2 is\n"
+"also given list the identifiers that occur in both files.\n"
+"\n"
+"  -f, --file=FILE  file name of ID database\n"
+"      --help       display this help and exit\n"
+"      --version    output version information and exit\n"
+msgstr ""
+"Lista azonosító elõfordulhat a FÁJLNÉVBEN vagy ha \n"
+"megadja a FÁJLNÉV2-t akkor a mindkét fájlban.\n"
+"\n"
+"  -f, --file=FÁJL  az ID adatbázis fájl neve\n"
+"      --help       megjeleníti ezt a segítséget és kilép\n"
+"      --version    kiírja a verzió információt és kilép\n"
+
+#: src/fid.c:91 src/fnid.c:80 src/lid.c:290 src/mkid.c:193 src/xtokid.c:106
+#, c-format
+msgid ""
+"\n"
+"Report bugs to "
+msgstr ""
+
+#: src/fid.c:149
+#, c-format
+msgid "no file name arguments"
+msgstr "nem fájl név az paraméter"
+
+#: src/fid.c:154
+#, c-format
+msgid "too many file name arguments"
+msgstr "túl sok fájl név paraméter"
+
+#: src/fid.c:161 src/fnid.c:155 src/lid.c:443
+#, c-format
+msgid "can't locate `ID'"
+msgstr "nem találom az ID-t"
+
+#: src/fid.c:244
+#, c-format
+msgid "`%s' is ambiguous"
+msgstr "%s nem egyértelmû"
+
+#: src/fid.c:250
+#, c-format
+msgid "`%s' not found"
+msgstr "%s nincs meg"
+
+#: src/fnid.c:68
+#, c-format
+msgid "Usage: %s [OPTION]... [PATTERN]...\n"
+msgstr "Használat: %s[OPCIÓK]...[MINTA]...\n"
+
+#: src/fnid.c:72
+#, c-format
+msgid ""
+"Print constituent file names that match PATTERN,\n"
+"using shell-style wildcards.\n"
+"  -f, --file=FILE        file name of ID database\n"
+"  -S, --separator=STYLE  STYLE is one of `braces', `space' or `newline'\n"
+"      --help             display this help and exit\n"
+"      --version          output version information and exit\n"
+msgstr ""
+"Kiírja azokat a fájlokat melynek nevei illeszkednek a MINTÁRA\n"
+"használhatja a shell-stílusú keresései karaktereket(*,?)  -f, --"
+"file=FÁJL        az ID adatbázis fájl neve\n"
+"  -S, --separator=STÍLUS  A STÍLUS lehet braces', `space' vagy `newline'\n"
+"      --help             megjeleníti ezt a segítséget és kilép\n"
+"      --version          kiírja a verzió információt és kilép\n"
+
+#: src/lid.c:249
+#, c-format
+msgid "Usage: %s [OPTION]... PATTERN...\n"
+msgstr "Használat: %s [OPCIÓ]...[MINTA]...\n"
+
+#: src/lid.c:253
+#, fuzzy, c-format
+msgid ""
+"Query ID database and report results.\n"
+"By default, output consists of multiple lines, each line containing the\n"
+"matched identifier followed by the list of file names in which it occurs.\n"
+"\n"
+"  -f, --file=FILE       file name of ID database\n"
+"\n"
+"  -i, --ignore-case     match PATTERN case insensitively\n"
+"  -l, --literal         match PATTERN as a literal string\n"
+"  -r, --regexp          match PATTERN as a regular expression\n"
+"  -w, --word            match PATTERN as a delimited word\n"
+"  -s, --substring       match PATTERN as a substring\n"
+"            Note: If PATTERN contains extended regular expression meta-\n"
+"            characters, it is interpreted as a regular expression "
+"substring.\n"
+"            Otherwise, PATTERN is interpreted as a literal word.\n"
+"\n"
+"  -k, --key=STYLE       STYLE is one of `token', `pattern' or `none'\n"
+"  -R, --result=STYLE    STYLE is one of `filenames', `grep', `edit' or "
+"`none'\n"
+"  -S, --separator=STYLE  STYLE is one of `braces', `space' or `newline' and\n"
+"                        only applies to file names when `--"
+"result=filenames'\n"
+"            The above STYLE options control how query results are "
+"presented.\n"
+"            Defaults are --key=token --result=filenames --separator=%s\n"
+"\n"
+"  -F, --frequency=FREQ  find tokens that occur FREQ times, where FREQ\n"
+"                        is a range expressed as `N..M'.  If N is omitted, "
+"it\n"
+"                        defaults to 1, if M is omitted it defaults to "
+"MAX_USHRT\n"
+"  -a, --ambiguous=LEN   find tokens whose names are ambiguous for LEN chars\n"
+"\n"
+"  -x, --hex             only find numbers expressed as hexadecimal\n"
+"  -d, --decimal         only find numbers expressed as decimal\n"
+"  -o, --octal           only find numbers expressed as octal\n"
+"            By default, searches match numbers of any radix.\n"
+"\n"
+"      --help            display this help and exit\n"
+"      --version         output version information and exit\n"
+msgstr ""
+"Lekérdezi az ID adatbázist és jelentést készít.\n"
+"Alapból a kimenet több sort tartalmaz, mindegyik sor tartalmazza a\n"
+"az illeszkedõ azonosítókat majd ezt követi a fájl neve amelyikben feltûnt\n"
+"\n"
+"  -f, --file=FÁJL       az ID adatbázis fájl neve\n"
+"\n"
+"  -i, --ignore-case     a MINTÁBAN nem tesz különbséget a kis és nagy betû "
+"között\n"
+"  -l, --literal         a MINTÁBAN csak betû szerinti egyezést fogad el\n"
+"  -r, --regexp          a MINTÁT, mint reguláris kifelyezés kezeli\n"
+"  -w, --word            a MINTA egy elhatárolt szó\n"
+"  -s, --substring       a MINTA egy alsztring\n"
+"            Megjegyzés: Ha a MINTA tartalmaz egy kibõvített reguláris meta-\n"
+"            karaktert, akkor reguláris kifelyezés alsztringjeként lesz "
+"kezelve.\n"
+"            egyébként a MINTÁT betûrõl-betûre való egyezést használ\n"
+" \n"
+"  -k, --key=STÍLUS       STÍLUS lehet  `token', `pattern' vagy `none'\n"
+"  -R, --result=STÍLUS    STÍLUS lehet `filenames', `grep', `edit' vagy "
+"`none'\n"
+"  -S, --separator=STÍLUS STÍLUS lehet `braces', `space' vagy `newline'  és\n"
+"             csak akkor alkalmazza a fájlnevekre amikor  `--"
+"result=filenames' kapcsolót használja\n"
+"            A STÍLUS opciók a kimenet megjelenítését szabályozzák.\n"
+"            Alapból --key=token --result=filenames --separator=%s\n"
+"\n"
+"  -F, --frequency=ISMÉTLÉS  a megkeresi azokat a jeleket amelyek ISMÉTLÉS-"
+"szor elõfordulnak\n"
+"           ahol az ISMÉTLÉS egy intervallum N..M.Ha nem ír N-t akkor \n"
+"                  alapból 1-et használ, ha az M-et hagyja ki akkor az "
+"alapbeállítás a MAX_USHRT változó\n"
+"  -a, --ambiguous=HOSSZ   ahol a megtalált jel nem egyértelmû ott a HOSSZ-t "
+"használja\n"
+"\n"
+"  -x, --hex             a megtalált számokat tizenhatos számrendszer-belinek "
+"veszi\n"
+"  -d, --decimal        a megtalált számokat tízes számrendszer-belinek "
+"vesszi\n"
+"  -o, --octal           a megtalált számokat nyolcas számrendszer-belinek "
+"vesszi\n"
+"            Alapból az összes számrendszert elfogadja.\n"
+"\n"
+"      --help            megjeleníti ezt a segítséget és kilép\n"
+"      --version         megjeleníti a verzió információkat és kilép\n"
+
+#: src/lid.c:289
+msgid "braces"
+msgstr "összekapcsoló"
+
+#: src/lid.c:289
+#, fuzzy
+msgid "space"
+msgstr "hely"
+
+#: src/lid.c:383
+#, c-format
+msgid "notice: use of `-e' is deprecated, use `-r' instead"
+msgstr "megjegyzés:a '-e' elavult, használja helyette a '-r' kapcsolót"
+
+#: src/lid.c:464
+#, c-format
+msgid "All identifiers are non-ambiguous within the first %d characters\n"
+msgstr "Az összes azonosító nem egyértelmû az elsõ %d karakteren belül\n"
+
+#: src/lid.c:499
+#, c-format
+msgid "invalid `--key' style: `%s'"
+msgstr "érvénytelen '--key' stílus %s"
+
+#: src/lid.c:511
+#, c-format
+msgid "invalid `--result' style: `%s'"
+msgstr "érvénytelen '--result' stílus %s"
+
+#: src/lid.c:612 src/lid.c:933
+#, c-format
+msgid "can't match regular-expression: memory exhausted"
+msgstr "nem azonos reguláris kifelyezés: memória elfogyott"
+
+#: src/lid.c:701
+#, c-format
+msgid "edit? [y1-9^S/nq] "
+msgstr "szerkeszt? [y1-9^S/nq] "
+
+#: src/lid.c:770
+#, c-format
+msgid "can't fork"
+msgstr "nem lehet elágazni"
+
+#: src/lid.c:792
+#, c-format
+msgid "can't exec `%s'"
+msgstr "a %s nem futtatható"
+
+#: src/mkid.c:163 src/xtokid.c:84
+#, c-format
+msgid "Usage: %s [OPTION]... [FILE]...\n"
+msgstr "Használat: %s [KAPCSOLÓ]... [FÁJL]...\n"
+
+#: src/mkid.c:167
+#, fuzzy, c-format
+msgid ""
+"Build an identifier database.\n"
+"  -o, --output=OUTFILE    file name of ID database output\n"
+"  -f, --file=OUTFILE      synonym for --output\n"
+"  -i, --include=LANGS     include languages in LANGS (default: \"C C++ asm"
+"\")\n"
+"  -x, --exclude=LANGS     exclude languages in LANGS\n"
+"  -l, --lang-option=L:OPT pass OPT as a default for language L (see below)\n"
+"  -m, --lang-map=MAPFILE  use MAPFILE to map file names onto source "
+"language\n"
+"  -d, --default-lang=LANG  make LANG the default source language\n"
+"  -p, --prune=NAMES       exclude the named files and/or directories\n"
+"  -v, --verbose           report per file statistics\n"
+"  -s, --statistics        report statistics at end of run\n"
+"\n"
+"      --files0-from=F     tokenize only the files specified by\n"
+"                           NUL-terminated names in file F\n"
+"\n"
+"       --help              display this help and exit\n"
+"      --version           output version information and exit\n"
+"\n"
+"FILE may be a file name, or a directory name to recursively search.\n"
+"If no FILE is given, the current directory is searched by default.\n"
+"Note that the `--include' and `--exclude' options are mutually-exclusive.\n"
+"\n"
+"The following arguments apply to the language-specific scanners:\n"
+msgstr ""
+"Létrehozz egy azonosító(ID) adatbázist.\n"
+"  -o, --output=OUTFILE    az ID adatbázis fájl neve\n"
+"  -f, --file=OUTFILE      ugyanaz, mint az  --output\n"
+"  -i, --include=LANGS     a LANGS nyelveket használja(alapból: \"C C++ asm"
+"\")\n"
+"  -x, --exclude=LANGS     a LANGS nyelveket nem használja\n"
+"  -l, --lang-option=L:OPT az OPT -ot teszi az alapértelmezett nyelvé(lásd "
+"késõbb)\n"
+"  -m, --lang-map=MAPFÁJL  a MAPFÁJL-t használja a fájlnevek mappeléséhez a "
+"forrás nyelvhez\n"
+"  -d, --default-lang=LANG létrehozza a LANG-et alapértelmezett forrás-"
+"nyelvnek\n"
+"  -p, --prune=NEVEK       kihagyja a NEVEK fájlokat és könyvtárakat\n"
+"  -v, --verbose           a statisztika eredményét fájlonként kiírja\n"
+"  -s, --statistics        a statisztika eredményét a futás végén kiírja\n"
+"\n"
+"      --help              megjeleníti ezt a segítséget és kilép\n"
+"      --version           megjeleníti a verzió információkat és kilép\n"
+"\n"
+"A FÁJL lehet fájlnév vagy könyvtárnév a rekúrziv kereséshez\n"
+"Ha nincs meg adva FÁJL, akkor az aktuális könyvtárban kezd el keresni\n"
+"Megjegyzés: az `--include' és `--exclude' opciók egymást kizárják.\n"
+"\n"
+"A következõ opciókat alkalmazza a nyelv-specifikus ellenõrzõk\n"
+
+#: src/mkid.c:309 src/xtokid.c:194
+#, c-format
+msgid "extra operand %s"
+msgstr ""
+
+#: src/mkid.c:311 src/xtokid.c:196
+msgid "file operands cannot be combined with --files0-from"
+msgstr ""
+
+#: src/mkid.c:316 src/xtokid.c:201
+#, c-format
+msgid "cannot open %s for reading"
+msgstr ""
+
+#: src/mkid.c:350 src/xtokid.c:234
+#, c-format
+msgid "%s: read error"
+msgstr ""
+
+#: src/mkid.c:364 src/xtokid.c:248
+#, c-format
+msgid "when reading file names from stdin, no file name of %s allowed"
+msgstr ""
+
+#: src/mkid.c:378 src/mkid.c:386 src/xtokid.c:262 src/xtokid.c:270
+msgid "invalid zero-length file name"
+msgstr ""
+
+#: src/mkid.c:440
+#, c-format
+msgid "nothing to do"
+msgstr ""
+
+#: src/mkid.c:490
+#, c-format
+msgid "can't create `%s' in `%s'"
+msgstr "nem lehet létrehozni a `%s' -ben `%s'-t"
+
+#: src/mkid.c:495
+#, c-format
+msgid "can't modify `%s'"
+msgstr "nem lehet módosítani a %s-t"
+
+#: src/mkid.c:572
+#, c-format
+msgid "can't stat `%s'"
+msgstr "nem lehet statisztikát készíteni a %s-rõl"
+
+#: src/mkid.c:641
+#, c-format
+msgid "  new = %d/%d"
+msgstr "  új = %d/%d"
+
+#: src/mkid.c:650
+#, c-format
+msgid "Name=%ld, "
+msgstr "Név=%ld, "
+
+#: src/mkid.c:651
+#, c-format
+msgid "Number=%ld, "
+msgstr "Szám =%ld,"
+
+#: src/mkid.c:652
+#, c-format
+msgid "String=%ld, "
+msgstr "Sztring =%ld,"
+
+#: src/mkid.c:653
+#, c-format
+msgid "Literal=%ld, "
+msgstr "sztring =%ld,"
+
+#: src/mkid.c:654
+#, c-format
+msgid "Comment=%ld\n"
+msgstr "Megjegyzés=%ld\n"
+
+#: src/mkid.c:656
+#, c-format
+msgid "Files=%ld, "
+msgstr "Fájlok =%ld,"
+
+#: src/mkid.c:657
+#, c-format
+msgid "Tokens=%ld, "
+msgstr "Jelek=%ld,"
+
+#: src/mkid.c:658
+#, c-format
+msgid "Bytes=%ld Kb, "
+msgstr "Bájt=%ld KB "
+
+#: src/mkid.c:659
+#, fuzzy, c-format
+msgid "Heap=%llu+%llu Kb, "
+msgstr "Dinamikus munkaterület=%d+%d Kb, "
+
+#: src/mkid.c:664
+#, c-format
+msgid "Output=%ld (%ld tok, %ld hit)\n"
+msgstr "Output=%ld (%ld tok, %ld hit)\n"
+
+#: src/mkid.c:668
+#, c-format
+msgid ", Freq=%ld/%ld=%.2f\n"
+msgstr ", ismétlés=%ld/%ld=%.2f\n"
+
+#: src/mkid.c:692
+#, c-format
+msgid "Sorting tokens...\n"
+msgstr "Jelek rendezése...\n"
+
+#: src/mkid.c:700
+#, c-format
+msgid "Writing `%s'...\n"
+msgstr "A %s írása...\n"
+
+#: src/mkid.c:703
+#, c-format
+msgid "can't create `%s'"
+msgstr "nem lehet létrehozni a %s-t"
+
+#: src/mkid.c:715 src/mkid.c:725 src/mkid.c:772
+#, c-format
+msgid "internal limitation: offset of 2^32 or larger"
+msgstr ""
+
+#: src/mkid.c:780
+#, c-format
+msgid "error closing `%s'"
+msgstr ""
+
+#: src/mkid.c:868
+#, c-format
+msgid "level %d: %ld/%ld = %.0f%%\n"
+msgstr "szint %d: %ld/%ld = %.0f%%\n"
+
+#: src/xtokid.c:88
+#, fuzzy, c-format
+msgid ""
+"Print all tokens found in a source file.\n"
+"  -i, --include=LANGS     include languages in LANGS (default: \"C C++ asm"
+"\")\n"
+"  -x, --exclude=LANGS     exclude languages in LANGS\n"
+"  -l, --lang-option=L:OPT pass OPT as a default for language L (see below)\n"
+"  -m, --lang-map=MAPFILE  use MAPFILE to map file names onto source "
+"language\n"
+"  -d, --default-lang=LANG  make LANG the default source language\n"
+"  -p, --prune=NAMES       exclude the named files and/or directories\n"
+"\n"
+"      --files0-from=F     tokenize only the files specified by\n"
+"                           NUL-terminated names in file F\n"
+"\n"
+"      --help              display this help and exit\n"
+"\t\t      --version           output version information and exit\n"
+"\n"
+"The following arguments apply to the language-specific scanners:\n"
+msgstr ""
+"Kiírja az összes megtalált jelet a forrás fájlban.\n"
+"  -i, --include=LANGS     a LANGS nyelveket használja(alapból: \"C C++ asm"
+"\")\n"
+"  -x, --exclude=LANGS     a LANGS nyelveket nem használja\n"
+"  -l, --lang-option=L:OPT az OPT -ot teszi az alapértelmezett nyelvé(lásd "
+"késõbb)\n"
+"  -m, --lang-map=MAPFÁJL  a MAPFÁJL-t használja a fájlnevek mappeléséhez a "
+"forrás nyelvhez\n"
+"  -d, --default-lang=LANG létrehozza a LANG-et alapértelmezett "
+"forrásnyelvnek\n"
+"  -p, --prune=NEVEK       kihagyja a NEVEK fájlokat és könyvtárakat\n"
+"      --help              megjeleníti ezt a segítséget és kilép\n"
+"      --version           megjeleníti a verzió információkat és kilép\n"
+"\n"
+"A következõ opciókat alkalmazza a nyelv-specifikus ellenõrzõk\n"
+
+#~ msgid "%s: illegal option -- %c\n"
+#~ msgstr "%s: illegális kapcsoló -- %c\n"

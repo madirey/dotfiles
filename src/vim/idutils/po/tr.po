@@ -1,0 +1,939 @@
+# Id-utils Turkish Translation.
+# Copyright (C) 2002 Free Software Foundation, Inc.
+# Deniz Akkus Kanca <deniz@arayan.com>, 2002.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: id-utils 3.2d\n"
+"Report-Msgid-Bugs-To: bug-idutils@gnu.org\n"
+"POT-Creation-Date: 2010-06-17 08:37+0200\n"
+"PO-Revision-Date: 2002-06-27 13:00+0200\n"
+"Last-Translator: Deniz Akkus Kanca <deniz@arayan.com>\n"
+"Language-Team: Turkish <gnu-tr-u12a@lists.sourceforge.net>\n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: lib/closeout.c:112
+msgid "write error"
+msgstr ""
+
+#: lib/error.c:181
+msgid "Unknown system error"
+msgstr ""
+
+#: lib/getopt.c:527 lib/getopt.c:543
+#, fuzzy, c-format
+msgid "%s: option '%s' is ambiguous\n"
+msgstr "%s: `%s' seçeneği belirsiz\n"
+
+#: lib/getopt.c:576 lib/getopt.c:580
+#, fuzzy, c-format
+msgid "%s: option '--%s' doesn't allow an argument\n"
+msgstr "%s: `--%s' seçeneği argüman almaz\n"
+
+#: lib/getopt.c:589 lib/getopt.c:594
+#, fuzzy, c-format
+msgid "%s: option '%c%s' doesn't allow an argument\n"
+msgstr "%s: `%c%s' seçeneği argüman almaz\n"
+
+#: lib/getopt.c:637 lib/getopt.c:656
+#, fuzzy, c-format
+msgid "%s: option '--%s' requires an argument\n"
+msgstr "%s: `%s' seçeneği argüman gerektirir\n"
+
+#: lib/getopt.c:694 lib/getopt.c:697
+#, fuzzy, c-format
+msgid "%s: unrecognized option '--%s'\n"
+msgstr "%s: bilinmeyen seçenek `--%s'\n"
+
+#: lib/getopt.c:705 lib/getopt.c:708
+#, fuzzy, c-format
+msgid "%s: unrecognized option '%c%s'\n"
+msgstr "%s: bilinmeyen seçenek %c%s'\n"
+
+#: lib/getopt.c:757 lib/getopt.c:760
+#, fuzzy, c-format
+msgid "%s: invalid option -- '%c'\n"
+msgstr "%s: hatalı seçenek -- %c\n"
+
+#: lib/getopt.c:810 lib/getopt.c:827 lib/getopt.c:1035 lib/getopt.c:1053
+#, fuzzy, c-format
+msgid "%s: option requires an argument -- '%c'\n"
+msgstr "%s: seçenek argüman gerektirir -- %c\n"
+
+#: lib/getopt.c:883 lib/getopt.c:899
+#, fuzzy, c-format
+msgid "%s: option '-W %s' is ambiguous\n"
+msgstr "%s: `%s' seçeneği belirsiz\n"
+
+#: lib/getopt.c:923 lib/getopt.c:941
+#, fuzzy, c-format
+msgid "%s: option '-W %s' doesn't allow an argument\n"
+msgstr "%s: `--%s' seçeneği argüman almaz\n"
+
+#: lib/getopt.c:962 lib/getopt.c:980
+#, fuzzy, c-format
+msgid "%s: option '-W %s' requires an argument\n"
+msgstr "%s: `%s' seçeneği argüman gerektirir\n"
+
+#: lib/obstack.c:423 lib/obstack.c:425 lib/xalloc-die.c:34
+msgid "memory exhausted"
+msgstr ""
+
+#: lib/openat-die.c:34
+#, fuzzy, c-format
+msgid "unable to record current working directory"
+msgstr "çalışma dizini bulunamıyor"
+
+#: lib/openat-die.c:52
+#, fuzzy, c-format
+msgid "failed to return to initial working directory"
+msgstr "çalışma dizini bulunamıyor"
+
+#. TRANSLATORS:
+#. Get translations for open and closing quotation marks.
+#.
+#. The message catalog should translate "`" to a left
+#. quotation mark suitable for the locale, and similarly for
+#. "'".  If the catalog has no translation,
+#. locale_quoting_style quotes `like this', and
+#. clocale_quoting_style quotes "like this".
+#.
+#. For example, an American English Unicode locale should
+#. translate "`" to U+201C (LEFT DOUBLE QUOTATION MARK), and
+#. should translate "'" to U+201D (RIGHT DOUBLE QUOTATION
+#. MARK).  A British English Unicode locale should instead
+#. translate these to U+2018 (LEFT SINGLE QUOTATION MARK)
+#. and U+2019 (RIGHT SINGLE QUOTATION MARK), respectively.
+#.
+#. If you don't know what to put here, please see
+#. <http://en.wikipedia.org/wiki/Quotation_mark#Glyphs>
+#. and use glyphs suitable for your language.
+#: lib/quotearg.c:272
+msgid "`"
+msgstr ""
+
+#: lib/quotearg.c:273
+msgid "'"
+msgstr ""
+
+#: lib/regcomp.c:134
+msgid "Success"
+msgstr ""
+
+#: lib/regcomp.c:137
+msgid "No match"
+msgstr ""
+
+#: lib/regcomp.c:140
+msgid "Invalid regular expression"
+msgstr ""
+
+#: lib/regcomp.c:143
+msgid "Invalid collation character"
+msgstr ""
+
+#: lib/regcomp.c:146
+msgid "Invalid character class name"
+msgstr ""
+
+#: lib/regcomp.c:149
+msgid "Trailing backslash"
+msgstr ""
+
+#: lib/regcomp.c:152
+msgid "Invalid back reference"
+msgstr ""
+
+#: lib/regcomp.c:155
+msgid "Unmatched [ or [^"
+msgstr ""
+
+#: lib/regcomp.c:158
+msgid "Unmatched ( or \\("
+msgstr ""
+
+#: lib/regcomp.c:161
+msgid "Unmatched \\{"
+msgstr ""
+
+#: lib/regcomp.c:164
+msgid "Invalid content of \\{\\}"
+msgstr ""
+
+#: lib/regcomp.c:167
+msgid "Invalid range end"
+msgstr ""
+
+#: lib/regcomp.c:170
+msgid "Memory exhausted"
+msgstr ""
+
+#: lib/regcomp.c:173
+msgid "Invalid preceding regular expression"
+msgstr ""
+
+#: lib/regcomp.c:176
+msgid "Premature end of regular expression"
+msgstr ""
+
+#: lib/regcomp.c:179
+msgid "Regular expression too big"
+msgstr ""
+
+#: lib/regcomp.c:182
+msgid "Unmatched ) or \\)"
+msgstr ""
+
+#: lib/regcomp.c:703
+msgid "No previous regular expression"
+msgstr ""
+
+#: libidu/fnprint.c:137
+#, fuzzy, c-format
+msgid "invalid `--separator' style: `%s'"
+msgstr "geçersiz `--key' türü: `%s'"
+
+#: libidu/idfile.c:106
+#, c-format
+msgid "can't determine the io_size of a string!"
+msgstr "bir dizgenin io_size'ı bulunamadı!"
+
+#: libidu/idread.c:49 src/lid.c:600 src/mkid.c:589 src/xtokid.c:340
+#, c-format
+msgid "can't open `%s'"
+msgstr "`%s' açılamadı"
+
+#: libidu/idread.c:68
+#, c-format
+msgid "`%s' is not an ID file! (bad magic #)"
+msgstr "`%s' bir kimlik dosyası değil! (hatalı sihir no)"
+
+#: libidu/idread.c:70
+#, c-format
+msgid "`%s' is version %d, but I only grok version %d"
+msgstr "`%s' sürüm %d, fakat yalnız %d sürümü anlaşılıyor"
+
+#: libidu/idread.c:190
+#, c-format
+msgid "unsupported size in io_read (): %d"
+msgstr "io_read() içinde desteklenmeyen boy: %d"
+
+#: libidu/idread.c:200 libidu/idwrite.c:169
+#, c-format
+msgid "unknown I/O type: %d"
+msgstr "bilinmeyen I/O türü: %d"
+
+#: libidu/idu-hash.c:51
+#, c-format
+msgid "can't allocate %ld bytes for hash table: memory exhausted"
+msgstr "hash tablosu için %ld bayt ayrılamadı: bellek tükendi"
+
+#: libidu/idu-hash.c:264
+#, c-format
+msgid "Load=%ld/%ld=%.0f%%, "
+msgstr "Yük=%ld/%ld=%.0f%%, "
+
+#: libidu/idu-hash.c:266
+#, c-format
+msgid "Rehash=%d, "
+msgstr "Yeniden hash=%d, "
+
+#: libidu/idu-hash.c:267
+#, c-format
+msgid "Collisions=%ld/%ld=%.0f%%"
+msgstr "Çakışmalar=%ld/%ld=%.0f%%"
+
+#: libidu/idwrite.c:158
+#, c-format
+msgid "unsupported size in io_write (): %d"
+msgstr "io_write() içinde desteklenmeyen boy: %d"
+
+#: libidu/scanners.c:109
+#, c-format
+msgid "unrecognized language: `%s'"
+msgstr "bilinmeyen dil: `%s'"
+
+#: libidu/scanners.c:169
+#, c-format
+msgid "can't allocate language args obstack: memory exhausted"
+msgstr "dil argüman ob-yığıtı ayrılamadı: bellek tükendi"
+
+#: libidu/scanners.c:223 libidu/scanners.c:292
+#, c-format
+msgid "can't allocate language args: memory exhausted"
+msgstr "dil argümanları ayrılamadı: bellek tükendi"
+
+#: libidu/scanners.c:231
+#, c-format
+msgid "language name expected following `%s' in file `%s'"
+msgstr "`%2$s' dosyasında `%1$s' sonrasında dil adı beklendi"
+
+#: libidu/scanners.c:286
+#, c-format
+msgid "can't open language map file `%s'"
+msgstr "dil eşleşme dosyası `%s' açılamadı"
+
+#: libidu/scanners.c:288
+#, c-format
+msgid "can't get size of map file `%s'"
+msgstr "`%s' eşleşme dosyasının büyüklüğü belirlenmiyor"
+
+#: libidu/scanners.c:298
+#, c-format
+msgid "can't read language map file `%s'"
+msgstr "dil eşleşme dosyası `%s' okunamadı"
+
+#: libidu/scanners.c:301
+#, c-format
+msgid "can't read entire language map file `%s'"
+msgstr "dil eşleşme dosyası `%s'nın tamamı okunamadı"
+
+#: libidu/scanners.c:450
+#, c-format
+msgid ""
+"C language:\n"
+"  -k,--keep=CHARS        Allow CHARS in single-token strings, keep the "
+"result\n"
+"  -i,--ignore=CHARS      Allow CHARS in single-token strings, toss the "
+"result\n"
+"  -u,--strip-underscore  Strip a leading underscore from single-token "
+"strings\n"
+msgstr ""
+"C dili:\n"
+"  -k,--keep=KRKTR        Tek anahtarlı dizgelerde KRKTR'e izin verir, sonucu "
+"tutar\n"
+"  -i,--ignore=KRKTR      Tek anahtarlı dizgelerde KRKTR'e izin verir, sonucu "
+"atar\n"
+"  -u,--strip-underscore  Tek anahtarlı dizgelerin başından alt-tireyi soyar\n"
+
+#: libidu/scanners.c:461
+#, fuzzy, c-format
+msgid ""
+"C++ language:\n"
+"  -k,--keep=CHARS        Allow CHARS in single-token strings, keep the "
+"result\n"
+"  -i,--ignore=CHARS      Allow CHARS in single-token strings, toss the "
+"result\n"
+"  -u,--strip-underscore  Strip a leading underscore from single-token "
+"strings\n"
+msgstr ""
+"C dili:\n"
+"  -k,--keep=KRKTR        Tek anahtarlı dizgelerde KRKTR'e izin verir, sonucu "
+"tutar\n"
+"  -i,--ignore=KRKTR      Tek anahtarlı dizgelerde KRKTR'e izin verir, sonucu "
+"atar\n"
+"  -u,--strip-underscore  Tek anahtarlı dizgelerin başından alt-tireyi soyar\n"
+
+#: libidu/scanners.c:472
+#, fuzzy, c-format
+msgid ""
+"Java language:\n"
+"  -k,--keep=CHARS        Allow CHARS in single-token strings, keep the "
+"result\n"
+"  -i,--ignore=CHARS      Allow CHARS in single-token strings, toss the "
+"result\n"
+"  -u,--strip-underscore  Strip a leading underscore from single-token "
+"strings\n"
+msgstr ""
+"C dili:\n"
+"  -k,--keep=KRKTR        Tek anahtarlı dizgelerde KRKTR'e izin verir, sonucu "
+"tutar\n"
+"  -i,--ignore=KRKTR      Tek anahtarlı dizgelerde KRKTR'e izin verir, sonucu "
+"atar\n"
+"  -u,--strip-underscore  Tek anahtarlı dizgelerin başından alt-tireyi soyar\n"
+
+#: libidu/scanners.c:755 libidu/scanners.c:1024 libidu/scanners.c:1227
+#: libidu/scanners.c:1497
+#, c-format
+msgid "junk: `%c'"
+msgstr "bozuk: `%c'"
+
+#: libidu/scanners.c:757 libidu/scanners.c:1026 libidu/scanners.c:1229
+#: libidu/scanners.c:1499
+#, c-format
+msgid "junk: `\\%03o'"
+msgstr "bozuk: `\\%03o'"
+
+#: libidu/scanners.c:859
+#, c-format
+msgid ""
+"Assembly language:\n"
+"  -c,--comment=CHARS     Any of CHARS starts a comment until end-of-line\n"
+"  -k,--keep=CHARS        Allow CHARS in tokens, and keep the result\n"
+"  -i,--ignore=CHARS      Allow CHARS in tokens, and toss the result\n"
+"  -u,--strip-underscore  Strip a leading underscore from tokens\n"
+"  -n,--no-cpp            Don't handle C pre-processor directives\n"
+msgstr ""
+"Makina dili: (assembly)\n"
+"  -c,--comment=KRKTR     KRKTR'lerin her biri satırsonuna kadar açıklamayı "
+"başlatır\n"
+"  -k,--keep=KRKTR        Anahtarlarda KRKTR'e izin verir, sonucu tutar\n"
+"  -i,--ignore=KRKTR      Anahtarlarda KRKTR'e izin verir, sonucu atar\n"
+"  -u,--strip-underscore  Anahtarların başından alt-tireyi soyar\n"
+"  -n,--no-cpp            C ön-işleyici yönergelerini işlemez\n"
+
+#: libidu/scanners.c:1130
+#, c-format
+msgid ""
+"Text language:\n"
+"  -i,--include=CHAR-CLASS  Treat characters of CHAR-CLASS as token "
+"constituents\n"
+"  -x,--exclude=CHAR-CLASS  Treat characters of CHAR-CLASS as token "
+"delimiters\n"
+msgstr ""
+"Metin dili:\n"
+"  -i,--include=KSINIF     KSINIF'a ait karakterleri anahtar öğesi olarak "
+"kabul eder\n"
+"  -x,--exclude=KSINIF     KSINIF'a ait karakterleri anahtar sonlayıcısı "
+"olarak kabul eder\n"
+
+#: libidu/scanners.c:1335
+#, fuzzy, c-format
+msgid ""
+"Perl language:\n"
+"  -i,--include=CHAR-CLASS  Treat characters of CHAR-CLASS as token "
+"constituents\n"
+"  -x,--exclude=CHAR-CLASS  Treat characters of CHAR-CLASS as token "
+"delimiters\n"
+"  -d,--dtags  Include documentation tags\n"
+msgstr ""
+"Metin dili:\n"
+"  -i,--include=KSINIF     KSINIF'a ait karakterleri anahtar öğesi olarak "
+"kabul eder\n"
+"  -x,--exclude=KSINIF     KSINIF'a ait karakterleri anahtar sonlayıcısı "
+"olarak kabul eder\n"
+
+#: libidu/scanners.c:1598
+#, c-format
+msgid "Lisp language:\n"
+msgstr ""
+
+#: libidu/walker.c:124
+#, c-format
+msgid "can't read directory `%s' (`.' from `%s')"
+msgstr "`%s' dizini okunamadı (`%s'den `.')"
+
+#: libidu/walker.c:191
+#, c-format
+msgid "notice: `%s' was a %s, but is now a %s!"
+msgstr "bildirim: `%s', %s idi, fakat şimdi %s!"
+
+#: libidu/walker.c:192 libidu/walker.c:193
+msgid "file"
+msgstr "dosya"
+
+#: libidu/walker.c:192 libidu/walker.c:193
+msgid "directory"
+msgstr "dizin"
+
+#: libidu/walker.c:322
+#, c-format
+msgid "warning: `%s' and `%s' are the same file, but yield different scans!"
+msgstr "uyarı: `%s' ve `%s' aynı dosya fakat farklı tarama sonuçları veriyor!"
+
+#: libidu/walker.c:416
+#, c-format
+msgid "notice: scan parameters changed for `%s'"
+msgstr "bildirim: `%s' için tarama parametreleri değişti"
+
+#: libidu/walker.c:498 libidu/walker.c:506
+#, c-format
+msgid "can't mix --include and --exclude options"
+msgstr ""
+
+#: libidu/walker.c:616
+#, c-format
+msgid "can't get working directory"
+msgstr "çalışma dizini bulunamıyor"
+
+#: libidu/walker.c:671
+#, c-format
+msgid "can't chdir to `%s'"
+msgstr "`%s' dizinine geçilemedi"
+
+#: libidu/walker.c:676
+#, c-format
+msgid "can't chdir to `%s' from `%s'"
+msgstr "`%2$s'den `%1$s' dizinine geçilemedi"
+
+#: libidu/walker.c:737
+#, c-format
+msgid "can't lstat `%s' from `%s'"
+msgstr "`%2$s'den `%1$s'e `lstat' yapılamadı"
+
+#: libidu/walker.c:745
+#, c-format
+msgid "can't stat `%s' from `%s'"
+msgstr "`%2$s'den `%1$s' durumlanamadı"
+
+#: src/fid.c:72 src/fnid.c:51 src/lid.c:241 src/mkid.c:130 src/xtokid.c:55
+#, c-format
+msgid "Try `%s --help' for more information.\n"
+msgstr "Daha fazla bilgi için `%s --help' yazın.\n"
+
+#: src/fid.c:80
+#, c-format
+msgid "Usage: %s [OPTION] FILENAME [FILENAME2]\n"
+msgstr "Kullanım: %s [SEÇENEK] DOSYA [DOSYA2]\n"
+
+#: src/fid.c:83
+#, c-format
+msgid ""
+"List identifiers that occur in FILENAME, or if FILENAME2 is\n"
+"also given list the identifiers that occur in both files.\n"
+"\n"
+"  -f, --file=FILE  file name of ID database\n"
+"      --help       display this help and exit\n"
+"      --version    output version information and exit\n"
+msgstr ""
+"DOSYA'daki tanımlayıcıları gösterir. Eğer DOSYA2 de verilmişse,\n"
+"her iki dosyada da bulunan tanımlayıcıları gösterir.\n"
+"\n"
+"  -f, --file=FDOS  kimlik veritabanının dosya adı\n"
+"      --help       bu yardımı gösterir ve çıkar\n"
+"      --version    bu sürümü gösterir ve çıkar\n"
+
+#: src/fid.c:91 src/fnid.c:80 src/lid.c:290 src/mkid.c:193 src/xtokid.c:106
+#, c-format
+msgid ""
+"\n"
+"Report bugs to "
+msgstr ""
+
+#: src/fid.c:149
+#, c-format
+msgid "no file name arguments"
+msgstr "dosya adı argümanı yok"
+
+#: src/fid.c:154
+#, c-format
+msgid "too many file name arguments"
+msgstr "çok fazla dosya adı argümanı var"
+
+#: src/fid.c:161 src/fnid.c:155 src/lid.c:443
+#, c-format
+msgid "can't locate `ID'"
+msgstr "kimlik bulunamadı"
+
+#: src/fid.c:244
+#, c-format
+msgid "`%s' is ambiguous"
+msgstr "`%s' belirsiz"
+
+#: src/fid.c:250
+#, c-format
+msgid "`%s' not found"
+msgstr "`%s' bulunamadı"
+
+#: src/fnid.c:68
+#, c-format
+msgid "Usage: %s [OPTION]... [PATTERN]...\n"
+msgstr "Kullanım: %s [SEÇENEK]... [KALIP]...\n"
+
+#: src/fnid.c:72
+#, c-format
+msgid ""
+"Print constituent file names that match PATTERN,\n"
+"using shell-style wildcards.\n"
+"  -f, --file=FILE        file name of ID database\n"
+"  -S, --separator=STYLE  STYLE is one of `braces', `space' or `newline'\n"
+"      --help             display this help and exit\n"
+"      --version          output version information and exit\n"
+msgstr ""
+"KALIP'a uyan öğe dosya adlarını kabuk tarzı genel arama\n"
+"karakterleri kullanarak listeler.\n"
+"  -f, --file=DOSYA       kimlik veritabanının dosya adı\n"
+"  -S, --separator=AYRAÇ  AYRAÇ, `braces' ({}), `space' (boşluk)\n"
+"                         veya `newline' (yenisatır) olabilir\n"
+"      --help             bu yardımı gösterir ve çıkar\n"
+"      --version          sürüm bilgilerini gösterir ve çıkar\n"
+
+#: src/lid.c:249
+#, c-format
+msgid "Usage: %s [OPTION]... PATTERN...\n"
+msgstr "Kullanım: %s [SEÇENEK]... KALIP...\n"
+
+#: src/lid.c:253
+#, fuzzy, c-format
+msgid ""
+"Query ID database and report results.\n"
+"By default, output consists of multiple lines, each line containing the\n"
+"matched identifier followed by the list of file names in which it occurs.\n"
+"\n"
+"  -f, --file=FILE       file name of ID database\n"
+"\n"
+"  -i, --ignore-case     match PATTERN case insensitively\n"
+"  -l, --literal         match PATTERN as a literal string\n"
+"  -r, --regexp          match PATTERN as a regular expression\n"
+"  -w, --word            match PATTERN as a delimited word\n"
+"  -s, --substring       match PATTERN as a substring\n"
+"            Note: If PATTERN contains extended regular expression meta-\n"
+"            characters, it is interpreted as a regular expression "
+"substring.\n"
+"            Otherwise, PATTERN is interpreted as a literal word.\n"
+"\n"
+"  -k, --key=STYLE       STYLE is one of `token', `pattern' or `none'\n"
+"  -R, --result=STYLE    STYLE is one of `filenames', `grep', `edit' or "
+"`none'\n"
+"  -S, --separator=STYLE  STYLE is one of `braces', `space' or `newline' and\n"
+"                        only applies to file names when `--"
+"result=filenames'\n"
+"            The above STYLE options control how query results are "
+"presented.\n"
+"            Defaults are --key=token --result=filenames --separator=%s\n"
+"\n"
+"  -F, --frequency=FREQ  find tokens that occur FREQ times, where FREQ\n"
+"                        is a range expressed as `N..M'.  If N is omitted, "
+"it\n"
+"                        defaults to 1, if M is omitted it defaults to "
+"MAX_USHRT\n"
+"  -a, --ambiguous=LEN   find tokens whose names are ambiguous for LEN chars\n"
+"\n"
+"  -x, --hex             only find numbers expressed as hexadecimal\n"
+"  -d, --decimal         only find numbers expressed as decimal\n"
+"  -o, --octal           only find numbers expressed as octal\n"
+"            By default, searches match numbers of any radix.\n"
+"\n"
+"      --help            display this help and exit\n"
+"      --version         output version information and exit\n"
+msgstr ""
+"Kimlik veritabanını sorgular ve sonuçları bildirir.\n"
+"Öntanımlı olarak çıktı, her bir satırında eşleştirilen\n"
+"tanımlayıcı ve tanımlayıcının bulunduğu dosya isimlerinin\n"
+"listesi bulunan birden fazla satırdan oluşur.\n"
+"\n"
+"  -f, --file=DOSYA      kimlik veritabanının dosya adı\n"
+"\n"
+"  -i, --ignore-case     büyük/küçük harf ayırdetmeksizin KALIP'ı arar\n"
+"  -l, --literal         KALIP'ı sabit dizge kabul ederek arama yapar\n"
+"  -r, --regexp          KALIP'ı düzenli ifade kabul ederek arama yapar\n"
+"  -w, --word            KALIP'ı sonlandırılmış sözcük kabul ederek arama "
+"yapar\n"
+"  -s, --substring       KALIP'ı altdizge kabul ederek arama yapar\n"
+"            Not: Eğer KALIP genişletilmiş düzenli ifade meta-karakterler\n"
+"            içerirse, düzenli ifade altdizgesi olarak kabul edilir.\n"
+"            Aksi takdirde, sabit sözcük olarak kabul edilir.\n"
+"\n"
+"  -k, --key=TÜR         Anahtar türü: TÜR, `token' (anahtar), \n"
+"                        `pattern' (kalıp) veya `none' (hiçbiri) olabilir\n"
+"  -R, --result=TÜR      Sonuç türü: TÜR, `filenames' (dosyaadları), `grep'\n"
+"                        (grep komutu), `edit' (düzenleme) veya `none'\n"
+"                        (hiçbiri) olabilir.\n"
+"  -S, --separator=TÜR   Ayraç türü: TÜR, `braces' ({}), `space' (boşluk)\n"
+"                        veya `newline' (yenisatır) olabilir ve yalnızca\n"
+"                        `--result=filenames' seçeneği var ise dosya "
+"isimlerine\n"
+"                        uygulanır.\n"
+"            Yukarıdaki TÜR seçenekleri sorgu sonuçlarının nasıl "
+"gösterildiğini\n"
+"            kontrol eder.\n"
+"            Öntanımlı değerler: --key=token --result=filenames --separator="
+"%s\n"
+"\n"
+"  -F, --frequency=FREK  FREK defa geçen anahtarları bulur. FREK, `N..M' "
+"arası\n"
+"                        aralıkta olan bir sayıdır. Eğer N'nin öntanımlı\n"
+"                        değeri 1, M'nin ise MAX_USHRT'dır.\n"
+"  -a, --ambiguous=UZU   UZU harf boyunca adı belirsiz olan anahtarları "
+"bulur\n"
+"\n"
+"  -x, --hex             yalnızca 16lık düzende belirtilen sayıları bulur\n"
+"  -d, --decimal         yalnızca onluk düzende belirtilen sayıları bulur\n"
+"  -o, --octal           yalnızca 8lik düzende belirtilen sayıları bulur\n"
+"            Öntanımlı olarak sorgular herhangi bir sayı düzenindeki "
+"sayılarla eşleşir.\n"
+"\n"
+"      --help            bu yardımı gösterir ve çıkar\n"
+"      --version         bu sürüm bilgisini gösterir ve çıkar\n"
+
+#: src/lid.c:289
+msgid "braces"
+msgstr "braces"
+
+#: src/lid.c:289
+msgid "space"
+msgstr "space"
+
+#: src/lid.c:383
+#, c-format
+msgid "notice: use of `-e' is deprecated, use `-r' instead"
+msgstr "bildirim: `-e' kullanımdan kalkmak üzere, `-r' kullanın"
+
+#: src/lid.c:464
+#, c-format
+msgid "All identifiers are non-ambiguous within the first %d characters\n"
+msgstr "Bütün tanımlayıcıların ilk %d harfleri belirli\n"
+
+#: src/lid.c:499
+#, c-format
+msgid "invalid `--key' style: `%s'"
+msgstr "geçersiz `--key' türü: `%s'"
+
+#: src/lid.c:511
+#, c-format
+msgid "invalid `--result' style: `%s'"
+msgstr "geçersiz `--result' türü: `%s'"
+
+#: src/lid.c:612 src/lid.c:933
+#, c-format
+msgid "can't match regular-expression: memory exhausted"
+msgstr "düzenli ifade eşleştirilemedi: bellek tükendi"
+
+#: src/lid.c:701
+#, c-format
+msgid "edit? [y1-9^S/nq] "
+msgstr "düzenle? [e1-9^S/hq] "
+
+#: src/lid.c:770
+#, c-format
+msgid "can't fork"
+msgstr "çatal açılamadı"
+
+#: src/lid.c:792
+#, c-format
+msgid "can't exec `%s'"
+msgstr "`%s' çalıştırılamadı"
+
+#: src/mkid.c:163 src/xtokid.c:84
+#, c-format
+msgid "Usage: %s [OPTION]... [FILE]...\n"
+msgstr "Kullanım: %s [SEÇENEK]... [DOSYA]...\n"
+
+#: src/mkid.c:167
+#, fuzzy, c-format
+msgid ""
+"Build an identifier database.\n"
+"  -o, --output=OUTFILE    file name of ID database output\n"
+"  -f, --file=OUTFILE      synonym for --output\n"
+"  -i, --include=LANGS     include languages in LANGS (default: \"C C++ asm"
+"\")\n"
+"  -x, --exclude=LANGS     exclude languages in LANGS\n"
+"  -l, --lang-option=L:OPT pass OPT as a default for language L (see below)\n"
+"  -m, --lang-map=MAPFILE  use MAPFILE to map file names onto source "
+"language\n"
+"  -d, --default-lang=LANG  make LANG the default source language\n"
+"  -p, --prune=NAMES       exclude the named files and/or directories\n"
+"  -v, --verbose           report per file statistics\n"
+"  -s, --statistics        report statistics at end of run\n"
+"\n"
+"      --files0-from=F     tokenize only the files specified by\n"
+"                           NUL-terminated names in file F\n"
+"\n"
+"       --help              display this help and exit\n"
+"      --version           output version information and exit\n"
+"\n"
+"FILE may be a file name, or a directory name to recursively search.\n"
+"If no FILE is given, the current directory is searched by default.\n"
+"Note that the `--include' and `--exclude' options are mutually-exclusive.\n"
+"\n"
+"The following arguments apply to the language-specific scanners:\n"
+msgstr ""
+"Tanımlayıcı veritabanı oluşturur.\n"
+"  -o, --output=ÇIKDOSYA   kimlik veritabanı çıktısı için dosya adı\n"
+"  -f, --file=ÇIKDOSYA     --output ile aynı\n"
+"  -i, --include=DİLLER    DİLLER'de belirtilen dilleri içerir (öntanımlı: "
+"\"C C++ asm\")\n"
+"  -x, --exclude=DİLLER    DİLLER'de belirtilen dilleri içermez\n"
+"  -l, --lang-option=D:SEÇ D diline SEÇ seçeneğini öntanımlı olarak geçirir, "
+"daha fazla\n"
+"                          bilgi için aşağıya bakın.\n"
+"  -m, --lang-map=EŞDOS    dosya adlarını kaynak diline eşleştirmek için "
+"EŞDOS\n"
+"                          dosyasını kullanır.\n"
+"  -d, --default-lang=DİL  öntanımlı kaynak dilini DİL olarak belirler.\n"
+"  -p, --prune=İSİM        İSİM'de yer alan dosya ve dizinleri işlem dışı "
+"tutar.\n"
+"  -v, --verbose           her dosya için istatistik üretir\n"
+"  -s, --statistics        işlem sonunda istatistik üretir\n"
+"\n"
+"      --help              bu yardımı gösterir ve çıkar\n"
+"      --version           sürüm bilgilerini gösterir ve çıkar\n"
+"\n"
+"DOSYA, dosya adı veya çevrimli olarak aranacak dizin adı olabilir.\n"
+"Eğer DOSYA verilmezse, öntanımlı olarak mevcut dizin aranır.\n"
+"--include ve --exclude seçeneklerinin aynı anda kullanılamayacağına dikkat\n"
+"edin.\n"
+"\n"
+"Aşağıdaki argümanlar dile özgü tarayıcılar için geçerlidir.\n"
+
+#: src/mkid.c:309 src/xtokid.c:194
+#, c-format
+msgid "extra operand %s"
+msgstr ""
+
+#: src/mkid.c:311 src/xtokid.c:196
+msgid "file operands cannot be combined with --files0-from"
+msgstr ""
+
+#: src/mkid.c:316 src/xtokid.c:201
+#, c-format
+msgid "cannot open %s for reading"
+msgstr ""
+
+#: src/mkid.c:350 src/xtokid.c:234
+#, c-format
+msgid "%s: read error"
+msgstr ""
+
+#: src/mkid.c:364 src/xtokid.c:248
+#, c-format
+msgid "when reading file names from stdin, no file name of %s allowed"
+msgstr ""
+
+#: src/mkid.c:378 src/mkid.c:386 src/xtokid.c:262 src/xtokid.c:270
+msgid "invalid zero-length file name"
+msgstr ""
+
+#: src/mkid.c:440
+#, c-format
+msgid "nothing to do"
+msgstr ""
+
+#: src/mkid.c:490
+#, c-format
+msgid "can't create `%s' in `%s'"
+msgstr "`%2$s' içinde `%1$s' oluşturulamadı"
+
+#: src/mkid.c:495
+#, c-format
+msgid "can't modify `%s'"
+msgstr "`%s' değiştirilemedi"
+
+#: src/mkid.c:572
+#, c-format
+msgid "can't stat `%s'"
+msgstr "`%s' durumlanamadı"
+
+#: src/mkid.c:641
+#, c-format
+msgid "  new = %d/%d"
+msgstr "  yeni = %d/%d"
+
+#: src/mkid.c:650
+#, c-format
+msgid "Name=%ld, "
+msgstr "İsim=%ld, "
+
+#: src/mkid.c:651
+#, c-format
+msgid "Number=%ld, "
+msgstr "Sayı=%ld, "
+
+#: src/mkid.c:652
+#, c-format
+msgid "String=%ld, "
+msgstr "Dizge=%ld, "
+
+#: src/mkid.c:653
+#, c-format
+msgid "Literal=%ld, "
+msgstr "Sabit=%ld, "
+
+#: src/mkid.c:654
+#, c-format
+msgid "Comment=%ld\n"
+msgstr "Açıklama=%ld\n"
+
+#: src/mkid.c:656
+#, c-format
+msgid "Files=%ld, "
+msgstr "Dosyalar=%ld, "
+
+#: src/mkid.c:657
+#, c-format
+msgid "Tokens=%ld, "
+msgstr "Anahtarlar=%ld, "
+
+#: src/mkid.c:658
+#, c-format
+msgid "Bytes=%ld Kb, "
+msgstr "Bayt=%ld Kb, "
+
+#: src/mkid.c:659
+#, fuzzy, c-format
+msgid "Heap=%llu+%llu Kb, "
+msgstr "Yığın=%d+%d Kb, "
+
+#: src/mkid.c:664
+#, c-format
+msgid "Output=%ld (%ld tok, %ld hit)\n"
+msgstr "Çıktı=%ld (%ld anah, %ld hit)\n"
+
+#: src/mkid.c:668
+#, c-format
+msgid ", Freq=%ld/%ld=%.2f\n"
+msgstr ", Frek=%ld/%ld=%.2f\n"
+
+#: src/mkid.c:692
+#, c-format
+msgid "Sorting tokens...\n"
+msgstr "Anahtarlar sıralanıyor...\n"
+
+#: src/mkid.c:700
+#, c-format
+msgid "Writing `%s'...\n"
+msgstr "`%s' yazılıyor...\n"
+
+#: src/mkid.c:703
+#, c-format
+msgid "can't create `%s'"
+msgstr "`%s' oluşturulamadı"
+
+#: src/mkid.c:715 src/mkid.c:725 src/mkid.c:772
+#, c-format
+msgid "internal limitation: offset of 2^32 or larger"
+msgstr ""
+
+#: src/mkid.c:780
+#, c-format
+msgid "error closing `%s'"
+msgstr ""
+
+#: src/mkid.c:868
+#, c-format
+msgid "level %d: %ld/%ld = %.0f%%\n"
+msgstr "seviye %d: %ld/%ld = %.0f%%\n"
+
+#: src/xtokid.c:88
+#, fuzzy, c-format
+msgid ""
+"Print all tokens found in a source file.\n"
+"  -i, --include=LANGS     include languages in LANGS (default: \"C C++ asm"
+"\")\n"
+"  -x, --exclude=LANGS     exclude languages in LANGS\n"
+"  -l, --lang-option=L:OPT pass OPT as a default for language L (see below)\n"
+"  -m, --lang-map=MAPFILE  use MAPFILE to map file names onto source "
+"language\n"
+"  -d, --default-lang=LANG  make LANG the default source language\n"
+"  -p, --prune=NAMES       exclude the named files and/or directories\n"
+"\n"
+"      --files0-from=F     tokenize only the files specified by\n"
+"                           NUL-terminated names in file F\n"
+"\n"
+"      --help              display this help and exit\n"
+"\t\t      --version           output version information and exit\n"
+"\n"
+"The following arguments apply to the language-specific scanners:\n"
+msgstr ""
+"Bir kaynak dosyasında bulunan bütün anahtarları gösterir.\n"
+"  -i, --include=DİLLER    DİLLER'de belirtilen dilleri içerir (öntanımlı: "
+"\"C C++ asm\")\n"
+"  -x, --exclude=DİLLER    DİLLER'de belirtilen dilleri içermez\n"
+"  -l, --lang-option=D:SEÇ D diline SEÇ seçeneğini öntanımlı olarak geçirir, "
+"daha fazla\n"
+"                          bilgi için aşağıya bakın.\n"
+"  -m, --lang-map=EŞDOS    dosya adlarını kaynak diline eşleştirmek için "
+"EŞDOS\n"
+"                          dosyasını kullanır.\n"
+"  -d, --default-lang=DİL  öntanımlı kaynak dilini DİL olarak belirler.\n"
+"  -p, --prune=İSİM        İSİM'de yer alan dosya ve dizinleri işlem dışı "
+"tutar.\n"
+"      --help              bu yardımı gösterir ve çıkar\n"
+"      --version           sürüm bilgilerini gösterir ve çıkar\n"
+"\n"
+
+#~ msgid "%s: illegal option -- %c\n"
+#~ msgstr "%s: geçersiz seçenek -- %c\n"

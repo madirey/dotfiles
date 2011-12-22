@@ -48,6 +48,20 @@ task :update do
   sh "git submodule foreach git pull origin master"
 end
 
+desc "Install id utils"
+task :install_idutils do
+  Dir.chdir "src/vim/idutils" do
+    sh "./configure; make; make install"
+  end
+end
+
+desc "Install ctags"
+task :install_ctags do
+  Dir.chdir "src/vim/ctags" do
+    sh "./configure; make; make install"
+  end
+end
+
 #desc "Run the install script for Command-T"
 #task :install_command_t do
 #  # lifted from the Janus setup, https://github.com/carlhuda/janus/blob/master/Rakefile

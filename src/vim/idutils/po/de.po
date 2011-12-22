@@ -1,0 +1,955 @@
+# German messages for GNU mkid.
+# Copyright © 1996, 2001, 2002, 2007 Free Software Foundation, Inc.
+# Karl Eichwalder <ke@suse.de>, 1996.
+# Michael Piefel <piefel@informatik.hu-berlin.de>, 2001, 2002, 2007.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: idutils 4.2\n"
+"Report-Msgid-Bugs-To: bug-idutils@gnu.org\n"
+"POT-Creation-Date: 2010-06-17 08:37+0200\n"
+"PO-Revision-Date: 2007-10-12 14:01+0200\n"
+"Last-Translator: Michael Piefel <piefel@informatik.hu-berlin.de>\n"
+"Language-Team: German <translation-team-de@lists.sourceforge.net>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8-bit\n"
+
+#: lib/closeout.c:112
+msgid "write error"
+msgstr ""
+
+#: lib/error.c:181
+msgid "Unknown system error"
+msgstr ""
+
+#: lib/getopt.c:527 lib/getopt.c:543
+#, fuzzy, c-format
+msgid "%s: option '%s' is ambiguous\n"
+msgstr "%s: Option „%s“ ist mehrdeutig\n"
+
+#: lib/getopt.c:576 lib/getopt.c:580
+#, fuzzy, c-format
+msgid "%s: option '--%s' doesn't allow an argument\n"
+msgstr "%s: Option „--%s“ erlaubt keine Argumente\n"
+
+#: lib/getopt.c:589 lib/getopt.c:594
+#, fuzzy, c-format
+msgid "%s: option '%c%s' doesn't allow an argument\n"
+msgstr "%s: Option „%c%s“ erlaubt keine Argumente\n"
+
+#: lib/getopt.c:637 lib/getopt.c:656
+#, fuzzy, c-format
+msgid "%s: option '--%s' requires an argument\n"
+msgstr "%s: Option „%s“ erfordert ein Argument\n"
+
+#: lib/getopt.c:694 lib/getopt.c:697
+#, fuzzy, c-format
+msgid "%s: unrecognized option '--%s'\n"
+msgstr "%s: nicht erkannte Option „--%s“\n"
+
+#: lib/getopt.c:705 lib/getopt.c:708
+#, fuzzy, c-format
+msgid "%s: unrecognized option '%c%s'\n"
+msgstr "%s: nicht erkannte Option „%c%s“\n"
+
+#: lib/getopt.c:757 lib/getopt.c:760
+#, fuzzy, c-format
+msgid "%s: invalid option -- '%c'\n"
+msgstr "%s: ungültige Option -- %c\n"
+
+#: lib/getopt.c:810 lib/getopt.c:827 lib/getopt.c:1035 lib/getopt.c:1053
+#, fuzzy, c-format
+msgid "%s: option requires an argument -- '%c'\n"
+msgstr "%s: Option erfordert ein Argument -- %c\n"
+
+#: lib/getopt.c:883 lib/getopt.c:899
+#, fuzzy, c-format
+msgid "%s: option '-W %s' is ambiguous\n"
+msgstr "%s: Option „-W %s“ ist mehrdeutig\n"
+
+#: lib/getopt.c:923 lib/getopt.c:941
+#, fuzzy, c-format
+msgid "%s: option '-W %s' doesn't allow an argument\n"
+msgstr "%s: Option „-W %s“ erlaubt keine Argumente\n"
+
+#: lib/getopt.c:962 lib/getopt.c:980
+#, fuzzy, c-format
+msgid "%s: option '-W %s' requires an argument\n"
+msgstr "%s: Option „%s“ erfordert ein Argument\n"
+
+#: lib/obstack.c:423 lib/obstack.c:425 lib/xalloc-die.c:34
+msgid "memory exhausted"
+msgstr ""
+
+#: lib/openat-die.c:34
+#, fuzzy, c-format
+msgid "unable to record current working directory"
+msgstr "Name des Arbeitsverzeichnisses nicht zu erreichen"
+
+#: lib/openat-die.c:52
+#, fuzzy, c-format
+msgid "failed to return to initial working directory"
+msgstr "Name des Arbeitsverzeichnisses nicht zu erreichen"
+
+#. TRANSLATORS:
+#. Get translations for open and closing quotation marks.
+#.
+#. The message catalog should translate "`" to a left
+#. quotation mark suitable for the locale, and similarly for
+#. "'".  If the catalog has no translation,
+#. locale_quoting_style quotes `like this', and
+#. clocale_quoting_style quotes "like this".
+#.
+#. For example, an American English Unicode locale should
+#. translate "`" to U+201C (LEFT DOUBLE QUOTATION MARK), and
+#. should translate "'" to U+201D (RIGHT DOUBLE QUOTATION
+#. MARK).  A British English Unicode locale should instead
+#. translate these to U+2018 (LEFT SINGLE QUOTATION MARK)
+#. and U+2019 (RIGHT SINGLE QUOTATION MARK), respectively.
+#.
+#. If you don't know what to put here, please see
+#. <http://en.wikipedia.org/wiki/Quotation_mark#Glyphs>
+#. and use glyphs suitable for your language.
+#: lib/quotearg.c:272
+msgid "`"
+msgstr ""
+
+#: lib/quotearg.c:273
+msgid "'"
+msgstr ""
+
+#: lib/regcomp.c:134
+msgid "Success"
+msgstr ""
+
+#: lib/regcomp.c:137
+msgid "No match"
+msgstr ""
+
+#: lib/regcomp.c:140
+msgid "Invalid regular expression"
+msgstr ""
+
+#: lib/regcomp.c:143
+msgid "Invalid collation character"
+msgstr ""
+
+#: lib/regcomp.c:146
+msgid "Invalid character class name"
+msgstr ""
+
+#: lib/regcomp.c:149
+msgid "Trailing backslash"
+msgstr ""
+
+#: lib/regcomp.c:152
+msgid "Invalid back reference"
+msgstr ""
+
+#: lib/regcomp.c:155
+msgid "Unmatched [ or [^"
+msgstr ""
+
+#: lib/regcomp.c:158
+msgid "Unmatched ( or \\("
+msgstr ""
+
+#: lib/regcomp.c:161
+msgid "Unmatched \\{"
+msgstr ""
+
+#: lib/regcomp.c:164
+msgid "Invalid content of \\{\\}"
+msgstr ""
+
+#: lib/regcomp.c:167
+msgid "Invalid range end"
+msgstr ""
+
+#: lib/regcomp.c:170
+msgid "Memory exhausted"
+msgstr ""
+
+#: lib/regcomp.c:173
+msgid "Invalid preceding regular expression"
+msgstr ""
+
+#: lib/regcomp.c:176
+msgid "Premature end of regular expression"
+msgstr ""
+
+#: lib/regcomp.c:179
+msgid "Regular expression too big"
+msgstr ""
+
+#: lib/regcomp.c:182
+msgid "Unmatched ) or \\)"
+msgstr ""
+
+#: lib/regcomp.c:703
+msgid "No previous regular expression"
+msgstr ""
+
+#: libidu/fnprint.c:137
+#, c-format
+msgid "invalid `--separator' style: `%s'"
+msgstr "ungültiger „--separator“-Stil: „%s“"
+
+#: libidu/idfile.c:106
+#, c-format
+msgid "can't determine the io_size of a string!"
+msgstr "kann die „io_size“ einer Zeichenkette nicht bestimmen!"
+
+#: libidu/idread.c:49 src/lid.c:600 src/mkid.c:589 src/xtokid.c:340
+#, c-format
+msgid "can't open `%s'"
+msgstr "kann „%s“ nicht öffnen"
+
+#: libidu/idread.c:68
+#, c-format
+msgid "`%s' is not an ID file! (bad magic #)"
+msgstr "„%s“ ist keine ID-Datei! (falsche Kennung #)"
+
+#: libidu/idread.c:70
+#, c-format
+msgid "`%s' is version %d, but I only grok version %d"
+msgstr "„%s“ ist Version %d, aber ich verstehe nur Version %d"
+
+#: libidu/idread.c:190
+#, c-format
+msgid "unsupported size in io_read (): %d"
+msgstr "nicht unterstützte Größe in „io_read ()“: %d"
+
+#: libidu/idread.c:200 libidu/idwrite.c:169
+#, c-format
+msgid "unknown I/O type: %d"
+msgstr "unbekannter E/A-Typ: %d"
+
+#: libidu/idu-hash.c:51
+#, c-format
+msgid "can't allocate %ld bytes for hash table: memory exhausted"
+msgstr "kann keine %ld Byte für Hashtabelle bereitstellen: Speicher erschöpft"
+
+#: libidu/idu-hash.c:264
+#, c-format
+msgid "Load=%ld/%ld=%.0f%%, "
+msgstr "„Load“=%ld/%ld=%.2f, "
+
+#: libidu/idu-hash.c:266
+#, c-format
+msgid "Rehash=%d, "
+msgstr "„Rehash“=%d, "
+
+#: libidu/idu-hash.c:267
+#, c-format
+msgid "Collisions=%ld/%ld=%.0f%%"
+msgstr "Kollisionen=%ld/%ld=%.0f%%"
+
+#: libidu/idwrite.c:158
+#, c-format
+msgid "unsupported size in io_write (): %d"
+msgstr "nicht unterstützte Größe in „io_write ()“: %d"
+
+#: libidu/scanners.c:109
+#, c-format
+msgid "unrecognized language: `%s'"
+msgstr "Sprache nicht erkannt: „%s“"
+
+#: libidu/scanners.c:169
+#, c-format
+msgid "can't allocate language args obstack: memory exhausted"
+msgstr ""
+"kann obstack für Sprachargumente nicht bereitstellen: Speicher erschöpft"
+
+#: libidu/scanners.c:223 libidu/scanners.c:292
+#, c-format
+msgid "can't allocate language args: memory exhausted"
+msgstr "kann Sprachargumente nicht bereitstellen: Speicher erschöpft"
+
+#: libidu/scanners.c:231
+#, c-format
+msgid "language name expected following `%s' in file `%s'"
+msgstr "in Datei „%2$s“ nach „%1$s“ Sprachname erwartet"
+
+#: libidu/scanners.c:286
+#, c-format
+msgid "can't open language map file `%s'"
+msgstr "kann Sprachbeschreibungsdatei „%s“ nicht öffnen"
+
+#: libidu/scanners.c:288
+#, c-format
+msgid "can't get size of map file `%s'"
+msgstr "kann Größe der Beschreibungsdatei nicht „%s“ nicht bestimmen"
+
+#: libidu/scanners.c:298
+#, c-format
+msgid "can't read language map file `%s'"
+msgstr "kann Sprachbeschreibungsdatei „%s“ nicht lesen"
+
+#: libidu/scanners.c:301
+#, c-format
+msgid "can't read entire language map file `%s'"
+msgstr "kann nicht die ganze Sprachbeschreibungsdatei „%s“ lesen"
+
+#: libidu/scanners.c:450
+#, c-format
+msgid ""
+"C language:\n"
+"  -k,--keep=CHARS        Allow CHARS in single-token strings, keep the "
+"result\n"
+"  -i,--ignore=CHARS      Allow CHARS in single-token strings, toss the "
+"result\n"
+"  -u,--strip-underscore  Strip a leading underscore from single-token "
+"strings\n"
+msgstr ""
+"Sprache C:\n"
+"  -k,--keep=ZEICHEN      ZEICHEN in Zeichenketten aus einzelnen Token "
+"erlauben,\n"
+"                           das Ergebnis behalten\n"
+"  -i,--ignore=ZEICHEN    ZEICHEN in Zeichenketten aus einzelnen Token "
+"erlauben,\n"
+"                           das Ergebnis wegwerfen\n"
+"  -u,--strip-underscore  führende Unterstriche aus Zeichenketten aus\n"
+"                           einzelnen Token entfernen\n"
+
+#: libidu/scanners.c:461
+#, c-format
+msgid ""
+"C++ language:\n"
+"  -k,--keep=CHARS        Allow CHARS in single-token strings, keep the "
+"result\n"
+"  -i,--ignore=CHARS      Allow CHARS in single-token strings, toss the "
+"result\n"
+"  -u,--strip-underscore  Strip a leading underscore from single-token "
+"strings\n"
+msgstr ""
+"Sprache C++:\n"
+"  -k,--keep=ZEICHEN      ZEICHEN in Zeichenketten aus einzelnen Token "
+"erlauben,\n"
+"                           das Ergebnis behalten\n"
+"  -i,--ignore=ZEICHEN    ZEICHEN in Zeichenketten aus einzelnen Token "
+"erlauben,\n"
+"                           das Ergebnis wegwerfen\n"
+"  -u,--strip-underscore  führende Unterstriche aus Zeichenketten aus\n"
+"                           einzelnen Token entfernen\n"
+
+#: libidu/scanners.c:472
+#, c-format
+msgid ""
+"Java language:\n"
+"  -k,--keep=CHARS        Allow CHARS in single-token strings, keep the "
+"result\n"
+"  -i,--ignore=CHARS      Allow CHARS in single-token strings, toss the "
+"result\n"
+"  -u,--strip-underscore  Strip a leading underscore from single-token "
+"strings\n"
+msgstr ""
+"Sprache Java:\n"
+"  -k,--keep=ZEICHEN      ZEICHEN in Zeichenketten aus einzelnen Token "
+"erlauben,\n"
+"                           das Ergebnis behalten\n"
+"  -i,--ignore=ZEICHEN    ZEICHEN in Zeichenketten aus einzelnen Token "
+"erlauben,\n"
+"                           das Ergebnis wegwerfen\n"
+"  -u,--strip-underscore  führende Unterstriche aus Zeichenketten aus\n"
+"                           einzelnen Token entfernen\n"
+
+#: libidu/scanners.c:755 libidu/scanners.c:1024 libidu/scanners.c:1227
+#: libidu/scanners.c:1497
+#, c-format
+msgid "junk: `%c'"
+msgstr "Müll: „%c“"
+
+#: libidu/scanners.c:757 libidu/scanners.c:1026 libidu/scanners.c:1229
+#: libidu/scanners.c:1499
+#, c-format
+msgid "junk: `\\%03o'"
+msgstr "Müll: „\\%03o“"
+
+#: libidu/scanners.c:859
+#, c-format
+msgid ""
+"Assembly language:\n"
+"  -c,--comment=CHARS     Any of CHARS starts a comment until end-of-line\n"
+"  -k,--keep=CHARS        Allow CHARS in tokens, and keep the result\n"
+"  -i,--ignore=CHARS      Allow CHARS in tokens, and toss the result\n"
+"  -u,--strip-underscore  Strip a leading underscore from tokens\n"
+"  -n,--no-cpp            Don't handle C pre-processor directives\n"
+msgstr ""
+"Assembler:\n"
+"  -c,--comment=ZEICHEN   jedes der ZEICHEN beginnt Kommentar bis Zeilenende\n"
+"  -k,--keep=ZEICHEN      ZEICHEN in Token erlauben, Ergebnis behalten\n"
+"  -i,--ignore=ZEICHEN    ZEICHEN in Token erlauben, Ergebnis wegwerfen\n"
+"  -u,--strip-underscore  führende Unterstriche aus Token entfernen\n"
+"  -n,--no-cpp            C-Präprozessor-Direktiven nicht behandeln\n"
+
+#: libidu/scanners.c:1130
+#, c-format
+msgid ""
+"Text language:\n"
+"  -i,--include=CHAR-CLASS  Treat characters of CHAR-CLASS as token "
+"constituents\n"
+"  -x,--exclude=CHAR-CLASS  Treat characters of CHAR-CLASS as token "
+"delimiters\n"
+msgstr ""
+"Text:\n"
+"  -i,--include=KLASSE   Zeichen in KLASSE als Tokenbestandteil behandeln\n"
+"  -x,--exclude=KLASSE   Zeichen in KLASSE als Tokentrenner behandeln\n"
+
+#: libidu/scanners.c:1335
+#, c-format
+msgid ""
+"Perl language:\n"
+"  -i,--include=CHAR-CLASS  Treat characters of CHAR-CLASS as token "
+"constituents\n"
+"  -x,--exclude=CHAR-CLASS  Treat characters of CHAR-CLASS as token "
+"delimiters\n"
+"  -d,--dtags  Include documentation tags\n"
+msgstr ""
+"Sprache Perl:\n"
+"  -i,--include=KLASSE   Zeichen in KLASSE als Tokenbestandteil behandeln\n"
+"  -x,--exclude=KLASSE   Zeichen in KLASSE als Tokentrenner behandeln\n"
+"  -d,--dtags            Dokumentations-Tags mit einschließen\n"
+
+#: libidu/scanners.c:1598
+#, c-format
+msgid "Lisp language:\n"
+msgstr "Sprache Lisp:\n"
+
+#: libidu/walker.c:124
+#, c-format
+msgid "can't read directory `%s' (`.' from `%s')"
+msgstr "kann Verzeichnis „%s“ nicht lesen („.“ von „%s“)"
+
+# constructed sentence ahead
+#: libidu/walker.c:191
+#, c-format
+msgid "notice: `%s' was a %s, but is now a %s!"
+msgstr "Bemerkung: „%s“ war ein%s, ist nun aber ein%s!"
+
+#: libidu/walker.c:192 libidu/walker.c:193
+msgid "file"
+msgstr "e Datei"
+
+#: libidu/walker.c:192 libidu/walker.c:193
+msgid "directory"
+msgstr " Verzeichnis"
+
+#: libidu/walker.c:322
+#, c-format
+msgid "warning: `%s' and `%s' are the same file, but yield different scans!"
+msgstr ""
+"Warnung: „%s“ und „%s“ sind dieselbe Datei, ergeben aber verschiedene "
+"Scanergebnisse!"
+
+#: libidu/walker.c:416
+#, c-format
+msgid "notice: scan parameters changed for `%s'"
+msgstr "Bemerkung: Scanparameter haben sich für „%s“ geändert"
+
+#: libidu/walker.c:498 libidu/walker.c:506
+#, c-format
+msgid "can't mix --include and --exclude options"
+msgstr ""
+
+#: libidu/walker.c:616
+#, c-format
+msgid "can't get working directory"
+msgstr "Name des Arbeitsverzeichnisses nicht zu erreichen"
+
+#: libidu/walker.c:671
+#, c-format
+msgid "can't chdir to `%s'"
+msgstr "kann nicht in „%s“ wechseln"
+
+#: libidu/walker.c:676
+#, c-format
+msgid "can't chdir to `%s' from `%s'"
+msgstr "kann nicht aus „%2$s“ nach „%1$s“ wechseln"
+
+#: libidu/walker.c:737
+#, c-format
+msgid "can't lstat `%s' from `%s'"
+msgstr "kann kein lstat von „%s“ auf „%s“ durchführen"
+
+#: libidu/walker.c:745
+#, c-format
+msgid "can't stat `%s' from `%s'"
+msgstr "kann kein stat von „%s“ auf „%s“ durchführen"
+
+#: src/fid.c:72 src/fnid.c:51 src/lid.c:241 src/mkid.c:130 src/xtokid.c:55
+#, c-format
+msgid "Try `%s --help' for more information.\n"
+msgstr "„%s --help“ gibt weitere Informationen.\n"
+
+#: src/fid.c:80
+#, c-format
+msgid "Usage: %s [OPTION] FILENAME [FILENAME2]\n"
+msgstr "Aufruf: %s [OPTION] DATEINAME [DATEINAME2]\n"
+
+#: src/fid.c:83
+#, c-format
+msgid ""
+"List identifiers that occur in FILENAME, or if FILENAME2 is\n"
+"also given list the identifiers that occur in both files.\n"
+"\n"
+"  -f, --file=FILE  file name of ID database\n"
+"      --help       display this help and exit\n"
+"      --version    output version information and exit\n"
+msgstr ""
+"Bezeichner aufführen, die in DATEINAME auftreten, oder, wenn DATEINAME2\n"
+"ebenfalls gegeben ist, Bezeichner aufführen, die in beiden Dateien "
+"auftreten.\n"
+"\n"
+"  -f, --file=DATEI  Dateiname der ID-Datenbank\n"
+"      --help        diese Hilfe anzeigen und beenden\n"
+"      --version     Versionsinformationen anzeigen und beenden\n"
+
+#: src/fid.c:91 src/fnid.c:80 src/lid.c:290 src/mkid.c:193 src/xtokid.c:106
+#, c-format
+msgid ""
+"\n"
+"Report bugs to "
+msgstr ""
+"\n"
+"Melden Sie Fehler (auf Englisch, mit LC_ALL=C) an "
+
+#: src/fid.c:149
+#, c-format
+msgid "no file name arguments"
+msgstr "keine Dateinamenargumente"
+
+#: src/fid.c:154
+#, c-format
+msgid "too many file name arguments"
+msgstr "zu viele Dateinamenargumente"
+
+#: src/fid.c:161 src/fnid.c:155 src/lid.c:443
+#, c-format
+msgid "can't locate `ID'"
+msgstr "kann „ID“ nicht finden"
+
+#: src/fid.c:244
+#, c-format
+msgid "`%s' is ambiguous"
+msgstr "„%s“ ist mehrdeutig"
+
+#: src/fid.c:250
+#, c-format
+msgid "`%s' not found"
+msgstr "„%s“ nicht gefunden"
+
+#: src/fnid.c:68
+#, c-format
+msgid "Usage: %s [OPTION]... [PATTERN]...\n"
+msgstr "Aufruf: %s [OPTION]… [MUSTER]…\n"
+
+#: src/fnid.c:72
+#, c-format
+msgid ""
+"Print constituent file names that match PATTERN,\n"
+"using shell-style wildcards.\n"
+"  -f, --file=FILE        file name of ID database\n"
+"  -S, --separator=STYLE  STYLE is one of `braces', `space' or `newline'\n"
+"      --help             display this help and exit\n"
+"      --version          output version information and exit\n"
+msgstr ""
+"Zeige Dateinamen aus der Datenbank, die auf MUSTER passen,\n"
+"unter Benutzung von Jokerzeichen der Shell.\n"
+"  -f, --file=DATEI       Dateiname der ID-Datenbank\n"
+"  -S, --separator=STIL   Seperator-STIL ist „braces“ (Klammern), „space“\n"
+"                           (Leerzeichen) oder „newline“ (Zeilenvorschub)\n"
+"      --help             diese Hilfe anzeigen und beenden\n"
+"      --version          Versionsinformationen anzeigen und beenden\n"
+
+#: src/lid.c:249
+#, c-format
+msgid "Usage: %s [OPTION]... PATTERN...\n"
+msgstr "Aufruf: %s [OPTION]… MUSTER…\n"
+
+#: src/lid.c:253
+#, fuzzy, c-format
+msgid ""
+"Query ID database and report results.\n"
+"By default, output consists of multiple lines, each line containing the\n"
+"matched identifier followed by the list of file names in which it occurs.\n"
+"\n"
+"  -f, --file=FILE       file name of ID database\n"
+"\n"
+"  -i, --ignore-case     match PATTERN case insensitively\n"
+"  -l, --literal         match PATTERN as a literal string\n"
+"  -r, --regexp          match PATTERN as a regular expression\n"
+"  -w, --word            match PATTERN as a delimited word\n"
+"  -s, --substring       match PATTERN as a substring\n"
+"            Note: If PATTERN contains extended regular expression meta-\n"
+"            characters, it is interpreted as a regular expression "
+"substring.\n"
+"            Otherwise, PATTERN is interpreted as a literal word.\n"
+"\n"
+"  -k, --key=STYLE       STYLE is one of `token', `pattern' or `none'\n"
+"  -R, --result=STYLE    STYLE is one of `filenames', `grep', `edit' or "
+"`none'\n"
+"  -S, --separator=STYLE  STYLE is one of `braces', `space' or `newline' and\n"
+"                        only applies to file names when `--"
+"result=filenames'\n"
+"            The above STYLE options control how query results are "
+"presented.\n"
+"            Defaults are --key=token --result=filenames --separator=%s\n"
+"\n"
+"  -F, --frequency=FREQ  find tokens that occur FREQ times, where FREQ\n"
+"                        is a range expressed as `N..M'.  If N is omitted, "
+"it\n"
+"                        defaults to 1, if M is omitted it defaults to "
+"MAX_USHRT\n"
+"  -a, --ambiguous=LEN   find tokens whose names are ambiguous for LEN chars\n"
+"\n"
+"  -x, --hex             only find numbers expressed as hexadecimal\n"
+"  -d, --decimal         only find numbers expressed as decimal\n"
+"  -o, --octal           only find numbers expressed as octal\n"
+"            By default, searches match numbers of any radix.\n"
+"\n"
+"      --help            display this help and exit\n"
+"      --version         output version information and exit\n"
+msgstr ""
+"ID-Datenbank abfragen und Ergebnisse melden.\n"
+"Per Voreinstellung besteht die Ausgabe aus mehreren Zeilen, wobei jede "
+"Zeile\n"
+"den gefundenen Bezeichner gefolgt von der Liste der Dateien, in denen er\n"
+"auftritt, enthält.\n"
+"\n"
+"  -f, --file=DATEI      Dateiname der ID-Datenbank\n"
+"\n"
+"  -i, --ignore-case     nach MUSTER suchen ohne Groß-/Kleinschreibung\n"
+"  -l, --literal         nach MUSTER als wortwörtliche Zeichenkette suchen\n"
+"  -r, --regexp          nach MUSTER als regulären Ausdruck suchen\n"
+"  -w, --word            nach MUSTER als abgetrenntes Wort suchen\n"
+"  -s, --substring       nach MUSTER als Subzeichenkette suchen\n"
+"            Bemerkung: Wenn MUSTER Metazeichen für erweiterte reguläre\n"
+"            Ausdrücke enthält, wird es als Subzeichenkette mit regulärem\n"
+"            Ausdruck angesehen, ansonsten als genaues Wort.\n"
+"\n"
+"  -k, --key=STIL        STIL für Schlüssel; eins aus „token“, „pattern“\n"
+"                          oder „none“\n"
+"  -R, --result=STIL     STIL für Ergebnis; eins aus „filenames“, „grep“, "
+"„edit“\n"
+"                          oder „none“\n"
+"  -S, --separator=STIL  STIL für Trenner; eins aus „braces“, „space“ oder\n"
+"                          „newline“, für Dateinamen, wenn „--"
+"result=filenames“\n"
+"            Die obigen STIL-Optionen steuern die Präsentation der Abfragen.\n"
+"            Voreinstellung ist --key=token --result=filenames --separator="
+"%s\n"
+"\n"
+"  -F, --frequency=FREQ  Token finden, die FREQ mal auftauchen,wobei FREQ "
+"ein\n"
+"                        Bereich der Form „N..M“ ist.  Wird N weggelassen, "
+"wird\n"
+"                        es mit 1 angenommen, wird M weggelassen, wird es "
+"mit\n"
+"                        MAX_USHRT angenommen\n"
+"  -a, --ambiguous=LÄN   Token finden, deren Namen mehrdeutig für LÄN Zeichen "
+"sind\n"
+"\n"
+"  -x, --hex             nur hexadezimal ausgedrückte Zahlen finden\n"
+"  -d, --decimal         nur dezimal ausgedrückte Zahlen finden\n"
+"  -o, --octal           nur oktal ausgedrückte Zahlen finden\n"
+"            Standardmäßig wird nach Zahlen beliebiger Basis gesucht.\n"
+"\n"
+"      --help            diese Hilfe anzeigen und beenden\n"
+"      --version         Versionsinformationen anzeigen und beenden\n"
+
+#: src/lid.c:289
+msgid "braces"
+msgstr "braces"
+
+#: src/lid.c:289
+msgid "space"
+msgstr "space"
+
+#: src/lid.c:383
+#, c-format
+msgid "notice: use of `-e' is deprecated, use `-r' instead"
+msgstr ""
+"Bemerkung: Benutzung von „-e“ wird nicht mehr empfohlen, benutzen Sie "
+"stattdessen „-r“"
+
+#: src/lid.c:464
+#, c-format
+msgid "All identifiers are non-ambiguous within the first %d characters\n"
+msgstr "Alle Bezeichner sind verschieden hinsichtlich der ersten %d Zeichen\n"
+
+#: src/lid.c:499
+#, c-format
+msgid "invalid `--key' style: `%s'"
+msgstr "ungültiger „--key“-Stil: „%s“"
+
+#: src/lid.c:511
+#, c-format
+msgid "invalid `--result' style: `%s'"
+msgstr "ungültiger „--result“-Stil: „%s“"
+
+#: src/lid.c:612 src/lid.c:933
+#, c-format
+msgid "can't match regular-expression: memory exhausted"
+msgstr "kann regulären Ausdruck nicht finden: Speicher erschöpft"
+
+# Muss hier auf `_j_ … / nq' umgestellt werden????
+#: src/lid.c:701
+#, c-format
+msgid "edit? [y1-9^S/nq] "
+msgstr "Editieren? [y1-9^S/nq] "
+
+#: src/lid.c:770
+#, c-format
+msgid "can't fork"
+msgstr "kann kein fork durchführen"
+
+#: src/lid.c:792
+#, c-format
+msgid "can't exec `%s'"
+msgstr "kann „%s“ nicht ausführen"
+
+#: src/mkid.c:163 src/xtokid.c:84
+#, c-format
+msgid "Usage: %s [OPTION]... [FILE]...\n"
+msgstr "Aufruf: %s [OPTION]… [DATEI]…\n"
+
+#: src/mkid.c:167
+#, fuzzy, c-format
+msgid ""
+"Build an identifier database.\n"
+"  -o, --output=OUTFILE    file name of ID database output\n"
+"  -f, --file=OUTFILE      synonym for --output\n"
+"  -i, --include=LANGS     include languages in LANGS (default: \"C C++ asm"
+"\")\n"
+"  -x, --exclude=LANGS     exclude languages in LANGS\n"
+"  -l, --lang-option=L:OPT pass OPT as a default for language L (see below)\n"
+"  -m, --lang-map=MAPFILE  use MAPFILE to map file names onto source "
+"language\n"
+"  -d, --default-lang=LANG  make LANG the default source language\n"
+"  -p, --prune=NAMES       exclude the named files and/or directories\n"
+"  -v, --verbose           report per file statistics\n"
+"  -s, --statistics        report statistics at end of run\n"
+"\n"
+"      --files0-from=F     tokenize only the files specified by\n"
+"                           NUL-terminated names in file F\n"
+"\n"
+"       --help              display this help and exit\n"
+"      --version           output version information and exit\n"
+"\n"
+"FILE may be a file name, or a directory name to recursively search.\n"
+"If no FILE is given, the current directory is searched by default.\n"
+"Note that the `--include' and `--exclude' options are mutually-exclusive.\n"
+"\n"
+"The following arguments apply to the language-specific scanners:\n"
+msgstr ""
+"  -o, --output=OUTFILE       Dateiname der ID-Datenbank\n"
+"  -f, --file=OUTFILE         Synonym für --output\n"
+"  -i, --include=SPRACHEN     SPRACHEN einschließen (Voreinst.: C C++ asm)\n"
+"  -x, --exclude=SPRACHEN     SPRACHEN ausschließen\n"
+"  -l, --lang-option=S:OPT    OPT als Voreinst. für Sprache S übergeben (s. "
+"u.)\n"
+"  -m, --lang-map=ABBDATEI    ABBDATEI benutzen für Zuordnung Endung-"
+">Sprache\n"
+"  -d, --default-lang=SPRACHE Standardsprache sei SPRACHE\n"
+"  -p, --prune=NAMEN          Angegebene Dateien/Verzeichnisse auslassen\n"
+"  -v, --verbose              Statistik pro Datei ausgeben\n"
+"  -s, --statistics           Statistik am Ende ausgeben\n"
+"\n"
+"      --help                 diese Hilfe anzeigen und beenden\n"
+"      --version              Versionsinformationen anzeigen und beenden\n"
+"\n"
+"DATEI kann ein Dateiname sein oder ein Verzeichnisname für rekursive Suche.\n"
+"Ist keine DATEI gegeben, wird das aktuelle Verzeichnis durchsucht.\n"
+"Beachten Sie, dass sich „--include“ und „--exclude“ gegenseitig "
+"ausschließen.\n"
+"\n"
+"Die folgenden Argumente gehören zu den sprachspezifischen Scannern:\n"
+
+#: src/mkid.c:309 src/xtokid.c:194
+#, c-format
+msgid "extra operand %s"
+msgstr ""
+
+#: src/mkid.c:311 src/xtokid.c:196
+msgid "file operands cannot be combined with --files0-from"
+msgstr ""
+
+#: src/mkid.c:316 src/xtokid.c:201
+#, c-format
+msgid "cannot open %s for reading"
+msgstr ""
+
+#: src/mkid.c:350 src/xtokid.c:234
+#, c-format
+msgid "%s: read error"
+msgstr ""
+
+#: src/mkid.c:364 src/xtokid.c:248
+#, c-format
+msgid "when reading file names from stdin, no file name of %s allowed"
+msgstr ""
+
+#: src/mkid.c:378 src/mkid.c:386 src/xtokid.c:262 src/xtokid.c:270
+msgid "invalid zero-length file name"
+msgstr ""
+
+#: src/mkid.c:440
+#, c-format
+msgid "nothing to do"
+msgstr ""
+
+#: src/mkid.c:490
+#, c-format
+msgid "can't create `%s' in `%s'"
+msgstr "kann „%s“ nicht in „%s“ erstellen"
+
+#: src/mkid.c:495
+#, c-format
+msgid "can't modify `%s'"
+msgstr "kann „%s“ nicht modifizieren"
+
+#: src/mkid.c:572
+#, c-format
+msgid "can't stat `%s'"
+msgstr "kann nicht auf „%s“ zugreifen"
+
+#: src/mkid.c:641
+#, c-format
+msgid "  new = %d/%d"
+msgstr ", neu = %d/%d"
+
+#: src/mkid.c:650
+#, c-format
+msgid "Name=%ld, "
+msgstr "Name=%ld, "
+
+#: src/mkid.c:651
+#, c-format
+msgid "Number=%ld, "
+msgstr "Zahl=%ld, "
+
+#: src/mkid.c:652
+#, c-format
+msgid "String=%ld, "
+msgstr "Zeichenkette=%ld, "
+
+# ist das gemeint? ###
+#: src/mkid.c:653
+#, c-format
+msgid "Literal=%ld, "
+msgstr "Zeichen=%ld, "
+
+#: src/mkid.c:654
+#, c-format
+msgid "Comment=%ld\n"
+msgstr "Kommentar=%ld\n"
+
+#: src/mkid.c:656
+#, c-format
+msgid "Files=%ld, "
+msgstr "Dateien=%ld, "
+
+#: src/mkid.c:657
+#, c-format
+msgid "Tokens=%ld, "
+msgstr "Token=%ld, "
+
+#: src/mkid.c:658
+#, c-format
+msgid "Bytes=%ld Kb, "
+msgstr "Byte=%ld KB, "
+
+#: src/mkid.c:659
+#, fuzzy, c-format
+msgid "Heap=%llu+%llu Kb, "
+msgstr "„Heap“=%d+%d KB, "
+
+#: src/mkid.c:664
+#, c-format
+msgid "Output=%ld (%ld tok, %ld hit)\n"
+msgstr "Ausgabe=%ld (%ld tok, %ld hit)\n"
+
+# Frequenz übersetzen? ke
+# Ob Freq nun frequency oder Frequenz ist, sollte wurscht sein. MPi
+#: src/mkid.c:668
+#, c-format
+msgid ", Freq=%ld/%ld=%.2f\n"
+msgstr ", Freq=%ld/%ld=%.2f\n"
+
+#: src/mkid.c:692
+#, c-format
+msgid "Sorting tokens...\n"
+msgstr "Sortiere Token…\n"
+
+#: src/mkid.c:700
+#, c-format
+msgid "Writing `%s'...\n"
+msgstr "Schreibe „%s“…\n"
+
+#: src/mkid.c:703
+#, c-format
+msgid "can't create `%s'"
+msgstr "kann „%s“ nicht erstellen"
+
+#: src/mkid.c:715 src/mkid.c:725 src/mkid.c:772
+#, c-format
+msgid "internal limitation: offset of 2^32 or larger"
+msgstr ""
+
+#: src/mkid.c:780
+#, c-format
+msgid "error closing `%s'"
+msgstr "Fehler beim Schließen von „%s“"
+
+#: src/mkid.c:868
+#, c-format
+msgid "level %d: %ld/%ld = %.0f%%\n"
+msgstr "Level %d: %ld/%ld = %.0f%%\n"
+
+#: src/xtokid.c:88
+#, fuzzy, c-format
+msgid ""
+"Print all tokens found in a source file.\n"
+"  -i, --include=LANGS     include languages in LANGS (default: \"C C++ asm"
+"\")\n"
+"  -x, --exclude=LANGS     exclude languages in LANGS\n"
+"  -l, --lang-option=L:OPT pass OPT as a default for language L (see below)\n"
+"  -m, --lang-map=MAPFILE  use MAPFILE to map file names onto source "
+"language\n"
+"  -d, --default-lang=LANG  make LANG the default source language\n"
+"  -p, --prune=NAMES       exclude the named files and/or directories\n"
+"\n"
+"      --files0-from=F     tokenize only the files specified by\n"
+"                           NUL-terminated names in file F\n"
+"\n"
+"      --help              display this help and exit\n"
+"\t\t      --version           output version information and exit\n"
+"\n"
+"The following arguments apply to the language-specific scanners:\n"
+msgstr ""
+"Alle Token, die in einer Quelldatei gefunden werden, ausgeben\n"
+"  -i, --include=SPRACHEN     SPRACHEN einschließen (Voreinst.: C C++ asm)\n"
+"  -x, --exclude=SPRACHEN     SPRACHEN ausschließen\n"
+"  -l, --lang-option=S:OPT    OPT als Voreinst. für Sprache S übergeben (s. "
+"u.)\n"
+"  -m, --lang-map=ABBDATEI    ABBDATEI benutzen für Zuordnung Endung-"
+">Sprache\n"
+"  -d, --default-lang=SPRACHE Standardsprache sei SPRACHE\n"
+"  -p, --prune=NAMEN          Angegebene Dateien/Verzeichnisse auslassen\n"
+"      --help                 diese Hilfe anzeigen und beenden\n"
+"      --version              Versionsinformationen anzeigen und beenden\n"
+"\n"
+"Die folgenden Argumente gehören zu den sprachspezifischen Scannern:\n"
+
+#~ msgid "%s: illegal option -- %c\n"
+#~ msgstr "%s: unzulässige Option -- %c\n"
+
+#~ msgid ""
+#~ "\n"
+#~ "\n"
+#~ msgstr ""
+#~ "\n"
+#~ "\n"

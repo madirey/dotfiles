@@ -74,6 +74,7 @@ export JAVA_HOME=/usr/lib/jvm/java-6-sun
 alias dotfiles='cd ~/Development/dotfiles'
 alias fsdev='cd ~/Development/fieldscope_django_31may2011/FieldScope-Server/src/fieldscope'
 alias fsflexdev='cd ~/Development/fieldscope_client_29sep2011/FieldScope-Client'
+alias fsclientdev=fsflexdev
 
 # lazy aliases
 alias vi='vim'

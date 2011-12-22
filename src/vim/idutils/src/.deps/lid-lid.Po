@@ -1,0 +1,3 @@
+lid-lid.o lid-lid.o: lid-lid.c lid.h
+
+lid.h:

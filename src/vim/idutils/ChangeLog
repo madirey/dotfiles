@@ -1,0 +1,987 @@
+2010-06-17  Jim Meyering  <meyering@redhat.com>
+
+	version 4.5
+	* NEWS: Record release date.
+
+	maint: use gnulib's do-release-commit-and-tag module
+	* bootstrap.conf (gnulib_modules): Add do-release-commit-and-tag.
+
+2010-06-16  Jim Meyering  <meyering@redhat.com>
+
+	tests: fix "make distcheck" failure
+	* testsuite/help-version (mkid_setup): Tell mkid not to access
+	the not-yet-installed id-lang.map file.
+	(xtokid_setup): Likewise.
+
+	tests: clean up "consistency" and limit the number of files it uses
+	* testsuite/consistency: Use abs_top_srcdir.
+	Perform tests only on files under src, so it doesn't take so long.
+	Stop using "eval" and an explicit $bindir.
+	Don't re-invoke "make".  Not needed, now that $abs_top_srcdir
+	is exported from Makefile (via check.mk) to this script.
+	* testsuite/Makefile.am (consistency-real): Remove rule, now
+	that we no longer use it.
+
+	build: remove now-unnecessary replacement lstat definition
+	* libidu/walker.c [! HAVE_LSTAT] (lstat): Remove definition.
+	Gnulib already handles that.
+
+	maint: update bootstrap and init.sh from gnulib
+	* bootstrap: Update from gnulib.
+	* testsuite/init.sh: Likewise.
+
+	build: update gnulib submodule to latest
+
+	build: require gettext-0.18
+	* configure.ac: Require it here...
+	* bootstrap.conf (buildreq): ...and here.
+
+2010-05-09  Jim Meyering  <meyering@redhat.com>
+
+	tests: adjust help-version
+	* testsuite/help-version: Use one-line invocation of init.sh.
+
+	build: avoid new syntax-check failure
+	* libidu/iduglobal.h (FNM_FILE_NAME): Remove definition.
+	Now, it's provided by gnulib.
+
+	build: update from gnulib
+	* bootstrap: Update from gnulib.
+	* testsuite/init.sh: Update from gnulib.
+	* gnulib: Update to latest.
+
+	doc: add "gid" to the menus and direntry list
+	* doc/idutils.texi (gid invocation): Add a section on "gid".
+
+	doc: add @dircategory to Info documentation
+	The Texinfo documentation says that Info files should use @dircategory,
+	and suggests consulting the Free Software Directory to select a category
+	name.  The directory places under ""Text creation and manipulation".
+	* doc/idutils.texi: Add "@dircategory Text creation and manipulation".
+	Inspired by a nearly identical patch by Colin Watson for Parted.
+
+	mkid: use ftello (not ftell) and fail if an offset is 2^32 or larger
+	This is necessary because the internal layout requires that an
+	offset be representable as a 4-byte quantity.
+	* src/mkid.c (write_id_file): Use ftello, not ftell.
+	The latter would fail on files larger than 4GiB.  Now,
+	we still fail for such files, but use ftello instead --
+	and give a diagnostic.
+
+2010-05-01  Jim Meyering  <meyering@redhat.com>
+
+	build: update gnulib submodule to latest
+
+	tests: add help-version, from grep
+	* testsuite/help-version: New file.
+	* testsuite/init.sh: New file, from gnulib.
+	* testsuite/Makefile.am (EXTRA_DIST): Add init.sh.
+	(TESTS): Add help-version.
+	* cfg.mk (_hv_file): Define.
+	* testsuite/check.mk (TESTS_ENVIRONMENT): Define VERSION,
+	for help-version's cross check.
+	(built_programs): Adjust to work, and to accommodate $(EXEEXT).
+
+	maint: accommodate new syntax-check rules
+	* bootstrap.conf (gnulib_modules): Add sys_ioctl
+	* src/lid.c: Include <sys/ioctl.h> unconditionally.
+	* libidu/xnls.h: Don't depend on HAVE_LOCALE_H.
+	<locale.h> is always available.
+
+	maint: accommodate new empty-line-EOF syntax-check rule
+	* lisp/Makefile.am (dist_lisp_LISP): Remove empty line at EOF
+
+	doc: update to version 1.3 of the FDL
+	* doc/idutils.texi: Update to FDL 1.3.
+	* NEWS: Likewise.
+	* cfg.mk (old_NEWS_hash): Update to accommodate this change.
+
+2010-04-21  Jim Meyering  <meyering@redhat.com>
+
+	build: update gnulib submodule to latest
+
+2010-01-03  Jim Meyering  <meyering@redhat.com>
+
+	maint: record update-copyright options for this package
+	* cfg.mk: Next time, just run "make update-copyright".
+
+2010-01-01  Jim Meyering  <meyering@redhat.com>
+
+	build: update gnulib submodule to latest
+
+	maint: remove all .cvsignore files
+
+	maint: update all FSF copyright year lists to include 2010
+	Use this command:
+	git ls-files |grep -vE '^(\..*|COPYING|gnulib)$' |xargs \
+	env UPDATE_COPYRIGHT_USE_INTERVALS=1 build-aux/update-copyright
+
+2009-12-31  Jim Meyering  <meyering@redhat.com>
+
+	maint: sync dist-check.mk from coreutils
+	* dist-check.mk: Update.
+
+	maint: newer gnulib; don't hard-code my GPG key ID
+	* cfg.mk (gpg_key_ID): Remove definition, now that maint.mk automates it.
+	* gnulib: Update to latest.
+
+2009-12-01  Jim Meyering  <meyering@redhat.com>
+
+	build: correct relative name of .version file
+	* man/Makefile.am (common_dep): Use ../.version,
+	not $(top_srcdir)/.version.
+	Reported by Markus Armbruster.
+
+2009-11-20  Jim Meyering  <meyering@redhat.com>
+
+	maint: cfg.mk: remove factored-out ftp host/dir definitions
+	* cfg.mk (gnu_ftp_host-alpha, gnu_ftp_host-beta gnu_ftp_host-stable):
+	(gnu_rel_host, url_dir_list): Remove definitions.  The defaults,
+	now provided by maint.mk, are the same.
+	* gnulib: Update for latest, including those maint.mk additions.
+
+2009-11-13  Jim Meyering  <meyering@redhat.com>
+
+	build: require gettext-0.17
+	* configure.ac: Require gettext-0.17; it was released two years ago.
+
+	build: correct gettext configure-time support
+	* configure.ac: Use AM_GNU_GETTEXT([external], [need-ngettext]),
+	rather than AM_GNU_GETTEXT([external], [need-formatstring-macros]).
+	Reported by Martin Jacobs in
+	http://thread.gmane.org/gmane.comp.parsers.bison.bugs/3181
+
+2009-11-07  Jim Meyering  <meyering@redhat.com>
+
+	build: update gnulib submodule to latest
+
+2009-10-31  Jim Meyering  <meyering@redhat.com>
+
+	admin: distribute gnu-web-doc-update
+	* bootstrap.conf (gnulib_modules): Add gnu-web-doc-update.
+
+	admin: document release procedure (copied from gzip's)
+	* README-release: New file.
+
+2009-10-30  Jim Meyering  <meyering@redhat.com>
+
+	post-release administrivia
+	* NEWS: Add header line for next release.
+	* .prev-version: Record previous version.
+	* cfg.mk (old_NEWS_hash): Auto-update.
+
+	version 4.4
+	* NEWS: Record release date.
+
+	build: accommodate new syntax-check test
+	Use EXIT_FAILURE and EXIT_SUCCESS, not 1 and 0.
+	Apply these commands:
+	perl -pi -e 's/\berror \(1,/error (EXIT_FAILURE,/' \
+	  $(git grep -l '\<error (1,')
+	perl -pi -e 's/\bexit \(1\)/exit (EXIT_FAILURE)/' \
+	  $(git grep -l '\<exit (1)')
+	perl -pi -e 's/\bexit \(0\)/exit (EXIT_SUCCESS)/' \
+	  $(git grep -l '\<exit (0)')
+	* libidu/idread.c (read_id_file, maybe_read_id_file, io_read):
+	* libidu/idu-hash.c (hash_init):
+	* libidu/idwrite.c (io_write):
+	* libidu/scanners.c (parse_language_map, parse_language_map_file):
+	(read_language_map_file):
+	* libidu/walker.c (include_languages, exclude_languages):
+	(get_current_dir_link):
+	* src/fid.c (usage, help_me, main):
+	* src/fnid.c (usage, help_me, main):
+	* src/lid.c (usage, help_me, main, report_grep, report_edit):
+	(query_regexp):
+	* src/mkid.c (main, assert_writeable, write_id_file):
+	* src/xtokid.c (help_me):
+
+	build: update gnulib submodule to latest
+
+2009-10-19  Jim Meyering  <meyering@redhat.com>
+
+	build: update gnulib submodule to latest
+
+2009-10-18  Jim Meyering  <meyering@redhat.com>
+
+	build: update bootstrap from coreutils
+	* bootstrap: Update from coreutils.
+	* bootstrap.conf: Likewise.
+
+	build: update gnulib submodule to latest
+
+2009-09-30  Jim Meyering  <meyering@redhat.com>
+
+	maint: use proper distribution upload url
+	* cfg.mk (url_dir_list): Use $(PACKAGE), not coreutils.
+
+	build: avoid warning exposed by gcc-4.4.1
+	* src/fid.c (help_me): Declare with noreturn attribute.
+	* src/fnid.c (help_me): Likewise.
+	* src/lid.c (help_me): Likewise.
+	* src/mkid.c (help_me): Likewise.
+	* src/xtokid.c (help_me): Likewise.
+
+	build: use more gnulib modules for better POSIX compliance
+	* bootstrap.conf (gnulib_modules): Add modules exposed via
+	make CFLAGS=-DGNULIB_POSIXCHECK 2>&1 \
+	  |perl -lne '/.* use gnulib module (\S+).*/ and print $1' \
+	  |sort |uniq -c|sort -nr
+	calloc, fflush, fopen, freopen, fprintf-posix, printf-posix,
+	sprintf-posix
+
+2009-08-31  Jim Meyering  <meyering@redhat.com>
+
+	maint: update gnulib submodule to latest
+
+	maint: declare usage with "noreturn" attribute, so...
+	* libidu/scanners.c: ...tools like llvm understand flow control better.
+
+	maint: use better syntax: NULL, not 0, in pointer comparison
+	* libidu/scanners.c (language_save_arg): Compare pointer to NULL, not 0.
+
+	maint: mkid, xtokid: remove unnecessary initialization
+	* src/xtokid.c (main): Don't set "skip_file" unnecessarily.
+	* src/mkid.c (main): Likewise.
+
+	build: don't use -Werror in lib/
+	* lib/Makefile.am (AM_CFLAGS): Don't use $(WERROR_CFLAGS).
+
+2009-08-16  Jim Meyering  <meyering@redhat.com>
+
+	build: enable warning options also in lib/
+	* lib/Makefile.am (AM_CFLAGS): Fix typo: s/WARNING_CFLAGS/WARN_CFLAGS/
+
+2009-08-15  Jim Meyering  <meyering@redhat.com>
+
+	maint: configure update-copyright to use intervals
+	* cfg.mk (update-copyright-env): Define.
+
+	maint: update copyright year lists to include 2009
+
+	maint: make @copyright line recognizable to update-copyright
+	* doc/idutils.texi: Remove "(C)" from copyright line.
+
+	build: avoid "make distcheck" failure and distracting diagnostics
+	* testsuite/check.mk (built_programs): Rewrite so that it works.
+	(TESTS_ENVIRONMENT): Use $$f, not $$tst.  The latter included a
+	$(srcdir)/ prefix that was fatal in the non-srcdir build case.
+
+	rename hash.? to idu-hash.? to avoid conflict with gnulib's hash.h
+	Now that gnulib's exclude module uses gnulib's hash module,
+	which includes a hash.h file, idutils' use of a hash.h file conflicted.
+	Rename the one here in idutils:
+	* libidu/idu-hash.c: Rename from hash.c.
+	* libidu/idu-hash.h: Rename from hash.h.
+	* libidu/idfile.h: Reflect renaming.
+	* libidu/idread.c: Likewise.
+	* libidu/idwrite.c: Likewise.
+	* src/mkid.c: Likewise.
+	* libidu/Makefile.am: Likewise.
+
+	build: use gnulib's update-copyright module
+	* bootstrap.conf (gnulib_modules): Add update-copyright.
+
+	build: use gnulib's getopt-gnu module (getopt is now deprecated)
+	* bootstrap.conf (gnulib_modules): Gnulib's getopt module is now
+	deprecated; use the new, preferred name, getopt-gnu.
+
+	build: update from gnulib
+	* gnulib: Update submodule to latest.
+
+	build: avoid a legitimate warning exposed by newer gcc
+	* libidu/scanners.c (language_save_arg): Remove decl of unused
+	static local, horizontal_space.
+
+	tests: run the latest test
+	* testsuite/Makefile.am (EXTRA_DIST): Add mkid-langopt.
+	* NEWS: Tweak wording.
+	* testsuite/mkid-langopt: Add a comment.
+
+2009-08-13  Pedro J. Ruiz Lopez  <holzplatten@es.gnu.org>
+
+	mkid: avoid segfault with "-l OPT"
+	* libidu/scanners.c: languages_0[] is not const anymore, since this
+	                     would make impossible to set lang->lg_argv
+	* libidu/scanners.c: language_save_arg now manages language options
+	                     with zero or one argument.
+	* doc/idutils.texi: update to reflect the behavior of mkid "-l" option.
+	* testsuite/mkid-langopt: new test program.
+
+2009-07-04  Jim Meyering  <meyering@redhat.com>
+
+	maint: ignore *.1 man pages
+	* .gitignore: Ignore man/*.1.
+
+	build: require/use newer automake
+	* configure.ac: require automake-1.11.
+	Enable color-tests and parallel-tests options.
+
+	tests: remove now-unnecessary build-aux/check.mk
+	* build-aux/check.mk: Remove file.
+	* testsuite/check.mk: Don't include build-aux/check.mk.
+
+	tests: avoid a false-positive failure
+	* testsuite/consistency: Manually remove single_file_token_bug.c
+	from the list of files to be compared, since it would provoke
+	a false positive.
+
+	tests: update CuTmpdir.pm from coreutils
+	* testsuite/CuTmpdir.pm: Update from coreutils.
+
+	mkid, xtokid: read and process --files0-from= input a name at a time,
+	rather than by reading the entire input into memory and *then*
+	processing each file name.
+	* src/mkid.c: Include "argv-iter.h", not "readtokens0.h".
+	(main): Rewrite to use argv-iter.
+	* src/xtokid.c: Likewise.
+	Include <assert.h>.
+	* bootstrap.conf (gnulib_modules): Add argv-iter.  Remove readtokens0.
+	* libidu/iduglobal.h (STREQ): Define.
+	(bad_cast): Define.
+
+	remove wc-related code that doesn't apply here
+	* src/mkid.c: Don't handle a file name of "-" specially.
+	* src/xtokid.c: Likewise.
+	* testsuite/files0-from: Don't test for it.
+
+	tests: add testing framework, and tests for the new option
+	* NEWS (New features): Mention the new option.
+	* src/mkid.c (main): Adjust a diagnostic.
+	* src/xtokid.c (main): Adjust a diagnostic.
+	* bootstrap.conf (gnulib_modules): Add perl and posix_shell
+	* build-aux/check.mk: New file, from coreutils.
+	* testsuite/Coreutils.pm: Likewise.
+	* testsuite/CuTmpdir.pm: Likewise.
+	* testsuite/check.mk: Likewise.
+	* testsuite/envvar-check: Likewise.
+	* testsuite/files0-from: New test, based on one from coreutils.
+	* testsuite/Makefile.am (TESTS): Add files0-from.
+	(TESTS_ENVIRONMENT): Remove definition.  Now it's in check.mk.
+	(EXTRA_DIST): Add Coreutils.pm CuTmpdir.pm envvar-check and check.mk.
+	Include $(srcdir)/check.mk.
+
+2009-07-04  Pedro J. Ruiz Lopez  <holzplatten@es.gnu.org>
+
+	mkid, xtokid: accept a new option --files0-from=FILE
+	* bootstrap.conf (gnulib_modules): Add quote and readtokens0.
+	* doc/idutils.texi: Document the option.
+	* src/mkid.c (usage, FILES0_FROM_OPTION, long_options, help_me)
+	(main): Implement.
+	* src/xtokid.c (usage, FILES0_FROM_OPTION, long_options, help_me)
+	(main): Likewise.
+
+2009-07-04  Jim Meyering  <meyering@redhat.com>
+
+	gnulib: update to latest, to get argv-iter
+
+2009-06-30  Jim Meyering  <meyering@redhat.com>
+
+	build: update from coreutils
+	* README-hacking: Update from coreutils.
+	* bootstrap.conf: Likewise.
+	* bootstrap: Likewise.
+	* dist-check.mk: Likewise.
+
+2009-06-16  Pedro J. Ruiz Lopez  <holzplatten@es.gnu.org>
+
+	Fixed bug #22154: --default-lang does nothing
+	* libidu/scanners.c: set_default_language function implemented.
+
+2009-06-07  Jim Meyering  <meyering@redhat.com>
+
+	maint: add const attribute to a few declarations
+	* libidu/hash.c (hash_print_stats, hash_dump): Add const.
+	* libidu/hash.h: Likewise.
+	* src/mkid.c (scan_files): Likewise.
+
+	build: avoid warning from newer gcc
+	* configure.ac: Turn off -Wunsafe-loop-optimizations.
+
+	build: update from gnulib
+	* gnulib: Update submodule to latest.
+
+2009-05-18  Ludovic Courtès  <ludo@gnu.org>
+
+	elisp: use `read-shell-command' in `gid'
+	* lisp/idutils.el (gid): Use `read-shell-command' instead of
+	`read-string', to allow for completion.
+
+2009-05-17  Jim Meyering  <meyering@redhat.com>
+
+	maint: cfg.mk: remove now-unnecessary gnulib_dir definition
+	* cfg.mk (gnulib_dir): Remove definition, now that gnulib's
+	maint.mk provides the default we want.
+
+	build: update from gnulib, for rename.m4 fix, improved tests, etc.
+	* gnulib: Update submodule to latest.
+
+	build: adjust warnings
+	* configure.ac: Enable a few warning options that didn't need to
+	be disabled; disable -Wlong-long (for latest gcc snapshot).
+
+	maint: remove unused file
+	* m4/extra_dist.sh: Remove now-unused file.
+
+2009-04-30  Jim Meyering  <meyering@redhat.com>
+
+	clean-up: use proper types
+	* src/fid.c (get_file_index): Use size_t for lengths, not int.
+
+	avoid a legitimate -Wstrict-overflow warning
+	* libidu/scanners.h (log_8_member_files): Change type from int to size_t.
+	* libidu/scanners.c: Likewise.
+
+	build: suppress more warnings
+	* src/fid.c (usage): Declare with __noreturn__ attribute.
+	* src/fnid.c (usage): Likewise.
+	* src/lid.c (usage): Likewise.
+	* src/mkid.c (usage): Likewise.
+	* src/xtokid.c: (usage): Likewise.
+	* src/mkid.c (sum_files): Remove unused macro.
+
+	build: suppress warnings about ignored return value from fread/fwrite
+	* libidu/idwrite.c: include "ignore-value.h".
+	(io_write): Ignore fwrite return value.
+	* libidu/idread.c: Likewise for fread.
+	* bootstrap.conf (gnulib_modules): Add ignore-value.
+
+	build: remove unused macros
+	* libidu/scanners.c (ISSPACE, WS): Remove unused macros.
+
+	build: avoid a warning
+	* libidu/idfile.c (sizeof_idhead): Avoid old-style function definition.
+
+	build: remove unused macros
+	* libidu/idread.c (TOK_COUNT_ADDR): Remove unused macro.
+	(TOK_HITS_ADDR): Likewise.
+
+	build: enable new compiler warning options
+	* src/Makefile.am (AM_CFLAGS): Define to $(WARN_CFLAGS) $(WERROR_CFLAGS).
+	* libidu/Makefile.am (AM_CPPFLAGS): Remove bogus -I$(top_builddir)/intl
+	(AM_CFLAGS): Define to $(WARN_CFLAGS) $(WERROR_CFLAGS).
+	* src/Makefile.am (AM_CPPFLAGS): Remove bogus -I.../intl
+
+2009-04-29  Jim Meyering  <meyering@redhat.com>
+
+	build: address automake warning
+	* lib/Makefile.am (AM_CFLAGS): Increment, rather than assigning,
+	so as not to override settings from just-included gnulib.mk.
+
+	build: accommodate maint.mk, now that it's pulled from gnulib
+	* dist-check.mk: New file, from coreutils.  Was part of maint.mk.
+	* cfg.mk (old_NEWS_hash): Include $(srcdir)/dist-check.mk.
+	Remove trailing "  -", to align with new check in maint.mk.
+	* Makefile.am (EXTRA_DIST): Add dist-check.mk.
+
+	maint: enable many gcc warnings
+	* bootstrap.conf (gnulib_modules): Add warnings and manywarnings.
+	* configure.ac: Use gl_MANYWARN_ALL_GCC, and exclude options
+	I don't want or that provoke too many warnings.
+	(WARN_CFLAGS, WERROR_CFLAGS): Define.
+	(lint, GNULIB_PORTCHECK): Define.
+	(_FORTIFY_SOURCE): Define to 2.
+
+	* .cvsignore: Remove now-unused file.
+
+	build: use maint.mk from gnulib
+	* maint.mk: Remove file.  Now it's generated.
+	* .gitignore: Ignore it.
+	* bootstrap.conf (gnulib_modules): Add maintainer-makefile.
+	Remove obsolete modules.
+
+	maint: use a git submodule for gnulib
+	* .gitmodules: New file, to track gnulib.
+	* gnulib: New file, created by running this:
+	git submodule add git://git.sv.gnu.org/gnulib.git gnulib
+
+	* configure.ac (AM_INIT_AUTOMAKE): Require automake-1.10b or newer.
+
+2009-04-27  Jim Meyering  <meyering@redhat.com>
+
+	build: make automake's silent-rules option the default
+	* configure.ac (AM_SILENT_RULES): Use this, with it's "yes" argument.
+	Those who want verbose build output may configure with
+	--disable-silent-rules or use "make V=1".
+
+2009-03-21  Jim Meyering  <meyering@redhat.com>
+
+	* maint.mk: sync from coreutils
+
+2009-03-18  Jim Meyering  <meyering@redhat.com>
+
+	maint.mk: update from coreutils
+	* maint.mk: Sync.
+	* cfg.mk (manual_title): Define.
+
+2009-03-02  Jim Meyering  <meyering@redhat.com>
+
+	* cfg.mk (old_NEWS_hash): Update.
+
+	maint.mk: update from coreutils
+	* maint.mk: Modernize
+	(sc_tight_scope): Move this rule to...
+	* idutils/cfg.mk (sc_tight_scope): ...here.
+	* .x-sc_require_config_h_first: New file.
+
+	* doc/idutils.texi: Update copyright year.
+
+	* configure.ac: Use dist-xz rather than dist-lzma.
+
+2009-03-02  Ludovic Courtès  <ludo@gnu.org>
+
+	recognize `.org' files as text
+	* libidu/id-lang.map: Add `.org' extension, for Emacs Org-Mode files.
+
+2008-11-30  Jim Meyering  <meyering@redhat.com>
+
+	* src/lid.c: Remove duplicate inclusion of <termios.h>.
+
+	* src/fnid.c: Remove duplicate inclusion of <errno.h>.
+
+2008-10-26  Jim Meyering  <meyering@redhat.com>
+
+	recognize a few more file types
+	* libidu/id-lang.map: Recognize .rb, .in.h, .PL, configure.in,
+	and GNUmakefile.
+
+	avoid a start-up leak
+	* libidu/walker.c (get_current_dir_link): Don't leak cwd_0.
+
+2008-10-22  Pedro J. Ruiz Lopez  <holzplatten@es.gnu.org>
+
+	accommodate gnulib header removals
+	* libidu/idfile.c: Include <sys/stat.h>, not "lstat.h".
+	* libidu/scanners.c: Likewise.
+	* libidu/walker.c: Likewise.
+	* src/mkid.c: Likewise.
+
+2008-10-18  Jim Meyering  <meyering@redhat.com>
+
+	post-release administrivia
+	* NEWS: Add header line for next release.
+	* .prev-version: Record previous version.
+	* cfg.mk (old_NEWS_hash): Auto-update.
+
+	* NEWS: Record release date; add copyright at bottom.
+
+	sync from coreutils
+	* maint.mk: Sync from coreutils.
+	* bootstrap: Likewise.
+	* README-hacking: Likewise.
+	* bootstrap.conf: Standardize copyright comments.
+	(gnulib_modules): Add announce-gen and strcasestr.
+
+	add idutils.spec.in
+	* idutils.spec.in: New file, mostly from from Markus Armbruster.
+	* Makefile.am (idutils.spec): New rule.
+	(EXTRA_DIST): Add idutils.spec.in and idutils.spec.
+	* .gitignore: Add idutils.spec.
+
+2008-09-13  Jim Meyering  <meyering@redhat.com>
+
+	set coding system to utf8 in THANKS
+	* THANKS: and adjust François' name accordingly.
+
+2008-09-12  Jim Meyering  <meyering@redhat.com>
+
+	* lisp/idutils.el: Update suggested autoload syntax in comment.
+
+	use dist_man1_MANS rather than dist_man_MANS: efficiency
+	* man/Makefile.am: Use dist_man1_MANS rather than dist_man_MANS.
+	Recommended in automake documentation, for more efficient install.
+
+2008-08-30  Jim Meyering  <meyering@redhat.com>
+
+	tests: adjust failure diagnostic to match reality
+	* testsuite/consistency: Correct suffix, s/xtokid/xti/ in diagnostics.
+	Also fix a double temp-file naming bug: s/fid/lid/g.
+
+	* bootstrap: Update from coreutils.
+
+2008-06-24  Jim Meyering  <meyering@redhat.com>
+
+	avoid warnings, adjust for const-correctness
+	* libidu/scanners.c (long_options_c, long_options_asm)
+	(long_options_text, long_options_perl): Add initializers.
+	* src/fid.c (long_options): Add initializers.
+	* src/fnid.c (long_options): Add initializers.
+	* src/lid.c (ATTRIBUTE_UNUSED): Define.
+	(long_options): Add initializers.
+	(report_nothing): Mark parameter as unused.
+	(get_editor_argv, report_edit): Adjust for const-correctness.
+	* src/mkid.c (long_options): Add initializers.
+	(report_statistics): Don't subtract "void*" pointers.  Cast to "char*".
+	* src/xtokid.c (long_options): Add initializers.
+
+	remove redundant "const" in declarations
+	* libidu/scanners.c (languages_0, long_options_c): Likewise.
+	(long_options_asm, long_options_text, long_options_perl): Likewise.
+	* src/fid.c (long_options): Likewise.
+	* src/fnid.c (long_options): Likewise.
+	* src/lid.c (long_options): Likewise.
+	* src/mkid.c (long_options): Likewise.
+	* src/xtokid.c (long_options): Likewise.
+
+	* maint.mk: sync from coreutils
+
+2008-06-14  Jim Meyering  <meyering@redhat.com>
+
+	sync maint.mk from coreutils, and adjust to conform
+	* libidu/scanners.c (long_options_c, long_options_asm): Add "const".
+	(long_options_text, long_options_perl): Likewise.
+	* src/fnid.c (long_options): Likewise.
+	* src/lid.c (long_options): Likewise.
+	* src/xtokid.c (long_options): Likewise.
+
+2008-06-04  Jim Meyering  <meyering@redhat.com>
+
+	exempt the four new src/lid-?id.c files from config.h test
+	* .x-sc_require_config_h: Add the regexp.
+
+	use gnulib's progname module
+	* bootstrap.conf (gnulib_modules): Add progname.
+	* src/mkid.c: Include "progname.h".
+	(program_name): Remove declaration.
+	(main): Call set_program_name rather than setting program_name.
+	* src/fid.c: Likewise.
+	* src/fnid.c: Likewise.
+	* src/lid.c: Likewise.
+	* src/xtokid.c: Likewise.
+
+	* maint.mk: sync from coreutils
+
+2008-05-30  Jim Meyering  <meyering@redhat.com>
+
+	* bootstrap.conf (gnulib_modules): Add autobuild.
+
+2008-05-28  Jim Meyering  <meyering@redhat.com>
+
+	* maint.mk: Merge from coreutils.
+
+	build aid, eid, and gid as binaries (were scripts)
+	* src/lid.c: Include "lid.h".
+	(main): Set defaults based on new global, lid_mode.
+	* src/Makefile.am (bin_PROGRAMS): Add aid, eid, gid.
+	(dist_bin_SCRIPTS): Remove them from this list.
+	(noinst_HEADERS, aid_SOURCES, eid_SOURCES): Define.
+	(gid_SOURCES, lid_SOURCES): Define.
+	* src/aid, src/eid, src/gid: Remove scripts.
+	* src/lid-aid.c, src/lid-eid.c, src/lid-gid.c, src/lid-lid.c:
+	* src/lid.h: New files.
+	* man/Makefile.am (aid.1, eid.1, gid.1): Adjust dependencies.
+	* .gitignore: Add src/aid, src/eid, src/gid.
+
+2008-05-27  Jim Meyering  <meyering@redhat.com>
+
+	enforce --help and --version compliance
+	* configure.ac (AM_INIT_AUTOMAKE): Add std-options.
+
+	perform gnulib tests first
+	* Makefile.am (SUBDIRS): Make gnulib-tests precede testsuite.
+
+2008-05-22  Jim Meyering  <meyering@redhat.com>
+
+	don't ignore pre-fclose ID-file write error
+	* src/mkid.c (write_id_file): Test ferror, too.
+
+2008-05-20  Jim Meyering  <meyering@redhat.com>
+
+	detect write error on stdout
+	* src/fid.c: Include "closeout.h".
+	(main): Use it via atexit.
+	* src/fnid.c (main): Likewise.
+	* src/lid.c (main): Likewise.
+	* src/mkid.c (main): Likewise.
+	* src/xtokid.c (main): Likewise.
+	* NEWS: Mention the bug fixes.
+
+2008-05-19  Jim Meyering  <meyering@redhat.com>
+
+	recognize more suffixes: .mk, .ac, .bz2, .lzma.
+	* libidu/id-lang.map: Add .mk -> make, .ac -> m4.
+	Handle .bz2 and .lzma, too.
+	* NEWS: Mention this.  Add a few more news items.
+
+2008-05-17  Jim Meyering  <meyering@redhat.com>
+
+	tighten scope in libidu/, too
+	Mark with "extern" the symbols that belong that way.
+	Make the others static.
+	* libidu/dynvec.h (dv_fill):
+	* libidu/fnprint.c (cw_dlink):
+	* libidu/hash.h (qsort_cmp_t):
+	* libidu/idfile.h (io_func_t):
+	* libidu/scanners.c (lang_args_obstack, languages_0, languages_N):
+	(language_help_me, language_getopt, get_language):
+	(lang_args_index):
+	* libidu/walker.c (largest_member_file):
+	* maint.mk (extract_char, today):
+	* src/fid.c (long_options):
+	* src/fnid.c (cw_dlink):
+	* src/lid.c (cw_dlink):
+	* src/xtokid.c (cw_dlink):
+
+	* src/Makefile.am (sc_tight_scope): Improve.
+
+	make more functions static
+
+	declare many global variable to be "static"
+	Remove the few that were thus exposed as being unused.
+	Remove some unused prototypes.
+
+	tests: make scope check work when $(noinst_HEADERS) is empty
+	* src/Makefile.am (sc_tight_scope): Add /dev/null as an argument
+	to the sed-based variable filter, in case $(noinst_HEADERS) is empty.
+
+	Remove unused functions.
+	* src/lid.c (linetty): Remove unused function.
+	(file_name_wildcard): Likewise.
+
+	* src/lid.c (strcasestr): Remove function.
+
+	make functions static
+
+	tests: enable scoping check
+	* cfg.mk (local-checks-to-skip): Don't skip sc_tight_scope anymore.
+	* src/Makefile.am (sc_tight_scope): New rule.  From coreutils.
+
+	* bootstrap: Sync from coreutils.
+
+	Generate man pages, update from coreutils.
+	* configure.ac (AC_CONFIG_FILES): Add man/Makefile.
+	Check for help2man.
+	* man/Makefile.am: New file.
+	* .gitignore: Add .version and .tarball-version.
+	* Makefile.am (SUBDIRS): Add man.
+	* cfg.mk: Update from coreutils.
+	* maint.mk: Likewise.
+	* man/aid.x: New file.
+	* man/defid.x: Likewise.
+	* man/eid.x: Likewise.
+	* man/fid.x: Likewise.
+	* man/fnid.x: Likewise.
+	* man/gid.x: Likewise.
+	* man/lid.x: Likewise.
+	* man/mkid.x: Likewise.
+	* man/xtokid.x: Likewise.
+
+2008-05-10  Jim Meyering  <meyering@redhat.com>
+
+	* src/defid: Handle --help and --version.
+
+	* configure.ac (AM_INIT_AUTOMAKE): Add dist-lzma.
+
+	Use new gnulib gnumakefile module.
+	* bootstrap.conf (gnulib_modules): Pull in new module.
+	* GNUmakefile: Remove from version control.
+	* .gitignore: Update.
+	* configure.ac (AC_CONFIG_LINKS): Delete; rely on gnulib to do
+	this now.
+	* Makefile.am (EXTRA_DIST): Remove GNUmakefile.
+
+2008-03-21  Jim Meyering  <meyering@redhat.com>
+
+	Sync GNUmakefile with gnulib.
+	* GNUmakefile (Makefile.cfg): Rename...
+	(cfg.mk): ...to this, and make optional.
+	(GNUmakefile.cfg): Delete, redundant with cfg.mk.
+	(Makefile.maint): Rename...
+	(maint.mk): ...to this.
+	(all) [!_have-Makefile]: Rename...
+	(abort-due-to-no-makefile): ...to this, and invoke via
+	.DEFAULT_GOAL to pick up all targets.
+	* Makefile.cfg: Rename...
+	* cfg.mk: ...to this.
+	* Makefile.maint: Rename...
+	* maint.mk ...to this.
+	(ME): Reflect rename.
+	(makefile-check, m4-check, author_mark_check, msg): Use $(ME)
+	rather than hard-coded name.
+
+2008-03-18  Jim Meyering  <meyering@redhat.com>
+
+	* bootstrap.conf (gnulib_modules): Add useless-if-before-free.
+
+	Update from coreutils.
+	* GNUmakefile: Likewise.
+	* Makefile.maint: Likewise.
+	* configure.ac: Likewise.
+
+2008-03-03  Jim Meyering  <meyering@redhat.com>
+
+	Update .tarball-version-related rules from coreutils.
+	* GNUmakefile: Support VPATH "make dist".  Namespace clean-up.
+	Remove .version-creating rules.
+	* configure.ac (AC_INIT): Use .tarball-version, not .version
+	* bootstrap: Update from coreutils.
+	* bootstrap.conf (obsolete_gnulib_modules): Remove free.
+	* Makefile.am: Emit .tarball-version into tarball.
+
+2008-02-27  Jim Meyering  <meyering@redhat.com>
+
+	* testsuite/Makefile.am (TESTS_ENVIRONMENT): Remove abs_top_builddir setting.  Not needed.
+
+2008-02-14  Bob Proulx  <bob@proulx.com>
+
+	Fix testsuite PATH for VPATH builds.
+	* testsuite/Makefile.am (PATH): Prepend $(abs_top_builddir).
+
+	Add version report for aid program test dependency.
+	* testsuite/infloop-kawa-el [VERBOSE]: Print aid version.
+
+2008-02-14  Jim Meyering  <meyering@redhat.com>
+
+	aid, eid, gid: Make these scripts executable in srcdir.
+	This fixes a test failure that would occur when "aid"
+	is not already installed anywhere in your search PATH.
+	* src/aid: chmod a+x.
+	* src/eid: Likewise.
+	* src/gid: Likewise.
+	Reported by Bob Proulx.
+
+2008-02-09  Jim Meyering  <meyering@redhat.com>
+
+	* lisp/idutils.el (gid): Use read-string, not deprecated read-input.
+
+	Remove version comment from idutils.el.
+	* lisp/idutils.el: Remove version string comment.
+	* Makefile.am (distcheck-hook): Remove rule.
+
+	* Makefile.am (dist-hook): Write ChangeLog only if .git/ exists.
+
+	Modify bootstrap.conf, not bootstrap (for ChangeLog-generation).
+	* bootstrap.conf: touch ChangeLog here, ...
+	* bootstrap: ...not here.
+
+	Generate ChangeLog at "make dist" time.
+	* Makefile.am (dist-hook): New rule.
+	* bootstrap.conf (gnulib_modules): Add gitlog-to-changelog.
+
+	Pull vc-list-files from gnulib.
+	* bootstrap.conf (gnulib_modules): Add vc-list-files.
+	* build-aux/vc-list-files: Remove from version-control.
+
+	Makefile.maint: Update from coreutils.
+
+2008-01-30  Jim Meyering  <meyering@redhat.com>
+
+	Remove unnecessary test before "free".
+	* libidu/walker.c (get_current_dir_link): Remove "if (xcwd)"
+	just before "free (xcwd);".
+
+	Remove more files that are now in build-aux/.
+	* config.rpath: Remove file.
+	* mkinstalldirs: Remove file.
+
+	Avoid printf-format-vs-arg type mismatch warnings.
+	* src/mkid.c (report_statistics): Cast ptrdiff_t to unsigned long long.
+
+	Remove trailing blanks.
+	* README-alpha:
+	* TODO:
+	* doc/idutils.texi:
+	* libidu/scanners.c (set_uchar_ctype, ARGS, get_token_lisp):
+	* src/Makefile.am:
+	* src/fid.c (main):
+	* src/lid.c (report_edit):
+	* Makefile.cfg (local-checks-to-skip): Remove sc_trailing_blank,
+	thus enabling that check.
+
+	Remove useless multiply-by-1.  Avoid sizeof TYPE: use equivalent sizeof *VAR.
+	* libidu/dynvec.c (make_dynvec):
+	* libidu/scanners.c (parse_language_map_file, parse_args_c)
+	(parse_args_asm, parse_args_text):
+
+	Allocate safely.
+	* libidu/dynvec.c (make_dynvec, dynvec_freeze, dynvec_append):
+	Use xnmalloc, not xmalloc (n * sizeof T).
+	Use xnrealloc, not xrealloc (p, n * sizeof T).
+	* libidu/walker.c (append_strings_to_vector, vectorize_string): Likewise.
+	* libidu/scanners.c (tokenize_args_string): Likewise.
+
+	Use xstrdup, not strdup.
+	* src/lid.c (get_editor_argv): Use xstrdup, not strdup.
+	* libidu/walker.c (get_current_dir_link): Likewise.
+	* libidu/idfile.c: Include "xalloc.h".
+	(locate_id_file_name): Handle failed strdup.
+	* libidu/scanners.c (parse_args_text, parse_args_perl): Likewise.
+	(parse_args_c, parse_args_asm): Likewise.
+
+2008-01-14  Jim Meyering  <meyering@redhat.com>
+
+	fid: avoid buffer overrun.
+	* libidu/idread.c (deserialize_file_links): Fix typo (or think-o).
+
+	Here's what valgrind reported:
+
+	  Invalid write of size 4
+	     at 0x804A15A: deserialize_file_links (idread.c:132)
+	     by 0x8049DEE: maybe_read_id_file (idread.c:74)
+	     by 0x8049C64: read_id_file (idread.c:46)
+	     by 0x80492FB: main (fid.c:170)
+	   Address 0x41EB944 is 628 bytes inside a block of size 629 alloc'd
+	     at 0x4022765: malloc (vg_replace_malloc.c:149)
+	     by 0x80516BC: xnmalloc_inline (xmalloc.c:49)
+	     by 0x80516EE: xmalloc (xmalloc.c:65)
+	     by 0x8049E2F: deserialize_file_links (idread.c:87)
+	     by 0x8049DEE: maybe_read_id_file (idread.c:74)
+	     by 0x8049C64: read_id_file (idread.c:46)
+	     by 0x80492FB: main (fid.c:170)
+
+	Replace uses of xrealloc with uses of safer variants.
+	* src/mkid.c (write_id_file): Avoid risk of overflow.
+	(make_sibling_summary, add_token_to_summary): Likewise.
+
+	src/mkid.c: Remove now-unused declaration of dirname.
+
+	lisp/idutils.el: Restore "Version: ..." comment.
+
+	Ensure that a ChangeLog file exists before running automake.
+	Add ChangeLog to .gitignore.
+
+	Convert to coreutils-flavored gnulib.
+
+	ChangeLog-2007: Rename from ChangeLog.
+
+	distribute.sh: Remove now-unused file.
+	* distribute.sh: Remove file.  Now, use "make alpha", "make stable", etc.
+	and follow resulting instructions that tell how to invoke build-aux/gnupload.
+
+	Update copyright year.
+
+	Avoid a test failure.
+	* testsuite/infloop-kawa-el: Invoke mkid with -m, since
+	id-lang.map may not be installed yet.
+	* testsuite/Makefile.am (TESTS_ENVIRONMENT): Set abs_top_srcdir.
+
+	Mark diagnostics for translation.
+	* src/mkid.c (main): Mark with _(...).
+	* libidu/walker.c (exclude_languages, include_languages): Likewise.
+	* src/lid.c (report_grep): Likewise.
+
+	Put at least two spaces between an option and its description.
+	help2man requires this.
+	* src/lid.c: Add another space before the description.
+	* src/mkid.c: Likewise.
+	* src/xtokid.c: Likewise.
+
+	Adjust indentation in ChangeLog to use only TABs.
+
+	Avoid SPACE-TAB.
+	* testsuite/consistency: Use TAB-SPACE, instead.
+	* src/defid: Likewise.
+
+	Don't cast x*alloc return value.
+	* libidu/hash.c (hash_rehash): Remove cast.
+	(hash_init): Likewise.
+
+2008-01-04  Jim Meyering  <meyering@redhat.com>
+
+	Don't include <strsep.h>. Now it's guaranteed to be in <string.h>.
+	* libidu/walker.c: Don't include <strsep.h>.
+	* libidu/idfile.c: Likewise.
+	* libidu/scanners.c: Likewise.
+
+	Remove files now pulled from gnulib.
+	Also remove all intl/ files.

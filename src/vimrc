@@ -8,6 +8,8 @@
 " zj    move down to start of next fold
 " zk    move up to end of previous fold
 " Manage plugins. {{{1
+set runtimepath+=$HOME/.vim/vimpdb
+set runtimepath+=$HOME/.vim/pythoncomplete
 runtime macros/matchit.vim
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
@@ -31,6 +33,10 @@ set incsearch                " Start searching immediately
 
 " Don't use Ex mode, use Q for formatting
 map Q gq
+
+" Window resizing
+map - <C-W>-
+map = <C-W>+
 
 " CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
 " so that you can undo CTRL-U after inserting a line break.
@@ -56,6 +62,7 @@ if has("autocmd")
   " Use the default filetype settings, so that mail gets 'tw' set to 72,
   " 'cindent' is on in C files, etc.
   " Also load indent files, to automatically do language-dependent indenting.
+  filetype on
   filetype plugin indent on
 
   " Put these in an autocmd group, so that we can delete them easily.
@@ -113,7 +120,7 @@ set directory=~/tmp
 if has("autocmd")
   autocmd FileType html,css,scss,ruby,pml,yaml,coffee,vim setlocal ts=2 sts=2 sw=2 expandtab
   autocmd FileType python,javascript setlocal list
-  autocmd FileType python setlocal omnifunc=pysmell#Complete
+  autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 endif
 
 " Toggles & Switches (Leader commands) {{{1

@@ -1,0 +1,945 @@
+# translation of idutils-4.2.ru.po to Russian
+# Перевод id-utils
+# Copyright (C) 2000, 2009 Free Software Foundation, Inc.
+# This file is distributed under the same license as the idutils package.
+#
+# Denis Perchine <dyp@perchine.com>, 2000.
+# Yuri Kozlov <yuray@komyakino.ru>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: idutils 4.2\n"
+"Report-Msgid-Bugs-To: bug-idutils@gnu.org\n"
+"POT-Creation-Date: 2010-06-17 08:37+0200\n"
+"PO-Revision-Date: 2009-02-08 19:43+0300\n"
+"Last-Translator: Yuri Kozlov <yuray@komyakino.ru>\n"
+"Language-Team: Russian <gnu@mx.ru>\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: lib/closeout.c:112
+msgid "write error"
+msgstr ""
+
+#: lib/error.c:181
+msgid "Unknown system error"
+msgstr ""
+
+#: lib/getopt.c:527 lib/getopt.c:543
+#, fuzzy, c-format
+msgid "%s: option '%s' is ambiguous\n"
+msgstr "%s: ключ `%s' неоднозначен\n"
+
+#: lib/getopt.c:576 lib/getopt.c:580
+#, fuzzy, c-format
+msgid "%s: option '--%s' doesn't allow an argument\n"
+msgstr "%s: ключ `--%s' не имеет аргумента\n"
+
+#: lib/getopt.c:589 lib/getopt.c:594
+#, fuzzy, c-format
+msgid "%s: option '%c%s' doesn't allow an argument\n"
+msgstr "%s: ключ `%c%s' не имеет аргумента\n"
+
+#: lib/getopt.c:637 lib/getopt.c:656
+#, fuzzy, c-format
+msgid "%s: option '--%s' requires an argument\n"
+msgstr "%s: ключу `%s' требуется аргумент\n"
+
+#: lib/getopt.c:694 lib/getopt.c:697
+#, fuzzy, c-format
+msgid "%s: unrecognized option '--%s'\n"
+msgstr "%s: неизвестный ключ `--%s'\n"
+
+#: lib/getopt.c:705 lib/getopt.c:708
+#, fuzzy, c-format
+msgid "%s: unrecognized option '%c%s'\n"
+msgstr "%s: неизвестный ключ `%c%s'\n"
+
+#: lib/getopt.c:757 lib/getopt.c:760
+#, fuzzy, c-format
+msgid "%s: invalid option -- '%c'\n"
+msgstr "%s: неверный ключ -- %c\n"
+
+#: lib/getopt.c:810 lib/getopt.c:827 lib/getopt.c:1035 lib/getopt.c:1053
+#, fuzzy, c-format
+msgid "%s: option requires an argument -- '%c'\n"
+msgstr "%s: ключ требует аргумента -- %c\n"
+
+#: lib/getopt.c:883 lib/getopt.c:899
+#, fuzzy, c-format
+msgid "%s: option '-W %s' is ambiguous\n"
+msgstr "%s: ключ `-W%s' неоднозначен\n"
+
+#: lib/getopt.c:923 lib/getopt.c:941
+#, fuzzy, c-format
+msgid "%s: option '-W %s' doesn't allow an argument\n"
+msgstr "%s: ключ `-W%s' не имеет аргумента\n"
+
+#: lib/getopt.c:962 lib/getopt.c:980
+#, fuzzy, c-format
+msgid "%s: option '-W %s' requires an argument\n"
+msgstr "%s: ключу `%s' требуется аргумент\n"
+
+#: lib/obstack.c:423 lib/obstack.c:425 lib/xalloc-die.c:34
+msgid "memory exhausted"
+msgstr ""
+
+#: lib/openat-die.c:34
+#, fuzzy, c-format
+msgid "unable to record current working directory"
+msgstr "не удалось получить рабочий каталог"
+
+#: lib/openat-die.c:52
+#, fuzzy, c-format
+msgid "failed to return to initial working directory"
+msgstr "не удалось получить рабочий каталог"
+
+#. TRANSLATORS:
+#. Get translations for open and closing quotation marks.
+#.
+#. The message catalog should translate "`" to a left
+#. quotation mark suitable for the locale, and similarly for
+#. "'".  If the catalog has no translation,
+#. locale_quoting_style quotes `like this', and
+#. clocale_quoting_style quotes "like this".
+#.
+#. For example, an American English Unicode locale should
+#. translate "`" to U+201C (LEFT DOUBLE QUOTATION MARK), and
+#. should translate "'" to U+201D (RIGHT DOUBLE QUOTATION
+#. MARK).  A British English Unicode locale should instead
+#. translate these to U+2018 (LEFT SINGLE QUOTATION MARK)
+#. and U+2019 (RIGHT SINGLE QUOTATION MARK), respectively.
+#.
+#. If you don't know what to put here, please see
+#. <http://en.wikipedia.org/wiki/Quotation_mark#Glyphs>
+#. and use glyphs suitable for your language.
+#: lib/quotearg.c:272
+msgid "`"
+msgstr ""
+
+#: lib/quotearg.c:273
+msgid "'"
+msgstr ""
+
+#: lib/regcomp.c:134
+msgid "Success"
+msgstr ""
+
+#: lib/regcomp.c:137
+msgid "No match"
+msgstr ""
+
+#: lib/regcomp.c:140
+msgid "Invalid regular expression"
+msgstr ""
+
+#: lib/regcomp.c:143
+msgid "Invalid collation character"
+msgstr ""
+
+#: lib/regcomp.c:146
+msgid "Invalid character class name"
+msgstr ""
+
+#: lib/regcomp.c:149
+msgid "Trailing backslash"
+msgstr ""
+
+#: lib/regcomp.c:152
+msgid "Invalid back reference"
+msgstr ""
+
+#: lib/regcomp.c:155
+msgid "Unmatched [ or [^"
+msgstr ""
+
+#: lib/regcomp.c:158
+msgid "Unmatched ( or \\("
+msgstr ""
+
+#: lib/regcomp.c:161
+msgid "Unmatched \\{"
+msgstr ""
+
+#: lib/regcomp.c:164
+msgid "Invalid content of \\{\\}"
+msgstr ""
+
+#: lib/regcomp.c:167
+msgid "Invalid range end"
+msgstr ""
+
+#: lib/regcomp.c:170
+msgid "Memory exhausted"
+msgstr ""
+
+#: lib/regcomp.c:173
+msgid "Invalid preceding regular expression"
+msgstr ""
+
+#: lib/regcomp.c:176
+msgid "Premature end of regular expression"
+msgstr ""
+
+#: lib/regcomp.c:179
+msgid "Regular expression too big"
+msgstr ""
+
+#: lib/regcomp.c:182
+msgid "Unmatched ) or \\)"
+msgstr ""
+
+#: lib/regcomp.c:703
+msgid "No previous regular expression"
+msgstr ""
+
+#: libidu/fnprint.c:137
+#, c-format
+msgid "invalid `--separator' style: `%s'"
+msgstr "неверный стиль `--separator': `%s'"
+
+#: libidu/idfile.c:106
+#, c-format
+msgid "can't determine the io_size of a string!"
+msgstr "не удалось определить io_size строки!"
+
+#: libidu/idread.c:49 src/lid.c:600 src/mkid.c:589 src/xtokid.c:340
+#, c-format
+msgid "can't open `%s'"
+msgstr "не удалось открыть `%s'"
+
+#: libidu/idread.c:68
+#, c-format
+msgid "`%s' is not an ID file! (bad magic #)"
+msgstr "`%s' не является файлом ID! (неверный префикс #)"
+
+#: libidu/idread.c:70
+#, c-format
+msgid "`%s' is version %d, but I only grok version %d"
+msgstr "`%s' версии %d: возможна работа только с версией %d"
+
+#: libidu/idread.c:190
+#, c-format
+msgid "unsupported size in io_read (): %d"
+msgstr "не поддерживаемый размер в io_read (): %d"
+
+#: libidu/idread.c:200 libidu/idwrite.c:169
+#, c-format
+msgid "unknown I/O type: %d"
+msgstr "неизвестный тип ввода/вывода: %d"
+
+#: libidu/idu-hash.c:51
+#, c-format
+msgid "can't allocate %ld bytes for hash table: memory exhausted"
+msgstr "не удалось выделить %ld байт для хэш-таблицы: закончилась память"
+
+#: libidu/idu-hash.c:264
+#, c-format
+msgid "Load=%ld/%ld=%.0f%%, "
+msgstr "Загружено=%ld/%ld=%.0f%%, "
+
+#: libidu/idu-hash.c:266
+#, c-format
+msgid "Rehash=%d, "
+msgstr "Повторных вызовов хэш-функции=%d, "
+
+#: libidu/idu-hash.c:267
+#, c-format
+msgid "Collisions=%ld/%ld=%.0f%%"
+msgstr "Коллизий=%ld/%ld=%.0f%%"
+
+#: libidu/idwrite.c:158
+#, c-format
+msgid "unsupported size in io_write (): %d"
+msgstr "не поддерживаемый размер в io_write (): %d"
+
+#: libidu/scanners.c:109
+#, c-format
+msgid "unrecognized language: `%s'"
+msgstr "неизвестный язык: `%s'"
+
+#: libidu/scanners.c:169
+#, c-format
+msgid "can't allocate language args obstack: memory exhausted"
+msgstr ""
+"не удалось выделить память под obstack аргументов языка: закончилась память"
+
+#: libidu/scanners.c:223 libidu/scanners.c:292
+#, c-format
+msgid "can't allocate language args: memory exhausted"
+msgstr "не удалось выделить память под аргументы языка: закончилась память"
+
+#: libidu/scanners.c:231
+#, c-format
+msgid "language name expected following `%s' in file `%s'"
+msgstr "имя языка `%s' ожидалось в файле `%s'"
+
+#: libidu/scanners.c:286
+#, c-format
+msgid "can't open language map file `%s'"
+msgstr "не удалось открыть файл соотношения языков `%s'"
+
+#: libidu/scanners.c:288
+#, c-format
+msgid "can't get size of map file `%s'"
+msgstr "не удалось получить размер файла соотношения `%s'"
+
+#: libidu/scanners.c:298
+#, c-format
+msgid "can't read language map file `%s'"
+msgstr "не удалось прочитать файл соотношения языков `%s'"
+
+#: libidu/scanners.c:301
+#, c-format
+msgid "can't read entire language map file `%s'"
+msgstr "не удалось прочитать файл соотношения языков `%s' полностью"
+
+#: libidu/scanners.c:450
+#, c-format
+msgid ""
+"C language:\n"
+"  -k,--keep=CHARS        Allow CHARS in single-token strings, keep the "
+"result\n"
+"  -i,--ignore=CHARS      Allow CHARS in single-token strings, toss the "
+"result\n"
+"  -u,--strip-underscore  Strip a leading underscore from single-token "
+"strings\n"
+msgstr ""
+"Язык C:\n"
+"  -k,--keep=CHARS        Разрешить CHARS в строках-лексемах, сохранить\n"
+"                         результат\n"
+"  -i,--ignore=CHARS      Разрешить CHARS в строках-лексемах, выкинуть\n"
+"                         результат\n"
+"  -u,--strip-underscore  Удалять подчёркивание в начале строк-лексем\n"
+
+#: libidu/scanners.c:461
+#, c-format
+msgid ""
+"C++ language:\n"
+"  -k,--keep=CHARS        Allow CHARS in single-token strings, keep the "
+"result\n"
+"  -i,--ignore=CHARS      Allow CHARS in single-token strings, toss the "
+"result\n"
+"  -u,--strip-underscore  Strip a leading underscore from single-token "
+"strings\n"
+msgstr ""
+"Язык C++:\n"
+"  -k,--keep=CHARS        Разрешить CHARS в строках-лексемах, сохранить\n"
+"                         результат\n"
+"  -i,--ignore=CHARS      Разрешить CHARS в строках-лексемах, выкинуть\n"
+"                         результат\n"
+"  -u,--strip-underscore  Удалять подчёркивание в начале строк-лексем\n"
+
+#: libidu/scanners.c:472
+#, c-format
+msgid ""
+"Java language:\n"
+"  -k,--keep=CHARS        Allow CHARS in single-token strings, keep the "
+"result\n"
+"  -i,--ignore=CHARS      Allow CHARS in single-token strings, toss the "
+"result\n"
+"  -u,--strip-underscore  Strip a leading underscore from single-token "
+"strings\n"
+msgstr ""
+"Язык Java:\n"
+"  -k,--keep=CHARS        Разрешить CHARS в строках-лексемах, сохранить\n"
+"                         результат\n"
+"  -i,--ignore=CHARS      Разрешить CHARS в строках-лексемах, выкинуть\n"
+"                         результат\n"
+"  -u,--strip-underscore  Удалять подчёркивание в начале строк-лексем\n"
+
+#: libidu/scanners.c:755 libidu/scanners.c:1024 libidu/scanners.c:1227
+#: libidu/scanners.c:1497
+#, c-format
+msgid "junk: `%c'"
+msgstr "мусор: `%c'"
+
+#: libidu/scanners.c:757 libidu/scanners.c:1026 libidu/scanners.c:1229
+#: libidu/scanners.c:1499
+#, c-format
+msgid "junk: `\\%03o'"
+msgstr "мусор: `\\%03o'"
+
+#: libidu/scanners.c:859
+#, c-format
+msgid ""
+"Assembly language:\n"
+"  -c,--comment=CHARS     Any of CHARS starts a comment until end-of-line\n"
+"  -k,--keep=CHARS        Allow CHARS in tokens, and keep the result\n"
+"  -i,--ignore=CHARS      Allow CHARS in tokens, and toss the result\n"
+"  -u,--strip-underscore  Strip a leading underscore from tokens\n"
+"  -n,--no-cpp            Don't handle C pre-processor directives\n"
+msgstr ""
+"Язык ассемблера:\n"
+"  -c,--comment=CHARS     Любой из знаков CHARS начинает комментарий до\n"
+"                         конца строки\n"
+"  -k,--keep=CHARS        Разрешить CHARS в лексемах, сохранить результат\n"
+"  -i,--ignore=CHARS      Разрешить CHARS в лексемах, выкинуть результат\n"
+"  -u,--strip-underscore  Удалять подчёркивание в начале строк-лексем\n"
+"  -n,--no-cpp            Не обрабатывать директивы препроцессора C\n"
+
+#: libidu/scanners.c:1130
+#, c-format
+msgid ""
+"Text language:\n"
+"  -i,--include=CHAR-CLASS  Treat characters of CHAR-CLASS as token "
+"constituents\n"
+"  -x,--exclude=CHAR-CLASS  Treat characters of CHAR-CLASS as token "
+"delimiters\n"
+msgstr ""
+"Текстовый язык:\n"
+"  -i,--include=CHAR-CLASS  Воспринимать знаки из CHAR-CLASS как\n"
+"                           составляющие лексем\n"
+"  -x,--exclude=CHAR-CLASS  Воспринимать знаки из CHAR-CLASS как\n"
+"                           разделители лексем\n"
+
+#: libidu/scanners.c:1335
+#, c-format
+msgid ""
+"Perl language:\n"
+"  -i,--include=CHAR-CLASS  Treat characters of CHAR-CLASS as token "
+"constituents\n"
+"  -x,--exclude=CHAR-CLASS  Treat characters of CHAR-CLASS as token "
+"delimiters\n"
+"  -d,--dtags  Include documentation tags\n"
+msgstr ""
+"Язык Perl:\n"
+"  -i,--include=CHAR-CLASS  Воспринимать знаки из CHAR-CLASS как\n"
+"                           составляющие лексем\n"
+"  -x,--exclude=CHAR-CLASS  Воспринимать знаки из CHAR-CLASS как\n"
+"                           разделители лексем\n"
+"  -d,--dtags               Включать теги документации\n"
+
+#: libidu/scanners.c:1598
+#, c-format
+msgid "Lisp language:\n"
+msgstr "Язык Lisp:\n"
+
+#: libidu/walker.c:124
+#, c-format
+msgid "can't read directory `%s' (`.' from `%s')"
+msgstr "не удалось прочитать каталог `%s' (`.' из `%s')"
+
+#: libidu/walker.c:191
+#, c-format
+msgid "notice: `%s' was a %s, but is now a %s!"
+msgstr "замечание: `%s' был %s, а сейчас %s!"
+
+#: libidu/walker.c:192 libidu/walker.c:193
+msgid "file"
+msgstr "файл"
+
+#: libidu/walker.c:192 libidu/walker.c:193
+msgid "directory"
+msgstr "каталог"
+
+#: libidu/walker.c:322
+#, c-format
+msgid "warning: `%s' and `%s' are the same file, but yield different scans!"
+msgstr ""
+"внимание: `%s' и `%s' тот же самый файл, но выдает различные результаты "
+"сканирования"
+
+#: libidu/walker.c:416
+#, c-format
+msgid "notice: scan parameters changed for `%s'"
+msgstr "замечание: параметры сканирования изменены для `%s'"
+
+#: libidu/walker.c:498 libidu/walker.c:506
+#, c-format
+msgid "can't mix --include and --exclude options"
+msgstr ""
+
+#: libidu/walker.c:616
+#, c-format
+msgid "can't get working directory"
+msgstr "не удалось получить рабочий каталог"
+
+#: libidu/walker.c:671
+#, c-format
+msgid "can't chdir to `%s'"
+msgstr "не удалось перейти в `%s'"
+
+#: libidu/walker.c:676
+#, c-format
+msgid "can't chdir to `%s' from `%s'"
+msgstr "не удалось перейти в `%s' из `%s'"
+
+#: libidu/walker.c:737
+#, c-format
+msgid "can't lstat `%s' from `%s'"
+msgstr "не удалось выполнить lstat `%s' из `%s'"
+
+#: libidu/walker.c:745
+#, c-format
+msgid "can't stat `%s' from `%s'"
+msgstr "не удалось выполнить stat `%s' из `%s'"
+
+#: src/fid.c:72 src/fnid.c:51 src/lid.c:241 src/mkid.c:130 src/xtokid.c:55
+#, c-format
+msgid "Try `%s --help' for more information.\n"
+msgstr "Подробная справка по команде `%s --help'.\n"
+
+#: src/fid.c:80
+#, c-format
+msgid "Usage: %s [OPTION] FILENAME [FILENAME2]\n"
+msgstr "Использование: %s [КЛЮЧ] ИМЯ_ФАЙЛА [ИМЯ_ФАЙЛА2]\n"
+
+#: src/fid.c:83
+#, c-format
+msgid ""
+"List identifiers that occur in FILENAME, or if FILENAME2 is\n"
+"also given list the identifiers that occur in both files.\n"
+"\n"
+"  -f, --file=FILE  file name of ID database\n"
+"      --help       display this help and exit\n"
+"      --version    output version information and exit\n"
+msgstr ""
+"Выводит список идентификаторов, которые встречаются в ИМЯ_ФАЙЛА, или если\n"
+"есть ИМЯ_ФАЙЛА2, то выводит список идентификаторов в обоих файлах.\n"
+"\n"
+"  -f, --file=ФАЙЛ  имя файла базы данных ID\n"
+"      --help       показать справку и выйти\n"
+"      --version    вывести информацию о версии и выйти\n"
+
+#: src/fid.c:91 src/fnid.c:80 src/lid.c:290 src/mkid.c:193 src/xtokid.c:106
+#, c-format
+msgid ""
+"\n"
+"Report bugs to "
+msgstr ""
+"\n"
+"Сообщения об ошибках направляйте на "
+
+#: src/fid.c:149
+#, c-format
+msgid "no file name arguments"
+msgstr "нет аргументов имён файлов"
+
+#: src/fid.c:154
+#, c-format
+msgid "too many file name arguments"
+msgstr "слишком много аргументов имён файлов"
+
+#: src/fid.c:161 src/fnid.c:155 src/lid.c:443
+#, c-format
+msgid "can't locate `ID'"
+msgstr "не удалось найти файл `ID'"
+
+#: src/fid.c:244
+#, c-format
+msgid "`%s' is ambiguous"
+msgstr "`%s' неоднозначен"
+
+#: src/fid.c:250
+#, c-format
+msgid "`%s' not found"
+msgstr "`%s' не найден"
+
+#: src/fnid.c:68
+#, c-format
+msgid "Usage: %s [OPTION]... [PATTERN]...\n"
+msgstr "Использование: %s [OPTION]... [PATTERN]...\n"
+
+#: src/fnid.c:72
+#, c-format
+msgid ""
+"Print constituent file names that match PATTERN,\n"
+"using shell-style wildcards.\n"
+"  -f, --file=FILE        file name of ID database\n"
+"  -S, --separator=STYLE  STYLE is one of `braces', `space' or `newline'\n"
+"      --help             display this help and exit\n"
+"      --version          output version information and exit\n"
+msgstr ""
+"Печатает содержащиеся имена файлов, подходящие под шаблон PATTERN.\n"
+"  -f, --file=FILE        имя файла базы данных ID\n"
+"  -S, --separator=STYLE  STYLE может быть одним из `braces' (фигурные "
+"скобки),\n"
+"                         `space' (пробел) или `newline' (новая строка)\n"
+"      --help             показать справку и выйти\n"
+"      --version          вывести информацию о версии и выйти\n"
+
+#: src/lid.c:249
+#, c-format
+msgid "Usage: %s [OPTION]... PATTERN...\n"
+msgstr "Использование: %s [OPTION]... [PATTERN]...\n"
+
+#: src/lid.c:253
+#, fuzzy, c-format
+msgid ""
+"Query ID database and report results.\n"
+"By default, output consists of multiple lines, each line containing the\n"
+"matched identifier followed by the list of file names in which it occurs.\n"
+"\n"
+"  -f, --file=FILE       file name of ID database\n"
+"\n"
+"  -i, --ignore-case     match PATTERN case insensitively\n"
+"  -l, --literal         match PATTERN as a literal string\n"
+"  -r, --regexp          match PATTERN as a regular expression\n"
+"  -w, --word            match PATTERN as a delimited word\n"
+"  -s, --substring       match PATTERN as a substring\n"
+"            Note: If PATTERN contains extended regular expression meta-\n"
+"            characters, it is interpreted as a regular expression "
+"substring.\n"
+"            Otherwise, PATTERN is interpreted as a literal word.\n"
+"\n"
+"  -k, --key=STYLE       STYLE is one of `token', `pattern' or `none'\n"
+"  -R, --result=STYLE    STYLE is one of `filenames', `grep', `edit' or "
+"`none'\n"
+"  -S, --separator=STYLE  STYLE is one of `braces', `space' or `newline' and\n"
+"                        only applies to file names when `--"
+"result=filenames'\n"
+"            The above STYLE options control how query results are "
+"presented.\n"
+"            Defaults are --key=token --result=filenames --separator=%s\n"
+"\n"
+"  -F, --frequency=FREQ  find tokens that occur FREQ times, where FREQ\n"
+"                        is a range expressed as `N..M'.  If N is omitted, "
+"it\n"
+"                        defaults to 1, if M is omitted it defaults to "
+"MAX_USHRT\n"
+"  -a, --ambiguous=LEN   find tokens whose names are ambiguous for LEN chars\n"
+"\n"
+"  -x, --hex             only find numbers expressed as hexadecimal\n"
+"  -d, --decimal         only find numbers expressed as decimal\n"
+"  -o, --octal           only find numbers expressed as octal\n"
+"            By default, searches match numbers of any radix.\n"
+"\n"
+"      --help            display this help and exit\n"
+"      --version         output version information and exit\n"
+msgstr ""
+"Производит поиск в базе данных ID и выдает результат.\n"
+"По умолчанию вывод состоит из нескольких строк, содержащих совпадающие\n"
+"идентификаторы с последующим списков имён файлов, в которых они "
+"встречаются.\n"
+"\n"
+"  -f, --file=FILE       имя файла базы данных ID\n"
+"\n"
+"  -i, --ignore-case     совпадение с PATTERN не зависит от регистра\n"
+"  -l, --literal         буквальное совпадение с PATTERN\n"
+"  -r, --regexp          совпадение с PATTERN по регулярному выражению\n"
+"  -w, --word            совпадение с PATTERN как разделяющее слово\n"
+"  -s, --substring       совпадение с PATTERN по подстроке\n"
+"            Замечание: если PATTERN содержит мета-символы расширенного\n"
+"            регулярного выражения, он рассматривается как подстрока\n"
+"            регулярного выражения, иначе PATTERN рассматривается как слово\n"
+"\n"
+"  -k, --key=STYLE       STYLE может быть одним из `token' (лексема),\n"
+"                        `pattern' (шаблон) или `none' (нет)\n"
+"  -R, --result=STYLE    STYLE может быть одним из `filenames' (имена "
+"файлов),\n"
+"                        `grep' (поиск), `edit' (редактировать)\n"
+"                        или `none' (ничего)\n"
+"  -S, --separator=STYLE STYLE может быть одним из `braces' (фигурные "
+"скобки),\n"
+"                        `space' (пробел) или `newline' (новая строка);\n"
+"                        применяется только к именам файлов когда\n"
+"                        `--result=filenames'\n"
+"            Эти ключи управляют представлением результатов запроса.\n"
+"            Умолчания: --key=token --result=filenames --separator=%s\n"
+"\n"
+"  -F, --frequency=FREQ  искать лексемы, которые появляются FREQ раз, где\n"
+"                        FREQ - это диапазон, представленный как 'N..M'.\n"
+"                        Если N опущено, то по умолчанию равно 1.\n"
+"                        Если M опущено, то по умолчанию равно MAX_USHRT\n"
+"  -a, --ambiguous=LEN   искать лексемы, которые неоднозначны при длине LEN\n"
+"\n"
+"  -x, --hex             находить только шестнадцатеричные числа\n"
+"  -d, --decimal         находить только десятичные числа\n"
+"  -o, --octal           находить только восьмеричные числа\n"
+"            По умолчанию поиск находит числа с любым основанием.\n"
+"\n"
+"      --help            показать справку и выйти\n"
+"      --version         вывести информацию о версии и выйти\n"
+
+#: src/lid.c:289
+msgid "braces"
+msgstr "фигурные скобки"
+
+#: src/lid.c:289
+msgid "space"
+msgstr "пробел"
+
+#: src/lid.c:383
+#, c-format
+msgid "notice: use of `-e' is deprecated, use `-r' instead"
+msgstr "замечание: использование `-e' не рекомендуется, используйте `-r'"
+
+#: src/lid.c:464
+#, c-format
+msgid "All identifiers are non-ambiguous within the first %d characters\n"
+msgstr "Все идентификаторы однозначны по первым %d знакам\n"
+
+#: src/lid.c:499
+#, c-format
+msgid "invalid `--key' style: `%s'"
+msgstr "неверный стиль `--key': `%s'"
+
+#: src/lid.c:511
+#, c-format
+msgid "invalid `--result' style: `%s'"
+msgstr "неверный стиль `--result': `%s'"
+
+#: src/lid.c:612 src/lid.c:933
+#, c-format
+msgid "can't match regular-expression: memory exhausted"
+msgstr "не удалось сопоставить регулярное выражение: не хватает памяти"
+
+#: src/lid.c:701
+#, c-format
+msgid "edit? [y1-9^S/nq] "
+msgstr "редактировать? [y1-9^S/nq] "
+
+#: src/lid.c:770
+#, c-format
+msgid "can't fork"
+msgstr "не удалось запустить новый процесс"
+
+#: src/lid.c:792
+#, c-format
+msgid "can't exec `%s'"
+msgstr "не удалось выполнить exec `%s'"
+
+#: src/mkid.c:163 src/xtokid.c:84
+#, c-format
+msgid "Usage: %s [OPTION]... [FILE]...\n"
+msgstr "Использование: %s [OPTION]... [FILE]...\n"
+
+#: src/mkid.c:167
+#, fuzzy, c-format
+msgid ""
+"Build an identifier database.\n"
+"  -o, --output=OUTFILE    file name of ID database output\n"
+"  -f, --file=OUTFILE      synonym for --output\n"
+"  -i, --include=LANGS     include languages in LANGS (default: \"C C++ asm"
+"\")\n"
+"  -x, --exclude=LANGS     exclude languages in LANGS\n"
+"  -l, --lang-option=L:OPT pass OPT as a default for language L (see below)\n"
+"  -m, --lang-map=MAPFILE  use MAPFILE to map file names onto source "
+"language\n"
+"  -d, --default-lang=LANG  make LANG the default source language\n"
+"  -p, --prune=NAMES       exclude the named files and/or directories\n"
+"  -v, --verbose           report per file statistics\n"
+"  -s, --statistics        report statistics at end of run\n"
+"\n"
+"      --files0-from=F     tokenize only the files specified by\n"
+"                           NUL-terminated names in file F\n"
+"\n"
+"       --help              display this help and exit\n"
+"      --version           output version information and exit\n"
+"\n"
+"FILE may be a file name, or a directory name to recursively search.\n"
+"If no FILE is given, the current directory is searched by default.\n"
+"Note that the `--include' and `--exclude' options are mutually-exclusive.\n"
+"\n"
+"The following arguments apply to the language-specific scanners:\n"
+msgstr ""
+"Создает базу данных идентификаторов.\n"
+"  -o, --output=OUTFILE    имя файла базы данных ID результата\n"
+"  -f, --file=OUTFILE      синоним для --output\n"
+"  -i, --include=LANGS     включает языки LANGS (по умолчанию: \"C C++ asm"
+"\")\n"
+"  -x, --exclude=LANGS     исключает языки LANGS\n"
+"  -l, --lang-option=L:OPT передает OPT как умолчание для языка L (см. ниже)\n"
+"  -m, --lang-map=MAPFILE  использовать MAPFILE для сопоставления\n"
+"                          файлов с языками\n"
+"  -d, --default-lang=LANG сделать LANG языком по умолчанию\n"
+"  -p, --prune=NAMES       исключить файлы/каталоги NAMES\n"
+"  -v, --verbose           выводить статистику для каждого файла\n"
+"  -s, --statistics        выводить статистику в конце\n"
+"\n"
+"      --help              показать справку и выйти\n"
+"      --version           вывести информацию о версии и выйти\n"
+"\n"
+"FILE может быть именем файла или каталога (для рекурсивного поиска).\n"
+"Если FILE не задан, используется текущий каталог.\n"
+"Заметим, что ключи `--include' и `--exclude' взаимно исключающие.\n"
+"\n"
+"Следующие аргументы специфичны для сканеров различных языков:\n"
+
+#: src/mkid.c:309 src/xtokid.c:194
+#, c-format
+msgid "extra operand %s"
+msgstr ""
+
+#: src/mkid.c:311 src/xtokid.c:196
+msgid "file operands cannot be combined with --files0-from"
+msgstr ""
+
+#: src/mkid.c:316 src/xtokid.c:201
+#, c-format
+msgid "cannot open %s for reading"
+msgstr ""
+
+#: src/mkid.c:350 src/xtokid.c:234
+#, c-format
+msgid "%s: read error"
+msgstr ""
+
+#: src/mkid.c:364 src/xtokid.c:248
+#, c-format
+msgid "when reading file names from stdin, no file name of %s allowed"
+msgstr ""
+
+#: src/mkid.c:378 src/mkid.c:386 src/xtokid.c:262 src/xtokid.c:270
+msgid "invalid zero-length file name"
+msgstr ""
+
+#: src/mkid.c:440
+#, c-format
+msgid "nothing to do"
+msgstr ""
+
+#: src/mkid.c:490
+#, c-format
+msgid "can't create `%s' in `%s'"
+msgstr "не удалось создать `%s' в `%s'"
+
+#: src/mkid.c:495
+#, c-format
+msgid "can't modify `%s'"
+msgstr "не удалось изменить `%s'"
+
+#: src/mkid.c:572
+#, c-format
+msgid "can't stat `%s'"
+msgstr "не удалось выполнить stat для `%s'"
+
+#: src/mkid.c:641
+#, c-format
+msgid "  new = %d/%d"
+msgstr "  новых = %d/%d"
+
+#: src/mkid.c:650
+#, c-format
+msgid "Name=%ld, "
+msgstr "Имён=%ld, "
+
+#: src/mkid.c:651
+#, c-format
+msgid "Number=%ld, "
+msgstr "Чисел=%ld, "
+
+#: src/mkid.c:652
+#, c-format
+msgid "String=%ld, "
+msgstr "Строк=%ld, "
+
+#: src/mkid.c:653
+#, c-format
+msgid "Literal=%ld, "
+msgstr "Знаков=%ld, "
+
+#: src/mkid.c:654
+#, c-format
+msgid "Comment=%ld\n"
+msgstr "Комментариев=%ld\n"
+
+#: src/mkid.c:656
+#, c-format
+msgid "Files=%ld, "
+msgstr "Файлов=%ld, "
+
+#: src/mkid.c:657
+#, c-format
+msgid "Tokens=%ld, "
+msgstr "Лексем=%ld, "
+
+#: src/mkid.c:658
+#, c-format
+msgid "Bytes=%ld Kb, "
+msgstr "Байт=%ld Кб, "
+
+#: src/mkid.c:659
+#, fuzzy, c-format
+msgid "Heap=%llu+%llu Kb, "
+msgstr "Куча=%d+%d Кб, "
+
+#: src/mkid.c:664
+#, c-format
+msgid "Output=%ld (%ld tok, %ld hit)\n"
+msgstr "Результат=%ld (%ld лексем, %ld попаданий)\n"
+
+#: src/mkid.c:668
+#, c-format
+msgid ", Freq=%ld/%ld=%.2f\n"
+msgstr ", Частота=%ld/%ld=%.2f\n"
+
+#: src/mkid.c:692
+#, c-format
+msgid "Sorting tokens...\n"
+msgstr "Выполняется сортировка лексем...\n"
+
+#: src/mkid.c:700
+#, c-format
+msgid "Writing `%s'...\n"
+msgstr "Выполняется запись `%s'...\n"
+
+#: src/mkid.c:703
+#, c-format
+msgid "can't create `%s'"
+msgstr "не удалось создать `%s'"
+
+#: src/mkid.c:715 src/mkid.c:725 src/mkid.c:772
+#, c-format
+msgid "internal limitation: offset of 2^32 or larger"
+msgstr ""
+
+#: src/mkid.c:780
+#, c-format
+msgid "error closing `%s'"
+msgstr "ошибка закрытия `%s'"
+
+#: src/mkid.c:868
+#, c-format
+msgid "level %d: %ld/%ld = %.0f%%\n"
+msgstr "уровень %d: %ld/%ld = %.0f%%\n"
+
+#: src/xtokid.c:88
+#, fuzzy, c-format
+msgid ""
+"Print all tokens found in a source file.\n"
+"  -i, --include=LANGS     include languages in LANGS (default: \"C C++ asm"
+"\")\n"
+"  -x, --exclude=LANGS     exclude languages in LANGS\n"
+"  -l, --lang-option=L:OPT pass OPT as a default for language L (see below)\n"
+"  -m, --lang-map=MAPFILE  use MAPFILE to map file names onto source "
+"language\n"
+"  -d, --default-lang=LANG  make LANG the default source language\n"
+"  -p, --prune=NAMES       exclude the named files and/or directories\n"
+"\n"
+"      --files0-from=F     tokenize only the files specified by\n"
+"                           NUL-terminated names in file F\n"
+"\n"
+"      --help              display this help and exit\n"
+"\t\t      --version           output version information and exit\n"
+"\n"
+"The following arguments apply to the language-specific scanners:\n"
+msgstr ""
+"Выводит все лексемы, найденные в исходных файлах.\n"
+"  -i, --include=LANGS     включает языки LANGS (по умолчанию: \"C C++ asm"
+"\")\n"
+"  -x, --exclude=LANGS     исключает языки LANGS\n"
+"  -l, --lang-option=L:OPT передаёт OPT как умолчание для языка L (см. ниже)\n"
+"  -m, --lang-map=MAPFILE  использовать MAPFILE для сопоставления\n"
+"                          файлов с языками\n"
+"  -d, --default-lang=LANG сделать LANG языком по умолчанию\n"
+"  -p, --prune=NAMES       исключить файлы/каталоги NAMES\n"
+"      --help              показать справку и выйти\n"
+"      --version           вывести информацию о версии и выйти\n"
+"\n"
+"Следующие аргументы специфичны для сканеров различных языков:\n"
+
+#~ msgid "%s: illegal option -- %c\n"
+#~ msgstr "%s: запрещённый ключ -- %c\n"
+
+#~ msgid ""
+#~ "\n"
+#~ "\n"
+#~ msgstr ""
+#~ "\n"
+#~ "\n"

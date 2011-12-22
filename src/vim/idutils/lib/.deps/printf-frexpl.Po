@@ -1,0 +1,22 @@
+printf-frexpl.o printf-frexpl.o: printf-frexpl.c printf-frexp.c config.h \
+  printf-frexpl.h /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/float.h \
+  math.h /usr/include/math.h /usr/include/architecture/i386/math.h \
+  /usr/include/sys/cdefs.h fpucw.h
+
+printf-frexp.c:
+
+config.h:
+
+printf-frexpl.h:
+
+/usr/lib/gcc/i686-apple-darwin10/4.2.1/include/float.h:
+
+math.h:
+
+/usr/include/math.h:
+
+/usr/include/architecture/i386/math.h:
+
+/usr/include/sys/cdefs.h:
+
+fpucw.h:
