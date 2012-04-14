@@ -66,15 +66,19 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-# MVE related environment variables
-export GRADLE_OPTS="-Xmx1024m -XX:MaxPermSize=256m -XX:+CMSClassUnloadingEnabled"
-export JAVA_HOME=/usr/lib/jvm/java-6-sun
+export FLEX_HOME=/Users/mcaldwel/Development/flex/
+export JAVA_HOME=/Library/Java/Home
 
 # project location aliases
 alias dotfiles='cd ~/Development/dotfiles'
 alias fsdev='cd ~/Development/fieldscope_django_31may2011/FieldScope-Server/src/fieldscope'
 alias fsflexdev='cd ~/Development/fieldscope_client_29sep2011/FieldScope-Client'
 alias fsclientdev=fsflexdev
+
+# Python package compilation on Mac
+function pip() {
+    env ARCHFLAGS="-arch i386 -arch x86_64" pip $@
+}
 
 # lazy aliases
 alias vi='vim'

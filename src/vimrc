@@ -1,13 +1,7 @@
 " Special thanks to Drew Neil (http://github.com/nelstrom)
 " Many settings came from his shownotes at vimcast.org
+" Thanks, also, to David Johnston
 
-" Folding cheet sheet 
-" zR    open all folds
-" zM    close all folds
-" za    toggle fold at cursor position
-" zj    move down to start of next fold
-" zk    move up to end of previous fold
-" Manage plugins. {{{1
 set runtimepath+=$HOME/.vim/vimpdb
 set runtimepath+=$HOME/.vim/pythoncomplete
 runtime macros/matchit.vim
@@ -15,7 +9,7 @@ call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 let g:GetLatestVimScripts_allowautoinstall=1
 
-" Use Vim settings, rather then Vi settings (much better!).
+" Use Vim settings, rather than Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
@@ -98,7 +92,6 @@ if !exists(":DiffOrig")
       \ | wincmd p | diffthis
 endif
 
-" Preferences {{{1
 set visualbell t_vb=
 set foldmethod=marker
 set number
@@ -118,12 +111,11 @@ set laststatus=2
 set backupdir=~/tmp
 set directory=~/tmp
 if has("autocmd")
-  autocmd FileType html,css,scss,ruby,pml,yaml,coffee,vim setlocal ts=2 sts=2 sw=2 expandtab
+  " autocmd FileType html,css,scss,ruby,pml,yaml,coffee,vim setlocal expandtab
   autocmd FileType python,javascript setlocal list
   autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 endif
 
-" Toggles & Switches (Leader commands) {{{1
 let mapleader = ","
 nmap <silent> <leader>l :set list!<CR>
 nmap <silent> <leader>w :set wrap!<CR>
