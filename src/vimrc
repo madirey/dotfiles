@@ -128,7 +128,8 @@ nmap <silent> <leader>n :silent :nohlsearch<CR>
 
 
 
-
+" Exuberant ctags
+set tags=$VIM_CTAGS_PROJECT_DIR
 
 
 
