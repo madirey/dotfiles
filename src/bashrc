@@ -135,32 +135,33 @@ function upsearch() {
 function py() {
     virtual_env=$1
     shift
-    ~/Development/python_env/$virtual_env/bin/python2.6 $@
+    . ~/Development/python_env/$virtual_env/bin/activate
+    python $@
+    deactivate
 }
 
 function vi() {
-    # create ctags storage directory
-    if [ ! -d ~/.ctags_storage ]; then
-        mkdir ~/.ctags_storage
-    fi 
+    filename="${@: -1}" 
+    fileext=`echo "$filename"|awk -F. '{print $NF}'`
+    if [ "$fileext" = "py" ]; then
+        # create ctags storage directory
+        if [ ! -d ~/.ctags_storage ]; then
+            mkdir ~/.ctags_storage
+        fi 
 
-    parent=`upsearch ".git"`
-    pushd . > /dev/null
-    cd $parent/..
-    parent_clean=$PWD
-    proj=${PWD##*/} 
-    popd > /dev/null
+        site_packages=`python -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())"`
+        parent=`upsearch ".git"`
+        pushd . > /dev/null
+        cd $parent/..
+        parent_clean=$PWD
+        proj=${PWD##*/} 
+        popd > /dev/null
 
-    python_dir=`which python`
-    site_packages=$python_dir/../../lib/python2.6/site-packages
-    pushd . > /dev/null
-    cd $site_packages
-    site_packages_clean=$PWD
-    popd > /dev/null
 
-    # build ctags
-    export VIM_CTAGS_PROJECT_DIR=~/.ctags_storage/$proj
-    ctags -R -o $VIM_CTAGS_PROJECT_DIR $site_packages_clean
-    ctags -R -a -o $VIM_CTAGS_PROJECT_DIR $parent_clean
-    vi $@
+        # build ctags
+        export VIM_CTAGS_PROJECT_DIR=~/.ctags_storage/$proj
+        ctags -R -o $VIM_CTAGS_PROJECT_DIR $site_packages
+        ctags -R -a -o $VIM_CTAGS_PROJECT_DIR $parent_clean
+    fi
+    vim $@
 }
