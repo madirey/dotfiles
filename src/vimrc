@@ -132,7 +132,10 @@ nmap <silent> <leader>n :silent :nohlsearch<CR>
 set tags=$VIM_CTAGS_PROJECT_DIR
 
 
-
+" Vim-Latex
+set grepprg=grep\ -nH\ $*
+let g:tex_flavor='latex'
+au FileType tex so ~/.vim/ftplugin/tex_latexSuite.vim
 
 
 

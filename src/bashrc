@@ -7,7 +7,7 @@ set -o vi
 export EDITOR=vim
 export PAGER=less
 
-export PATH=/usr/local/bin:$PATH
+export PATH=/usr/local/bin:/usr/texbin:$PATH
 
 # History preferences
 HISTCONTROL=erasedups
