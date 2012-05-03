@@ -92,6 +92,7 @@ alias trls='tree -C | less -R'
 alias mode='(set -o | grep emacs.*on >/dev/null 2>&1 && echo "emacs mode" || echo "vi mode")'
 alias g='gnome-open'
 alias df='df -h'
+alias delpyc='find . -type f -name "*.pyc" -print0 | xargs -0 rm'
 
 # ssh aliases
 alias scpresume="rsync --partial --progress --rsh=ssh"
