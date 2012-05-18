@@ -5,6 +5,7 @@
 set runtimepath+=$HOME/.vim/vimpdb
 set runtimepath+=$HOME/.vim/pythoncomplete
 runtime macros/matchit.vim
+filetype off
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 let g:GetLatestVimScripts_allowautoinstall=1
@@ -31,6 +32,37 @@ map Q gq
 " Window resizing
 map - <C-W>-
 map = <C-W>+
+
+" Task list
+map <leader>td <Plug>TaskList
+
+" Make green
+map <leader>mg <Plug>MakeGreen
+
+" Window controls
+map <c-j> <c-w>j
+map <c-k> <c-w>k
+map <c-l> <c-w>l
+map <c-h> <c-w>h
+
+" gundo
+map <leader>g :GundoToggle<CR>
+
+" pyflakes
+let g:pyflakes_use_quickfix = 0
+
+" pep8
+let g:pep8_map='<leader>8'
+
+" nerdtree
+map <leader>n :NERDTreeToggle<CR>
+
+" rope
+map <leader>j :RopeGotoDefinition<CR>
+map <leader>r :RopeRename<CR>
+
+" ack
+nmap <leader>a <Esc>:Ack!
 
 " CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
 " so that you can undo CTRL-U after inserting a line break.
@@ -93,7 +125,8 @@ if !exists(":DiffOrig")
 endif
 
 set visualbell t_vb=
-set foldmethod=marker
+set foldmethod=indent
+set foldlevel=99
 set number
 set cursorline
 set tabstop=4
@@ -106,6 +139,7 @@ set listchars=tab:▸\ ,eol:¬
 set wildmode=longest,list
 set laststatus=2
 " set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
+set statusline=%{fugitive#statusline()}
 
 " Put swap files in /tmp file
 set backupdir=~/tmp
@@ -115,18 +149,14 @@ if has("autocmd")
   autocmd FileType python,javascript setlocal list
   autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 endif
+let g:SuperTabDefaultCompletionType = "context"
+set completeopt=menuone,longest,preview
 
 let mapleader = ","
 nmap <silent> <leader>l :set list!<CR>
 nmap <silent> <leader>w :set wrap!<CR>
 nmap <silent> <buffer> <leader>s :set spell!<CR>
 nmap <silent> <leader>n :silent :nohlsearch<CR>
-
-
-
-
-
-
 
 " Exuberant ctags
 set tags=$VIM_CTAGS_PROJECT_DIR

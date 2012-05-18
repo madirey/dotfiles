@@ -1,4 +1,7 @@
 # Forked from https://github.com/pbyrne/dotfiles/blob/master/Rakefile
+#
+# TODO: sudo pip install pep8
+# TODO: new 'bundle' submodules in root of repo replaces vim/bundle
 
 require 'rake'
 require 'date'
