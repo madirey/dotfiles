@@ -2,6 +2,7 @@
 #
 # TODO: sudo pip install pep8
 # TODO: new 'bundle' submodules in root of repo replaces vim/bundle
+# TODO: bundle/command-t -> rake make
 
 require 'rake'
 require 'date'

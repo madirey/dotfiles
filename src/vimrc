@@ -138,8 +138,10 @@ set nojoinspaces
 set listchars=tab:▸\ ,eol:¬
 set wildmode=longest,list
 set laststatus=2
-" set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
-set statusline=%{fugitive#statusline()}
+set statusline=%F%m%r%h%w
+set statusline+=\ %{fugitive#statusline()}
+set statusline+=\ [%{strlen(&fenc)?&fenc:&enc}]
+set statusline+=\ [line\ %l\/%L]
 
 " Put swap files in /tmp file
 set backupdir=~/tmp
