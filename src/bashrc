@@ -22,8 +22,6 @@ shopt -s checkwinsize
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 # Set current prompt
-# TODO: modify prompt to make it more me
-# TODO: determine prompt needs
 color_prompt=yes
 if [ "$color_prompt" = yes ]; then
     PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
@@ -161,8 +159,14 @@ function vi() {
 
         # build ctags
         export VIM_CTAGS_PROJECT_DIR=~/.ctags_storage/$proj
-        ctags -R -o $VIM_CTAGS_PROJECT_DIR $site_packages
-        ctags -R -a -o $VIM_CTAGS_PROJECT_DIR $parent_clean
+        echo "Indexing project..."
+        ctags -R -o $VIM_CTAGS_PROJECT_DIR $site_packages > /dev/null
+        ctags -R -a -o $VIM_CTAGS_PROJECT_DIR $parent_clean > /dev/null
     fi
     vim $@
+}
+
+function venv() {
+	name=$1
+	. ~/Development/python_env/$name/bin/activate
 }

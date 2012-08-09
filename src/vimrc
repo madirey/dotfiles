@@ -17,7 +17,10 @@ set nocompatible
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
-set backup
+set nobackup
+set nowb
+set noswapfile
+
 set history=50               " Keep 50 history items
 set ruler                    " Always show cursor position
 set showcmd                  " Show incorrect commands
@@ -53,9 +56,6 @@ let g:pyflakes_use_quickfix = 0
 
 " pep8
 let g:pep8_map='<leader>8'
-
-" nerdtree
-map <leader>n :NERDTreeToggle<CR>
 
 " rope
 map <leader>j :RopeGotoDefinition<CR>
@@ -144,7 +144,7 @@ set statusline+=\ [%{strlen(&fenc)?&fenc:&enc}]
 set statusline+=\ [line\ %l\/%L]
 
 " Put swap files in /tmp file
-set backupdir=~/tmp
+" set backupdir=~/tmp
 set directory=~/tmp
 if has("autocmd")
   " autocmd FileType html,css,scss,ruby,pml,yaml,coffee,vim setlocal expandtab
@@ -169,7 +169,8 @@ set grepprg=grep\ -nH\ $*
 let g:tex_flavor='latex'
 au FileType tex so ~/.vim/ftplugin/tex_latexSuite.vim
 
-
+" Fuzzy
+map <leader>f :FufFileWithCurrentBufferDir **/<C-M>
 
 
 " Toggle line numbers and fold column for easy copying:
