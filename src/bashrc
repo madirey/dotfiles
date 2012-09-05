@@ -163,7 +163,7 @@ function vi() {
         ctags -R -o $VIM_CTAGS_PROJECT_DIR $site_packages > /dev/null
         ctags -R -a -o $VIM_CTAGS_PROJECT_DIR $parent_clean > /dev/null
     fi
-    vim $@
+    /Applications/MacVim.app/Contents/MacOS/Vim $@
 }
 
 function venv() {
