@@ -7,7 +7,7 @@ set -o vi
 export EDITOR=vim
 export PAGER=less
 
-export PATH=/usr/local/bin:/usr/texbin:$PATH
+export PATH=/opt/local/lib/postgresql90/bin:/usr/local/bin:/usr/texbin:/Users/mcaldwell/Development/homebrew/bin:$PATH
 
 # History preferences
 HISTCONTROL=erasedups
@@ -95,7 +95,8 @@ alias delpyc='find . -type f -name "*.pyc" -print0 | xargs -0 rm'
 # ssh aliases
 alias scpresume="rsync --partial --progress --rsh=ssh"
 
-alias mercator='ssh mercator.fieldscope.org'
+alias mercator='ssh mcaldwel@mercator.fieldscope.org'
+alias ubuntu='ssh -i ~/.ssh/id_rsa2 ubuntu@ec2-174-129-73-124.compute-1.amazonaws.com'
 
 # reset shell
 alias cds='cd; clear'
@@ -139,6 +140,29 @@ function py() {
     deactivate
 }
 
+function mysql() {
+	arg=$1
+	if [ "$arg" = "start" ]; then
+		sudo -u mysql /opt/local/lib/mysql5/bin/mysqld_safe &
+	else
+		if [ "$arg" = "stop" ]; then
+			sudo -u mysql /opt/local/share/mysql5/mysql/mysql.server stop
+		fi
+	fi
+
+}
+
+function postgres() {
+	arg=$1
+	if [ "$arg" = "start" ]; then
+		sudo -u postgres pg_ctl -D /opt/local/var/db/postgresql90 -l /opt/local/var/log/postgresql90/server.log start
+	else
+		if [ "$arg" = "stop" ]; then
+			sudo -u postgres pg_ctl -D /opt/local/var/db/postgresql90 stop -s -m fast
+		fi
+	fi
+}
+
 function vi() {
     filename="${@: -1}" 
     fileext=`echo "$filename"|awk -F. '{print $NF}'`
@@ -160,8 +184,8 @@ function vi() {
         # build ctags
         export VIM_CTAGS_PROJECT_DIR=~/.ctags_storage/$proj
         echo "Indexing project..."
-        ctags -R -o $VIM_CTAGS_PROJECT_DIR $site_packages > /dev/null
-        ctags -R -a -o $VIM_CTAGS_PROJECT_DIR $parent_clean > /dev/null
+        ctags -R -o $VIM_CTAGS_PROJECT_DIR $site_packages 2>/dev/null
+        ctags -R -a -o $VIM_CTAGS_PROJECT_DIR $parent_clean 2>/dev/null
     fi
     /Applications/MacVim.app/Contents/MacOS/Vim $@
 }
@@ -170,3 +194,12 @@ function venv() {
 	name=$1
 	. ~/Development/python_env/$name/bin/activate
 }
+
+##
+# Your previous /Users/mcaldwell/.bash_profile file was backed up as /Users/mcaldwell/.bash_profile.macports-saved_2012-09-06_at_11:00:18
+##
+
+# MacPorts Installer addition on 2012-09-06_at_11:00:18: adding an appropriate PATH variable for use with MacPorts.
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+# Finished adapting your PATH environment variable for use with MacPorts.
+
