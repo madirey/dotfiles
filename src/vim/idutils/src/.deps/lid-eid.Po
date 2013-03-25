@@ -1,3 +1,0 @@
-lid-eid.o lid-eid.o: lid-eid.c lid.h
-
-lid.h:

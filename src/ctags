@@ -1,6 +1,0 @@
---python-kinds=-i
---exclude=*/build/*
---exclude=*/bin/*
---exclude=*/templates/*
---exclude=*/static/*
---exclude=*/media/*
