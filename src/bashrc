@@ -100,3 +100,6 @@ if [ -f ~/.user_functions ]; then
     . ~/.user_functions
 fi
 
+# virtualenv
+export WORKON_HOME=~/venv
+source /usr/local/bin/virtualenvwrapper.sh
