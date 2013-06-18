@@ -1,2 +1,2 @@
-dotfiles2
-=========
+dotfiles
+========
