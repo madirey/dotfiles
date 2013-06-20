@@ -21,6 +21,7 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'myusuf3/numbers.vim'
 Bundle 'fs111/pydoc.vim'
 Bundle 'mattcaldwell/python-imports.vim'
+Bundle 'mattcaldwell/python-mode'
 " Bundle 'ervandew/snipmate.vim'
 Bundle 'ervandew/supertab'
 Bundle 'tpope/vim-surround'
@@ -199,3 +200,7 @@ EOF
 
 " Syntastic
 let g:syntastic_check_on_open = 1
+
+" Python-mode
+let g:pymode_folding = 0
+let g:pymode_lint_ignore = "E125,E126,E127,E128,E201,E202,E225,E226,E227,E228,E231,E301,E302,E502"

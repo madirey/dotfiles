@@ -91,6 +91,8 @@ fi
 if [ -x ~/bin/hub ]; then
     alias git=hub
 fi
+alias gpsh='git push origin'
+alias gpll='git pull origin'
 
 # reload .bashrc
 alias refresh='. ~/.bashrc'
@@ -103,3 +105,6 @@ fi
 # virtualenv
 export WORKON_HOME=~/venv
 source /usr/local/bin/virtualenvwrapper.sh
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
