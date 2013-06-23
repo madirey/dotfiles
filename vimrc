@@ -108,6 +108,8 @@ map <C-l> :set list!<CR>
 map <leader>dt :set makeprg=python\ manage.py\ test\|:call MakeGreen()<CR>
 " django server
 map <leader>rs :set makeprg=python\ manage.py\ runserver<CR>
+" nose tests
+map <leader>rt :!nosetests --with-coverage<CR>
 " window navigation
 map <C-h> <C-w>h
 map <C-j> <C-w>j
