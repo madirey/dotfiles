@@ -108,3 +108,6 @@ source /usr/local/bin/virtualenvwrapper.sh
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+# scripts
+. ~/.scripts/git-completion.bash
