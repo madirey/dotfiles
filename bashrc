@@ -93,6 +93,8 @@ if [ -x ~/bin/hub ]; then
 fi
 alias gpsh='git push origin'
 alias gpll='git pull origin'
+alias gs='git status'
+alias gd='git diff'
 
 # reload .bashrc
 alias refresh='. ~/.bashrc'
