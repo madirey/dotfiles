@@ -91,10 +91,24 @@ fi
 if [ -x ~/bin/hub ]; then
     alias git=hub
 fi
-alias gpsh='git push origin'
-alias gpll='git pull origin'
+alias gpush='git push'
+alias gpsh='git push'
+alias gpull='git pull'
+alias gpll='git pull'
+alias gshow='git show'
+alias gsho='git show'
 alias gs='git status'
 alias gd='git diff'
+alias gl='git log'
+alias gc='git commit'
+
+# pyton aliases
+alias py='python'
+alias drs='python manage.py runserver'
+alias dt='python manage.py test'
+alias dsync='python manage.py syncdb'
+alias dshell='python manage.py shell'
+alias dm='python manage.py migrate'
 
 # reload .bashrc
 alias refresh='. ~/.bashrc'
