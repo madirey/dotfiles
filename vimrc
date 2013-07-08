@@ -204,6 +204,10 @@ let g:github_user = "mattcaldwell"
 let g:ctrlp_map = '<leader>f'
 " <F5> - refresh
 
+" search/replace
+map <leader>n :cn<CR>
+map <leader>p :cp<CR>
+
 " neosnippet
 " Plugin key-mappings.
 imap <C-k>     <Plug>(neosnippet_expand_or_jump)
