@@ -15,7 +15,7 @@ end
 
 desc "Update to the latest and greatest, and run any installs that need to happen"
 task :update do
-    sh "git pull"
+    sh "git pull origin master"
 end
 
 def conditionally_symlink(source, destination)
