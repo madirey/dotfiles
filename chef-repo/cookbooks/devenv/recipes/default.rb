@@ -12,9 +12,13 @@ package "git" do
     action :install
 end
 
-# include_recipe "git"
-include_recipe "python"
-include_recipe "ruby"
+package "mercurial" do
+    action :install
+end
+
+package "python" do
+    action :install
+end
 
 package "ruby-rvm" do
     action :install
@@ -30,6 +34,32 @@ end
 
 package "libreadline-dev" do
     action :install
+end
+
+package "checkinstall" do
+    action :install
+end
+
+bash "install_vim" do
+    code <<-EOH
+        apt-get remove vim vim-runtime gvim vim-tiny vim-common vim-gui-common
+        cd ~
+        hg clone https://code.google.com/p/vim/
+        cd vim
+        ./configure --with-features=huge \
+                    --enable-rubyinterp \
+                    --enable-pythoninterp \
+                    --enable-perlinterp \
+                    --enable-luainterp \
+                    --enable-cscope \
+                    --prefix=/usr
+        make VIMRUNTIMEDIR=/usr/share/vim/vim73
+        checkinstall
+        update-alternatives --install /usr/bin/editor editor /usr/bin/vim 1
+        update-alternatives --set editor /usr/bin/vim
+        update-alternatives --install /usr/bin/vi vi /usr/bin/vim 1
+        update-alternatives --set vi /usr/bin/vim
+    EOH
 end
 
 bash "install_ruby_rvm" do
@@ -48,6 +78,18 @@ bash "git_config" do
         git config --global user.name "Matt Caldwell"
         git config --global user.email "matt.caldwell@gmail.com"
     EOH
+end
+
+bash "make_bundle_dir" do
+    code <<-EOH
+        mkdir -p /home/vagrant/.vim/bundle
+    EOH
+end
+
+git "/home/vagrant/.vim/bundle" do
+    repository "git://github.com/gmarik/vundle.git"
+    reference "master"
+    action :sync
 end
 
 git "#{Chef::Config[:file_cache_path]}/devenv" do

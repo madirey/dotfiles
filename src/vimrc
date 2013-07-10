@@ -77,6 +77,7 @@ set smarttab
 set nowrap
 set cursorline
 set backspace=indent,eol,start
+set encoding=utf-8
 
 set history=1000
 set undolevels=1000
