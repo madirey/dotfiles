@@ -1,3 +1,4 @@
+require 'date'
 require 'rake'
 
 desc "Run once to initially set up the computer to use the dotfiles"
