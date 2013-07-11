@@ -40,11 +40,16 @@ package "checkinstall" do
     action :install
 end
 
+# for vim
+package "libperl-dev" do
+    action :install
+end
+
 bash "install_vim" do
     code <<-EOH
         apt-get remove vim vim-runtime gvim vim-tiny vim-common vim-gui-common
         cd ~
-        hg clone https://code.google.com/p/vim/
+        hg clone https://vim.googlecode.com/hg/ vim
         cd vim
         ./configure --with-features=huge \
                     --enable-rubyinterp \
@@ -54,7 +59,7 @@ bash "install_vim" do
                     --enable-cscope \
                     --prefix=/usr
         make VIMRUNTIMEDIR=/usr/share/vim/vim73
-        checkinstall
+        checkinstall -D -y
         update-alternatives --install /usr/bin/editor editor /usr/bin/vim 1
         update-alternatives --set editor /usr/bin/vim
         update-alternatives --install /usr/bin/vi vi /usr/bin/vim 1
@@ -80,15 +85,17 @@ bash "git_config" do
     EOH
 end
 
-bash "make_bundle_dir" do
-    code <<-EOH
-        mkdir -p /home/vagrant/.vim/bundle
-    EOH
+directory "/home/vagrant/.vim/bundle" do
+    owner "vagrant"
+    group "vagrant"
+    recursive true
 end
 
-git "/home/vagrant/.vim/bundle" do
+git "/home/vagrant/.vim/bundle/vundle" do
     repository "git://github.com/gmarik/vundle.git"
     reference "master"
+    user "vagrant"
+    group "vagrant"
     action :sync
 end
 
@@ -96,12 +103,22 @@ git "#{Chef::Config[:file_cache_path]}/devenv" do
     repository "git://github.com/mattcaldwell/dotfiles.git"
     remote "origin"
     reference "master"
+    user "vagrant"
+    group "vagrant"
     action :sync
 end
 
 bash "link_dotfiles" do
+    user "vagrant"
     cwd "#{Chef::Config[:file_cache_path]}/devenv"
     code <<-EOH
         rake
+    EOH
+end
+
+bash "install_vim_plugins" do
+    user "vagrant"
+    code <<-EOH
+        vim +BundleInstall +qall
     EOH
 end
