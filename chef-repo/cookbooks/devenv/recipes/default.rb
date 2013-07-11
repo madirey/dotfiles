@@ -45,6 +45,33 @@ package "libperl-dev" do
     action :install
 end
 
+package "python-dev" do
+    action :install
+end
+
+package "ruby-dev" do
+    action :install
+end
+
+package "python-pip" do
+    action :install
+end
+
+package "build-essential" do # for YouCompleteMe
+    action :install
+end
+
+package "cmake" do # for YouCompleteMe
+    action :install
+end
+
+bash "install_virtualenv" do
+    code <<-EOH
+        pip install virtualenv
+        pip install virtualenvwrapper
+    EOH
+end
+
 bash "install_vim" do
     code <<-EOH
         apt-get remove vim vim-runtime gvim vim-tiny vim-common vim-gui-common
@@ -99,7 +126,13 @@ git "/home/vagrant/.vim/bundle/vundle" do
     action :sync
 end
 
-git "#{Chef::Config[:file_cache_path]}/devenv" do
+directory "/home/vagrant/Development/mattcaldwell" do
+    owner "vagrant"
+    group "vagrant"
+    recursive true
+end
+
+git "/home/vagrant/Development/mattcaldwell/dotfiles" do
     repository "git://github.com/mattcaldwell/dotfiles.git"
     remote "origin"
     reference "master"
@@ -108,17 +141,33 @@ git "#{Chef::Config[:file_cache_path]}/devenv" do
     action :sync
 end
 
-bash "link_dotfiles" do
-    user "vagrant"
-    cwd "#{Chef::Config[:file_cache_path]}/devenv"
-    code <<-EOH
-        rake
-    EOH
+link "/home/vagrant/.bashrc" do
+    owner "vagrant"
+    group "vagrant"
+    to "/home/vagrant/Development/mattcaldwell/dotfiles/src/bashrc"
+end
+
+link "/home/vagrant/.vimrc" do
+    owner "vagrant"
+    group "vagrant"
+    to "/home/vagrant/Development/mattcaldwell/dotfiles/src/vimrc"
+end
+
+link "/home/vagrant/.scripts" do
+    owner "vagrant"
+    group "vagrant"
+    to "/home/vagrant/Development/mattcaldwell/dotfiles/scripts"
 end
 
 bash "install_vim_plugins" do
-    user "vagrant"
     code <<-EOH
-        vim +BundleInstall +qall
+        vim +BundleInstall +qall -e
+    EOH
+end
+
+bash "install_youcomplete_me" do
+    code <<-EOH
+        cd /home/vagrant/.vim/bundle/YouCompleteMe
+        ./install.sh --clang-completer
     EOH
 end
