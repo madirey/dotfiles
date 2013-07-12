@@ -8,6 +8,13 @@
 #
 #
 
+bash "update" do
+    code <<-EOH
+        apt-get update -y
+        DEBIAN_FRONTEND=noninteractive apt-get -y -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" dist-upgrade
+    EOH
+end
+
 package "git" do
     action :install
 end
