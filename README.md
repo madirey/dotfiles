@@ -14,8 +14,7 @@ Installation
 
 2. Launch vagrant VM
 
-    cd dotfiles
-    vagrant up
+    cd dotfiles; vagrant up
 
 Using
 =====
