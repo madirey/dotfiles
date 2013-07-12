@@ -39,7 +39,7 @@ Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'tomtom/tlib_vim'
 Bundle 'garbas/vim-snipmate'
 Bundle 'Valloric/YouCompleteMe'
-Bundle 'suan/vim-instant-markdown'
+Bundle 'plasticboy/vim-markdown'
 
 " Install Vundle
 if vundle_installed == 0
@@ -199,6 +199,9 @@ let g:github_user = "mattcaldwell"
 " ctrl-p
 let g:ctrlp_map = '<leader>f'
 " <F5> - refresh
+
+" vim-markdown
+let g:vim_markdown_folding_disabled=1
 
 " search/replace
 map <leader>n :cn<CR>
