@@ -159,6 +159,16 @@ link "/home/vagrant/.scripts" do
     to "/home/vagrant/Development/mattcaldwell/dotfiles/scripts"
 end
 
+git "/home/vagrant/.vim/bundle/YouCompleteMe" do
+    repository "git://github.com/Valloric/YouCompleteMe.git"
+    remote "origin"
+    reference "master"
+    user "vagrant"
+    group "vagrant"
+    enable_submodules true
+    action :sync
+end
+
 # TODO: add '--clang-completer'
 bash "install_youcomplete_me" do
     cwd "/home/vagrant"
