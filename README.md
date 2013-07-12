@@ -9,8 +9,11 @@ Prerequisites
 Installation
 ============
 1. Clone this repository
+
     git clone git@github.com:mattcaldwell/dotfiles.git
+
 2. Launch vagrant VM
+
     cd dotfiles
     vagrant up
 
