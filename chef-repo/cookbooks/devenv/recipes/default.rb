@@ -72,6 +72,7 @@ bash "install_virtualenv" do
     EOH
 end
 
+# FIXME: determine version dynamically
 bash "install_vim" do
     code <<-EOH
         apt-get remove vim vim-runtime gvim vim-tiny vim-common vim-gui-common
@@ -85,7 +86,7 @@ bash "install_vim" do
                     --enable-luainterp \
                     --enable-cscope \
                     --prefix=/usr
-        make VIMRUNTIMEDIR=/usr/share/vim/vim73
+        make VIMRUNTIMEDIR=/usr/share/vim/vim74a
         checkinstall -D -y
         update-alternatives --install /usr/bin/editor editor /usr/bin/vim 1
         update-alternatives --set editor /usr/bin/vim
@@ -116,14 +117,6 @@ directory "/home/vagrant/.vim/bundle" do
     owner "vagrant"
     group "vagrant"
     recursive true
-end
-
-git "/home/vagrant/.vim/bundle/vundle" do
-    repository "git://github.com/gmarik/vundle.git"
-    reference "master"
-    user "vagrant"
-    group "vagrant"
-    action :sync
 end
 
 directory "/home/vagrant/Development/mattcaldwell" do
@@ -159,13 +152,8 @@ link "/home/vagrant/.scripts" do
     to "/home/vagrant/Development/mattcaldwell/dotfiles/scripts"
 end
 
-bash "install_vim_plugins" do
-    code <<-EOH
-        vim +BundleInstall +qall -e
-    EOH
-end
-
 bash "install_youcomplete_me" do
+    cwd "/home/vagrant"
     code <<-EOH
         cd /home/vagrant/.vim/bundle/YouCompleteMe
         ./install.sh --clang-completer
