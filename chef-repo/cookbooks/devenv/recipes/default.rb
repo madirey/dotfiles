@@ -159,10 +159,11 @@ link "/home/vagrant/.scripts" do
     to "/home/vagrant/Development/mattcaldwell/dotfiles/scripts"
 end
 
+# TODO: add '--clang-completer'
 bash "install_youcomplete_me" do
     cwd "/home/vagrant"
     code <<-EOH
         cd /home/vagrant/.vim/bundle/YouCompleteMe
-        ./install.sh --clang-completer
+        ./install.sh
     EOH
 end
