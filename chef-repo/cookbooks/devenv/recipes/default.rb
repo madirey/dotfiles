@@ -177,3 +177,15 @@ bash "install_youcomplete_me" do
         ./install.sh
     EOH
 end
+
+bash "get_ssh_import_id" do
+    code <<-EOH
+        sudo pip install ssh-import-id
+    EOH
+end
+
+bash "import_github_ssh_keys" do
+    code <<-EOH
+        sudo -u vagrant /usr/local/bin/ssh-import-id gh:mattcaldwell
+    EOH
+end
