@@ -132,6 +132,9 @@ export PATH="/usr/local/heroku/bin:$PATH"
 ### chef
 export PATH="$PATH:/opt/chef/bin"
 
+### npm
+export PATH="$PATH:/usr/local/share/npm/bin"
+
 # scripts
 . ~/.scripts/git-completion.bash
 
