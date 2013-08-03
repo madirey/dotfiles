@@ -110,6 +110,10 @@ alias dsync='python manage.py syncdb'
 alias dshell='python manage.py shell'
 alias dm='python manage.py migrate'
 
+function run {
+    python manage.py runserver
+}
+
 # reload .bashrc
 alias refresh='. ~/.bashrc'
 
