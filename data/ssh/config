@@ -1,0 +1,37 @@
+Host ux-dev.usatoday.com
+    User root
+    IdentityFile ~/.ssh/dotcom.pem
+
+Host pypi.gannett.com
+    User root
+    IdentityFile ~/.ssh/dotcom.pem
+
+Host twtv4-stage
+ HostName 172.16.12.65
+ User webdev
+ IdentityFile ~/.ssh/id_rsa_celerity
+
+Host twtv4-stage-www1
+ HostName 172.16.12.81
+ User webdev
+ IdentityFile ~/.ssh/id_rsa_celerity
+
+Host twtv4-stage-www2
+ HostName 172.16.12.82
+ User webdev
+ IdentityFile ~/.ssh/id_rsa_celerity
+
+Host twtv4-stage-www3
+ HostName 172.16.12.83
+ User webdev
+ IdentityFile ~/.ssh/id_rsa_celerity
+
+Host twtv4-stage-www4
+ HostName 172.16.12.84
+ User webdev
+ IdentityFile ~/.ssh/id_rsa_celerity
+
+Host twtv4-static
+ HostName 172.16.12.21
+ User webdev
+ IdentityFile ~/.ssh/id_rsa_celerity

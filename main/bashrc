@@ -132,7 +132,6 @@ function gpr {
     echo `hub pull-request $1` > open
 }
 
-
 # reload .bashrc
 alias refresh='. ~/.bashrc'
 
@@ -147,9 +146,6 @@ source /usr/local/bin/virtualenvwrapper.sh
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
-
-### chef
-export PATH="$PATH:/opt/chef/bin"
 
 ### npm
 export PATH="$PATH:/usr/local/share/npm/bin"

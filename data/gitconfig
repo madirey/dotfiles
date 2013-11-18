@@ -1,0 +1,9 @@
+[user]
+    name = Matt Caldwell
+    email = matt.caldwell@gmail.com
+[push]
+    default = current
+[color]
+    ui = true
+[core]
+    ignorecase = false
