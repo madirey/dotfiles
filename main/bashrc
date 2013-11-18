@@ -6,6 +6,7 @@ set -o vi
 
 export EDITOR=vim
 export PAGER=less
+export dotfiles="$HOME/Development/mattcaldwell/dotfiles"
 
 # History preferences
 HISTCONTROL=erasedups
@@ -46,7 +47,6 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # sources /etc/bash.bashrc).
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
-    . /etc/tmuxinator_completion
 fi
 
 # enable color support of ls and also add handy aliases
@@ -142,7 +142,7 @@ fi
 
 # virtualenv
 export WORKON_HOME=~/venv
-source /usr/local/bin/virtualenvwrapper.sh
+. $dotfiles/scripts/shtools/virtualenvwrapper.sh
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
@@ -150,11 +150,14 @@ export PATH="/usr/local/heroku/bin:$PATH"
 ### npm
 export PATH="$PATH:/usr/local/share/npm/bin"
 
+export PATH="$PATH:$dotfiles/scripts/bin"
+
 # scripts
-. ~/.scripts/git-completion.bash
+. $dotfiles/scripts/shtools/git-completion.bash
+. $dotfiles/scripts/shtools/tmuxinator_completion
 
 # activate autoenv first
-. /usr/local/opt/autoenv/activate.sh
+. $dotfiles/scripts/hooks/autoenv/activate.sh
 
 # THEN rvm
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*

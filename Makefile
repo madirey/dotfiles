@@ -1,5 +1,13 @@
+mac: linkup homebrew
 
-mac:
+linux: linkup aptget
 
-linux:
+vagrant:
+
+linkup:
+	./scripts/bin/relink
+
+homebrew:
+
+aptget:
 
