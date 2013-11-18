@@ -1,1 +1,0 @@
-cookbook_path [ 'cookbooks' ]
