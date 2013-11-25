@@ -20,27 +20,113 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
 
-" Vundle plugins
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" begin: vundle plugins
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Fuzzy file search
 Bundle 'kien/ctrlp.vim'
+let g:ctrlp_map = '<leader>f'
+" <F5> - refresh
+
+" Easier navigation
 Bundle 'Lokaltog/vim-easymotion'
+
+" Git integration
 Bundle 'tpope/vim-fugitive'
+
+" Color-code test results
 Bundle 'reinh/vim-makegreen'
-Bundle 'scrooloose/nerdcommenter'
+
+" JSHint
+" Bundle 'wookiehangover/jshint.vim'
+
+" Bundle 'walm/jshint.vim'
+
+" Comment helpers
+" Bundle 'scrooloose/nerdcommenter'
+
+" File browsing
 Bundle 'scrooloose/nerdtree'
+map <C-d> :NERDTreeToggle<CR>
+if argc() == 0
+    autocmd VimEnter * NERDTree
+end
+
+" Line numbers
 Bundle 'myusuf3/numbers.vim'
+" toggle absolute/relative line numbers
+map <C-n> :call g:ToggleLineNumberMode()<CR>
+
+" Python helpers
 Bundle 'mattcaldwell/python-mode'
+let g:pymode_folding = 0
+let g:pymode_lint_ignore = "E125,E126,E127,E128,E201,E202,E225,E226,E227,E228,E231,E301,E302,E502"
+let g:pymode_lint_maxlinelength = 119
+map <leader>j :RopeGotoDefinition<CR>
+" Add the virtualenv's site-packages to vim path
+py << EOF
+import os.path
+import sys
+import vim
+if 'VIRTUAL_ENV' in os.environ:
+    project_base_dir = os.environ['VIRTUAL_ENV']
+    sys.path.insert(0, project_base_dir)
+    activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+    execfile(activate_this, dict(__file__=activate_this))
+EOF
+
+" Github commenting
 Bundle 'mattcaldwell/vim-github-comment'
+let g:github_user = "mattcaldwell"
+
+" Surroundings
 Bundle 'tpope/vim-surround'
-Bundle 'majutsushi/tagbar'
+
+" Tagbar
+" Bundle 'majutsushi/tagbar'
+map <C-t> :TagbarToggle<CR>
+
+" Highlight trailing whitespace
 Bundle 'bronson/vim-trailing-whitespace'
+
+" Custom color scheme
 Bundle 'twilight'
+
+" Visual indentation guide
 Bundle 'nathanaelkane/vim-indent-guides'
+:let g:indent_guides_guide_size = 1
+:let g:indent_guides_start_level = 2
+
+" ???
 Bundle 'MarcWeber/vim-addon-mw-utils'
+
+" ???
 Bundle 'tomtom/tlib_vim'
+
+" TextMate-like snippets
 Bundle 'garbas/vim-snipmate'
+
+" Command completion
 Bundle 'Valloric/YouCompleteMe'
+
+" HTML/XML tags
 Bundle 'Valloric/MatchTagAlways'
+" match html tags (MatchTagsAlways)
+let g:mta_filetypes = {
+    \ 'html' : 1,
+    \ 'xhtml': 1,
+    \ 'xml' : 1,
+    \ 'htmldjango' : 1,
+    \}
+
+" Markdown support
 Bundle 'plasticboy/vim-markdown'
+let g:vim_markdown_folding_disabled=1
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" end: vundle plugins
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 
 " Install Vundle
 if vundle_installed == 0
@@ -50,6 +136,7 @@ if vundle_installed == 0
 endif
 
 " Functions
+" TODO: do i still need this?
 function! g:ToggleLineNumberMode()
     if(&nu==1)
         set rnu
@@ -73,6 +160,7 @@ highlight PmenuSel ctermfg=0 ctermbg=7
 let mapleader = ','
 
 " Autocompletion
+" 'YouCompleteMe' takes care of this.
 "if has('autocmd')
 "    autocmd FileType python set omnifunc=pythoncomplete#Complete
 "    autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
@@ -113,15 +201,7 @@ set dir=~/tmp
 
 " Mappings -----------------------------------------
 "
-" display file explorer
-map <C-d> :NERDTreeToggle<CR>
-if argc() == 0
-    autocmd VimEnter * NERDTree
-end
 " display tags
-map <C-t> :TagbarToggle<CR>
-" toggle absolute/relative line numbers
-map <C-n> :call g:ToggleLineNumberMode()<CR>
 " clear highlighting
 map <C-g> :noh<CR>
 " clear search
@@ -157,9 +237,11 @@ set statusline+=%l/%L   "cursor line/total lines
 set statusline+=\ %P    "percent through file
 set laststatus=2
 
-" Search
+" search/replace
 set hlsearch
 set incsearch
+map <leader>n :cn<CR>
+map <leader>p :cp<CR>
 
 " Whitespace
 set list
@@ -173,49 +255,3 @@ set pastetoggle=<F2>
 
 " Forget to sudo?
 cmap w!! w !sudo tee % >/dev/null
-
-" Python
-" Add the virtualenv's site-packages to vim path
-py << EOF
-import os.path
-import sys
-import vim
-if 'VIRTUAL_ENV' in os.environ:
-    project_base_dir = os.environ['VIRTUAL_ENV']
-    sys.path.insert(0, project_base_dir)
-    activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
-    execfile(activate_this, dict(__file__=activate_this))
-EOF
-
-" Indent Guides
-:let g:indent_guides_guide_size = 1
-:let g:indent_guides_start_level = 2
-
-" Python-mode
-let g:pymode_folding = 0
-let g:pymode_lint_ignore = "E125,E126,E127,E128,E201,E202,E225,E226,E227,E228,E231,E301,E302,E502"
-let g:pymode_lint_maxlinelength = 119
-map <leader>j :RopeGotoDefinition<CR>
-
-" git
-let g:github_user = "mattcaldwell"
-
-" ctrl-p
-let g:ctrlp_map = '<leader>f'
-" <F5> - refresh
-
-" vim-markdown
-let g:vim_markdown_folding_disabled=1
-
-" search/replace
-map <leader>n :cn<CR>
-map <leader>p :cp<CR>
-
-" match html tags (MatchTagsAlways)
-let g:mta_filetypes = {
-    \ 'html' : 1,
-    \ 'xhtml': 1,
-    \ 'xml' : 1,
-    \ 'htmldjango' : 1,
-    \}
-
