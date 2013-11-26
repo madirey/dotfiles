@@ -11,6 +11,7 @@ relink:
 sshkeys:
 	mkdir -p ~/.ssh
 	cp ~/Dropbox/keys/* ~/.ssh
+	chmod 700 ~/.ssh/*
 
 installbrews:
 	while read line; do \
