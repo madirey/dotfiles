@@ -1,12 +1,16 @@
-mac: installbrews linkup vimdeps pythondeps
+mac: installbrews relink sshkeys vimdeps pythondeps
 
-linux: linkup aptget
+linux: relink aptget
 
 vagrant:
 
-linkup:
+relink:
 	./scripts/bin/relink
 	. ~/.bash_profile
+
+sshkeys:
+	mkdir -p ~/.ssh
+	cp ~/Dropbox/keys/* ~/.ssh
 
 installbrews:
 	while read line; do \
