@@ -17,5 +17,9 @@ pre_window: workon experience
 
 windows:
   - shell: git status
-  - editor: vim
+  - editor:
+      layout: 9302,195x49,0,0[195x42,0,0,1,195x6,0,43,3]
+      panes:
+          - vim
+          - #empty (default shell)
   - sitepackages: cdsitepackages; ls

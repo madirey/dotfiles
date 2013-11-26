@@ -5,6 +5,7 @@ ln -sf $dotfiles/main/bashrc ~/.bash_profile
 ln -sf $dotfiles/main/vimrc ~/.vimrc
 ln -sf $dotfiles/data/gitconfig ~/.gitconfig
 ln -sf $dotfiles/data/tmux.conf ~/.tmux.conf
+ln -sf $dotfiles/data/tmuxinator ~/.tmuxinator
 ln -sf vim /usr/local/bin/vi
 mkdir -p ~/.config
 ln -sf $dotfiles/data/flake8 ~/.config/flake8
