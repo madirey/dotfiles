@@ -114,25 +114,6 @@ alias dshell='python manage.py shell'
 alias dm='python manage.py migrate'
 alias dev='python setup.py develop'
 
-function run {
-    if [ -f "manage.py" ]; then
-        python manage.py runserver $@
-
-        if [ "$0" = "--open" ]; then
-            /usr/bin/open -a "/Applications/Google Chrome.app" "$0"
-            shift
-        fi
-    elif [ -f "gruntfile.js" ]; then
-        grunt server $@
-    fi
-}
-
-# github pull request
-# and then open in web browser
-function gpr {
-    echo `hub pull-request $1` > open
-}
-
 # reload .bashrc
 alias refresh='. ~/.bashrc'
 
@@ -144,6 +125,8 @@ fi
 # virtualenv
 export WORKON_HOME=~/venv
 . $dotfiles/scripts/shtools/virtualenvwrapper.sh
+export PIP_VIRTUALENV_BASE=$WORKON_HOME
+export PIP_RESPECT_VIRTUALENV=true
 
 # homebrew
 export PATH=/usr/local/bin:$PATH
@@ -176,6 +159,7 @@ case "$OSTYPE" in
         ;;
 
     darwin*)
+        . $dotfiles/main/mac/functions
         ;;
 
     cygwin)

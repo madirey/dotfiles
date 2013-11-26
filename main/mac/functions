@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+# github pull request
+# and then open in web browser
+function gpr {
+    /usr/bin/open `hub pull-request "$@"`
+}
+
+function run {
+    if [ -f "manage.py" ]; then
+        python manage.py runserver "$@"
+
+        if [ "$0" = "--open" ]; then
+            /usr/bin/open -a "/Applications/Google Chrome.app" "$0"
+            shift
+        fi
+    elif [ -f "gruntfile.js" ]; then
+        grunt server "$@"
+    fi
+}

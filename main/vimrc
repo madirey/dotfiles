@@ -123,6 +123,11 @@ let g:mta_filetypes = {
 " Markdown support
 Bundle 'plasticboy/vim-markdown'
 let g:vim_markdown_folding_disabled=1
+
+" Notes
+Bundle 'xolox/vim-misc'
+Bundle 'xolox/vim-notes'
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " end: vundle plugins
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
