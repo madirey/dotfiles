@@ -3,4 +3,5 @@ dotfiles="$HOME/Development/mattcaldwell/dotfiles"
 
 ln -sf $dotfiles/main/bashrc ~/.bash_profile
 ln -sf $dotfiles/main/vimrc ~/.vimrc
+ln -sf $dotfiles/data/gitconfig ~/.gitconfig
 ln -sf vim /usr/local/bin/vi
