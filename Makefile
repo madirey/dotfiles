@@ -1,4 +1,4 @@
-mac: installbrews relink sshkeys vimdeps pythondeps
+mac: installbrews relink sshkeys vimdeps pythondeps getdevrepos
 
 linux: relink aptget
 
@@ -26,6 +26,9 @@ vimdeps:
 pythondeps:
 	sudo easy_install pip
 	sudo pip install -r ./scripts/setup/requirements.txt
+
+getdevrepos:
+
 
 aptget:
 
