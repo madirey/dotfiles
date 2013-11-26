@@ -28,7 +28,9 @@ pythondeps:
 	sudo pip install -r ./scripts/setup/requirements.txt
 
 getdevrepos:
-
+	while read line; do \
+		cd ~/Development; git clone git@github.com:$$line; \
+	done < ./scripts/setup/repos.list
 
 aptget:
 
