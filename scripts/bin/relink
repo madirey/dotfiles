@@ -6,6 +6,7 @@ ln -sf $dotfiles/main/vimrc ~/.vimrc
 ln -sf $dotfiles/data/gitconfig ~/.gitconfig
 ln -sf $dotfiles/data/tmux.conf ~/.tmux.conf
 ln -sf $dotfiles/data/tmuxinator ~/.tmuxinator
+ln -sf $dotfiles/scripts/hooks/rvm/after_cd ~/.rvm/hooks/after_cd
 ln -sf vim /usr/local/bin/vi
 mkdir -p ~/.config
 ln -sf $dotfiles/data/flake8 ~/.config/flake8
