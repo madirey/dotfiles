@@ -1,4 +1,4 @@
-mac: installbrews relink sshkeys vimdeps pythondeps rubydeps getdevrepos
+mac: installbrews relink sshkeys vimdeps getdevrepos pythondeps rubydeps jsdeps
 
 linux: relink aptget
 
@@ -21,6 +21,12 @@ installbrews:
 	done < ./scripts/setup/mac/brew.list
 	cd /usr/local/library && git stash && git clean -d -f
 	brew update
+
+getdevrepos:
+	@while read line; do \
+		IFS=/ read -r account repo <<< "$$line"; \
+		cd ~/Development; mkdir -p "$$account"; cd "$$account"; git clone git@github.com:$$line; \
+	done < ./scripts/setup/repos.list
 
 vimdeps:
 	@echo Installing vim dependencies...
@@ -46,10 +52,13 @@ rubydeps:
 		/bin/bash -l -c ". ~/.rvm/scripts/rvm; rvm use 1.9.3; gem install $$gem --version $${version//[()]/}"; \
 	done < ./scripts/setup/gems.list
 
-getdevrepos:
-	while read line; do \
-		cd ~/Development; git clone git@github.com:$$line; \
-	done < ./scripts/setup/repos.list
+jsdeps:
+	@echo Installing js dependencies...
+	@cd ~/Development/joyent/node; ./configure --prefix=~/local; make install
+	@cd ~/Development/isaacs/npm; make install
+	@while read line; do \
+		npm install -g "$$line"; \
+	done < ./scripts/setup/npm.list
 
 aptget:
 
