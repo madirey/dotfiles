@@ -128,6 +128,15 @@ let g:vim_markdown_folding_disabled=1
 Bundle 'xolox/vim-misc'
 Bundle 'xolox/vim-notes'
 
+" Time tracker
+Bundle 'mattcaldwell/TimeKeeper'
+let g:TimeKeeperUseFlatFile=0
+let g:TimeKeeperUseGitNotes=1
+let g:TimeKeeperUseGitProjectBranch=1
+let g:TimeKeeperUseLocal=1
+let g:TimeKeeperStartOnLoad=1
+map <silent> <F8> :call TimeKeeper_ToggleTaskWindow()<cr>
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " end: vundle plugins
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
