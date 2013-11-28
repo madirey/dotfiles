@@ -1,7 +1,11 @@
 #!/usr/bin/env bash
 dotfiles="$HOME/Development/mattcaldwell/dotfiles"
 
-ln -sf $dotfiles/main/bashrc ~/.bash_profile
+ln -sf $dotfiles/main/profile ~/.profile
+ln -sf $dotfiles/main/bash_profile ~/.bash_profile
+ln -sf $dotfiles/main/bash_aliases ~/.bash_aliases
+ln -sf $dotfiles/main/bash_functions ~/.bash_functions
+ln -sf $dotfiles/main/bashrc ~/.bashrc
 ln -sf $dotfiles/main/vimrc ~/.vimrc
 ln -sf $dotfiles/data/gitconfig ~/.gitconfig
 ln -sf $dotfiles/data/tmux.conf ~/.tmux.conf

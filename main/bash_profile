@@ -1,0 +1,8 @@
+# .bash_profile
+#
+
+# load .profile
+. ~/.profile
+
+# load .bashrc
+. ~/.bashrc

@@ -1,0 +1,7 @@
+# .bash_functions
+#
+
+# Python package compilation on Mac
+function pip() {
+    env ARCHFLAGS="-arch i386 -arch x86_64" pip $@
+}

@@ -1,0 +1,48 @@
+# .bash_aliases
+#
+
+# Add an "alert" alias for long running commands.  Use like so:
+# $ sleep 10; alert
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
+# enable color support of ls and also add handy aliases
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias ls='ls -h --color=auto'
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+fi
+
+# ls aliases
+alias ls='ls -h -GF'
+alias ll='ls -alhF'
+alias la='ls -A'
+alias l='ls -CF'
+
+# cd aliases
+alias ..='cd ..'
+alias dev='cd ~/Development'
+
+# human-readable df
+alias df='df -h'
+
+# sort `top` by cpu %
+alias top='top -o cpu'
+
+# ssh aliases
+alias scpresume="rsync --partial --progress --rsh=ssh"
+
+# git aliases
+if [ -x /usr/local/bin/hub ]; then
+    alias git=hub
+fi
+alias gi='git init'
+alias gs='git status'
+alias gd='git diff'
+alias gl='git log'
+alias gc='git commit'
+
+# python aliases
+alias py='python'
+alias delpyc='find . -type f -name "*.pyc" -print0 | xargs -0 rm'
