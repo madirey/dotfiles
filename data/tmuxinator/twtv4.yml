@@ -1,7 +1,7 @@
-# ~/.tmuxinator/faw.yml
+# ~/.tmuxinator/twt.yml
 
-name: faw
-root: ~/Development/GannettDigital/faw-web
+name: twt
+root: ~/
 
 # Optional tmux socket
 # socket_name: foo
@@ -10,7 +10,7 @@ root: ~/Development/GannettDigital/faw-web
 # pre: sudo /etc/rc.d/mysqld start
 
 # Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
-pre_window: workon faw
+pre_window: workon twtv4
 
 # Pass command line options to tmux. Useful for specifying a different tmux.conf.
 # tmux_options: -f ~/.tmux.mac.conf
@@ -18,5 +18,5 @@ pre_window: workon faw
 windows:
   - shell: git status
   - editor: vim
-  - server: run
+  - server: run 9000
   - sitepackages: cdsitepackages; ls

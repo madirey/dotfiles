@@ -1,7 +1,7 @@
 # ~/.tmuxinator/faw.yml
 
-name: faw
-root: ~/Development/GannettDigital/faw-web
+name: experience_mobile
+root: ~/Development/GannettDigital/experience-mobile
 
 # Optional tmux socket
 # socket_name: foo
@@ -10,7 +10,7 @@ root: ~/Development/GannettDigital/faw-web
 # pre: sudo /etc/rc.d/mysqld start
 
 # Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
-pre_window: workon faw
+pre_window: workon experience-mobile
 
 # Pass command line options to tmux. Useful for specifying a different tmux.conf.
 # tmux_options: -f ~/.tmux.mac.conf

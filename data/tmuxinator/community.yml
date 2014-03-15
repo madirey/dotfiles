@@ -10,13 +10,17 @@ root: ~/
 # pre: sudo /etc/rc.d/mysqld start
 
 # Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
-pre_window: workon twt-community
+pre_window: workon community
 
 # Pass command line options to tmux. Useful for specifying a different tmux.conf.
 # tmux_options: -f ~/.tmux.mac.conf
 
 windows:
   - shell: git status
-  - editor: vim
+  - editor:
+      layout: 9302,195x49,0,0[195x42,0,0,1,195x6,0,43,3]
+      panes:
+          - vim
+          - #empty (default shell)
   - server: run 9001
   - sitepackages: cdsitepackages; ls

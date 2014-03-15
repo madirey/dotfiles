@@ -1,4 +1,4 @@
-mac: installbrews relink sshkeys vimdeps getdevrepos pythondeps rubydeps jsdeps
+mac: installbrews installdb relink sshkeys vimdeps getdevrepos pythondeps rubydeps jsdeps
 
 linux: relink aptget
 
@@ -21,6 +21,13 @@ installbrews:
 	done < ./scripts/setup/mac/brew.list
 	cd /usr/local/library && git stash && git clean -d -f
 	brew update
+
+installdb:
+	initdb /usr/local/var/postgres -E utf8
+	mkdir -p ~/Library/LaunchAgents
+	cp /usr/local/Cellar/postgresql/9.3.1/homebrew.mxcl.postgresql.plist ~/Library/LaunchAgents/
+	launchctl load -w /Users/mattcaldwell/Library/LaunchAgents/homebrew.mxcl.postgresql.plist
+	pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start
 
 getdevrepos:
 	@while read line; do \

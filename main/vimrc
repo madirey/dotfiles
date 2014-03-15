@@ -1,6 +1,21 @@
 " Vim mode
 set nocompatible
 
+" Add the virtualenv's site-packages to vim path
+py << EOF
+import os.path
+import sys
+import vim
+if 'VIRTUAL_ENV' in os.environ:
+    project_base_dir = os.environ['VIRTUAL_ENV']
+    sys.path.insert(0, project_base_dir)
+    activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+    execfile(activate_this, dict(__file__=activate_this))
+EOF
+
+" Customize leader
+let mapleader = ','
+
 " Hide buffers, don't close them
 set hidden
 
@@ -19,7 +34,6 @@ filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
-
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " begin: vundle plugins
@@ -44,13 +58,14 @@ Bundle 'reinh/vim-makegreen'
 " Bundle 'walm/jshint.vim'
 
 " Comment helpers
-" Bundle 'scrooloose/nerdcommenter'
+Bundle 'scrooloose/nerdcommenter'
 
 " File browsing
 Bundle 'scrooloose/nerdtree'
+let NERDTreeShowHidden=1         " show hidden files
 map <C-d> :NERDTreeToggle<CR>
-if argc() == 0
-    autocmd VimEnter * NERDTree
+if argc() == 0                   " show nerdtree when vim is
+    autocmd VimEnter * NERDTree  " opened with no file args
 end
 
 " Line numbers
@@ -59,22 +74,11 @@ Bundle 'myusuf3/numbers.vim'
 map <C-n> :call g:ToggleLineNumberMode()<CR>
 
 " Python helpers
-Bundle 'mattcaldwell/python-mode'
-let g:pymode_folding = 0
-let g:pymode_lint_ignore = "E125,E126,E127,E128,E201,E202,E225,E226,E227,E228,E231,E301,E302,E502"
-let g:pymode_lint_maxlinelength = 119
-map <leader>j :RopeGotoDefinition<CR>
-" Add the virtualenv's site-packages to vim path
-py << EOF
-import os.path
-import sys
-import vim
-if 'VIRTUAL_ENV' in os.environ:
-    project_base_dir = os.environ['VIRTUAL_ENV']
-    sys.path.insert(0, project_base_dir)
-    activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
-    execfile(activate_this, dict(__file__=activate_this))
-EOF
+" Bundle 'mattcaldwell/python-mode'
+" let g:pymode_folding = 0
+" let g:pymode_lint_ignore = "E125,E126,E127,E128,E201,E202,E225,E226,E227,E228,E231,E301,E302,E502"
+" let g:pymode_lint_maxlinelength = 119
+" map <leader>j :RopeGotoDefinition<CR>
 
 " Github commenting
 Bundle 'mattcaldwell/vim-github-comment'
@@ -92,6 +96,7 @@ Bundle 'bronson/vim-trailing-whitespace'
 
 " Custom color scheme
 Bundle 'twilight'
+set t_Co=256
 
 " Visual indentation guide
 Bundle 'nathanaelkane/vim-indent-guides'
@@ -99,16 +104,19 @@ Bundle 'nathanaelkane/vim-indent-guides'
 :let g:indent_guides_start_level = 2
 
 " ???
-Bundle 'MarcWeber/vim-addon-mw-utils'
+" Bundle 'MarcWeber/vim-addon-mw-utils'
 
 " ???
-Bundle 'tomtom/tlib_vim'
+" Bundle 'tomtom/tlib_vim'
 
 " TextMate-like snippets
-Bundle 'garbas/vim-snipmate'
+" Bundle 'garbas/vim-snipmate'
 
 " Command completion
-Bundle 'Valloric/YouCompleteMe'
+Bundle 'davidhalter/jedi-vim'
+"Bundle 'ervandew/supertab'
+let g:jedi#use_splits_not_buffers = "top"
+let g:jedi#goto_definitions_command = "<leader>j"
 
 " HTML/XML tags
 Bundle 'Valloric/MatchTagAlways'
@@ -124,9 +132,19 @@ let g:mta_filetypes = {
 Bundle 'plasticboy/vim-markdown'
 let g:vim_markdown_folding_disabled=1
 
+" Git Signs
+Bundle 'airblade/vim-gitgutter'
+
+" Status bar
+Bundle 'bling/vim-airline'
+
 " Notes
-Bundle 'xolox/vim-misc'
-Bundle 'xolox/vim-notes'
+" Bundle 'xolox/vim-misc'
+" Bundle 'xolox/vim-notes'
+
+" CSS Colors
+" NOTE: Plugin is slow.
+"Bundle 'skammer/vim-css-color'
 
 " Time tracker
 Bundle 'mattcaldwell/TimeKeeper'
@@ -137,10 +155,18 @@ let g:TimeKeeperUseLocal=1
 let g:TimeKeeperStartOnLoad=1
 map <silent> <F8> :call TimeKeeper_ToggleTaskWindow()<cr>
 
+" Tmux integration
+Bundle 'jgdavey/tslime.vim'
+
+" Emmet (HTML/CSS expansion ... and more?)
+Bundle 'mattn/emmet-vim'
+
+" Coffee script
+Bundle 'kchmck/vim-coffee-script'
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " end: vundle plugins
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 
 " Install Vundle
 if vundle_installed == 0
@@ -149,8 +175,52 @@ if vundle_installed == 0
     :BundleInstall
 endif
 
+" Configure tmux integration
+if !exists('g:tmux_command')
+    let g:tmux_command = 'tmux'
+endif
+
+let g:tslime = {}
+let g:tslime['session'] = substitute(system(g:tmux_command . " display-message -p '#S'"), "\n", "", "")
+let g:tslime['window'] = 'editor'
+let g:tslime['pane'] = '1'
+
+" tslime mappings
+"
+" git
+function! TMuxPaneUp()
+    :call Send_to_Tmux("tmux select-pane -U\n")
+endfunction
+
+function! TMuxPaneDown()
+    :call Send_to_Tmux("tmux select-pane -D\n")
+endfunction
+
+function! ExpandTMux()
+    :call TMuxPaneDown()
+    :call Send_to_Tmux("tmux resize-pane -U 20\n")
+endfunction
+
+function! CollapseTMux()
+    :call Send_to_Tmux("tmux resize-pane -D 20\n")
+endfunction
+
+function! Send_to_Tmux_and_Expand(cmd)
+    :call ExpandTMux()
+    :call Send_to_Tmux(a:cmd)
+endfunction
+
+map <leader>gb :call Send_to_Tmux("git blame -L " . line(".") . "," . line(".") . " " . expand("%") . "\n")<CR>
+map <leader>gd :call Send_to_Tmux_and_Expand("git diff\n")<CR>
+map <leader>gl :call Send_to_Tmux_and_Expand("git log\n")<CR>
+map <leader>gs :call Send_to_Tmux("git status\n")<CR>
+" window management
+map <leader>+ :call ExpandTMux()<CR>
+map <leader>- :call CollapseTMux()<CR>
+" django
+
+
 " Functions
-" TODO: do i still need this?
 function! g:ToggleLineNumberMode()
     if(&nu==1)
         set rnu
@@ -170,20 +240,15 @@ colorscheme twilight
 highlight Pmenu ctermfg=0 ctermbg=2
 highlight PmenuSel ctermfg=0 ctermbg=7
 
-" Customize leader
-let mapleader = ','
-
-" Autocompletion
-" 'YouCompleteMe' takes care of this.
-"if has('autocmd')
-"    autocmd FileType python set omnifunc=pythoncomplete#Complete
-"    autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-"    autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-"    autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-"endif
+if has('autocmd')
+    autocmd FileType python set expandtab tabstop=4 softtabstop=4 shiftwidth=4
+    autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+    autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+    autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+endif
 "set completeopt=menuone,longest,preview
 
-" Basic editor settings (and PEP8)
+" Basic editor settings
 set expandtab
 set tabstop=4
 set softtabstop=4
@@ -213,42 +278,30 @@ set swapfile
 set backupdir=~/tmp
 set dir=~/tmp
 
-" Mappings -----------------------------------------
-"
-" display tags
+" HTML
+if has('autocmd')
+    autocmd FileType html set noexpandtab
+    autocmd FileType htmldjango set noexpandtab
+endif
+
+" Javascript
+autocmd FileType javascript set tabstop=3|set shiftwidth=3|set expandtab
+
+" Ruby
+autocmd FileType ruby set tabstop=2|set shiftwidth=2|set expandtab
+
 " clear highlighting
 map <C-g> :noh<CR>
 " clear search
 map <C-s> :let @/ = ""<CR>
 " toggle list
 map <C-l> :set list!<CR>
-" django tests
-map <leader>dt :set makeprg=python\ manage.py\ test\|:call MakeGreen()<CR>
-" django server
-map <leader>rs :set makeprg=python\ manage.py\ runserver<CR>
-" nose tests
-map <leader>rt :!nosetests --with-coverage<CR>
 " window navigation
 map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
-"
-" End Mappings -------------------------------------
 
-" Status Line
-set statusline=%t       "tail of the filename
-set statusline+=[%{strlen(&fenc)?&fenc:'none'}, "file encoding
-set statusline+=%{&ff}] "file format
-set statusline+=%h      "help file flag
-set statusline+=%m      "modified flag
-set statusline+=%r      "read only flag
-set statusline+=%y      "filetype
-set statusline+=%{exists('g:loaded_fugitive')?fugitive#statusline():''} " git branch
-set statusline+=%=      "left/right separator
-set statusline+=%c,     "cursor column
-set statusline+=%l/%L   "cursor line/total lines
-set statusline+=\ %P    "percent through file
 set laststatus=2
 
 " search/replace

@@ -1,6 +1,6 @@
-# ~/.tmuxinator/twt.yml
+# ~/.tmuxinator/invisibill.yml
 
-name: twt
+name: invisibill
 root: ~/
 
 # Optional tmux socket
@@ -10,13 +10,17 @@ root: ~/
 # pre: sudo /etc/rc.d/mysqld start
 
 # Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
-pre_window: workon twt
+pre_window: cd ~/Development/invisibill/invisibill/
 
 # Pass command line options to tmux. Useful for specifying a different tmux.conf.
 # tmux_options: -f ~/.tmux.mac.conf
 
 windows:
   - shell: git status
-  - editor: vim
-  - server: run 9000
-  - sitepackages: cdsitepackages; ls
+  - editor:
+      layout: 9302,195x49,0,0[195x42,0,0,1,195x6,0,43,3]
+      panes:
+          - vim
+          - #empty (default shell)
+  - server1: rm tmp/pids/server.pid ; rails s
+  - server2: foreman start
