@@ -2,16 +2,16 @@
 set nocompatible
 
 " Add the virtualenv's site-packages to vim path
-py << EOF
-import os.path
-import sys
-import vim
-if 'VIRTUAL_ENV' in os.environ:
-    project_base_dir = os.environ['VIRTUAL_ENV']
-    sys.path.insert(0, project_base_dir)
-    activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
-    execfile(activate_this, dict(__file__=activate_this))
-EOF
+"py << EOF
+"import os.path
+"import sys
+"import vim
+"if 'VIRTUAL_ENV' in os.environ:
+"    project_base_dir = os.environ['VIRTUAL_ENV']
+"    sys.path.insert(0, project_base_dir)
+"    activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+"    execfile(activate_this, dict(__file__=activate_this))
+"EOF
 
 " Customize leader
 let mapleader = ','
@@ -74,10 +74,10 @@ Bundle 'myusuf3/numbers.vim'
 map <C-n> :call g:ToggleLineNumberMode()<CR>
 
 " Python helpers
-" Bundle 'mattcaldwell/python-mode'
-" let g:pymode_folding = 0
-" let g:pymode_lint_ignore = "E125,E126,E127,E128,E201,E202,E225,E226,E227,E228,E231,E301,E302,E502"
-" let g:pymode_lint_maxlinelength = 119
+Bundle 'mattcaldwell/python-mode'
+let g:pymode_folding = 0
+let g:pymode_lint_ignore = "E125,E126,E127,E128,E201,E202,E225,E226,E227,E228,E231,E301,E302,E502"
+let g:pymode_lint_maxlinelength = 119
 " map <leader>j :RopeGotoDefinition<CR>
 
 " Github commenting
@@ -103,14 +103,11 @@ Bundle 'nathanaelkane/vim-indent-guides'
 :let g:indent_guides_guide_size = 1
 :let g:indent_guides_start_level = 2
 
-" ???
-" Bundle 'MarcWeber/vim-addon-mw-utils'
-
-" ???
-" Bundle 'tomtom/tlib_vim'
-
 " TextMate-like snippets
-" Bundle 'garbas/vim-snipmate'
+Bundle 'MarcWeber/vim-addon-mw-utils'
+Bundle 'tomtom/tlib_vim'
+Bundle 'garbas/vim-snipmate'
+Bundle 'robhudson/snipmate_for_django'
 
 " Command completion
 Bundle 'davidhalter/jedi-vim'
