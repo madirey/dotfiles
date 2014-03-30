@@ -1,0 +1,4 @@
+mkvirtualenv -a $PWD --no-site-packages $PROJECT_NAME
+pip install django
+pip freeze > requirements.txt
+python django-admin.py startproject $PROJECT_NAME

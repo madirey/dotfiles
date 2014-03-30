@@ -1,7 +1,7 @@
-# ~/.tmuxinator/boomers.yml
+# ~/.tmuxinator/ski.yml
 
-name: boomers
-root: ~/
+name: ski
+root: ~/Development/GannettDigital/ski-web
 
 # Optional tmux socket
 # socket_name: foo
@@ -10,18 +10,13 @@ root: ~/
 # pre: sudo /etc/rc.d/mysqld start
 
 # Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
-pre_window: workon boomers-web
+pre_window: workon ski
 
 # Pass command line options to tmux. Useful for specifying a different tmux.conf.
 # tmux_options: -f ~/.tmux.mac.conf
 
 windows:
   - shell: git status
-  - editor:
-      layout: 9302,195x49,0,0[195x42,0,0,1,195x6,0,43,3]
-      panes:
-          - vim
-          - #empty (default shell)
-  - server: vagrant ssh default -c "python manage.py runserver 0.0.0.0:8000"
-  - compass: vagrant ssh default -c "grunt"
+  - editor: vim
+  - server: run
   - sitepackages: cdsitepackages; ls

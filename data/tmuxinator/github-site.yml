@@ -1,0 +1,21 @@
+# ~/.tmuxinator/github-site.yml
+
+name: github-site
+root: ~/Development/GannettDigital/ski-web
+
+# Optional tmux socket
+# socket_name: foo
+
+# Runs before everything. Use it to start daemons etc.
+# pre: sudo /etc/rc.d/mysqld start
+
+# Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
+pre_window: workon github-site
+
+# Pass command line options to tmux. Useful for specifying a different tmux.conf.
+# tmux_options: -f ~/.tmux.mac.conf
+
+windows:
+  - shell: cat .csinfo
+  - editor: vim
+  - server: jekyll serve --watch
