@@ -218,6 +218,14 @@ function! Send_to_Tmux_and_Expand(cmd)
     :call Send_to_Tmux(a:cmd)
 endfunction
 
+function Send_Arbitrary_Command_to_Tmux()
+    let b:cmd = input("command to run: ")
+    :call Send_to_Tmux(b:cmd . "\n")
+endfunction
+
+" tslime
+map <leader>c :call Send_Arbitrary_Command_to_Tmux()<CR>
+" git commands
 map <leader>gb :call Send_to_Tmux("git blame -L " . line(".") . "," . line(".") . " " . expand("%") . " \| fold -sw 180\n")<CR>
 map <leader>gd :call Send_to_Tmux_and_Expand("git diff\n")<CR>
 map <leader>gl :call Send_to_Tmux_and_Expand("git log\n")<CR>
