@@ -96,10 +96,6 @@ let b:surround_{char2nr("w")} = "{% with \1with: \1 %}\r{% endwith %}"
 let b:surround_{char2nr("f")} = "{% for \1for loop: \1 %}\r{% endfor %}"
 let b:surround_{char2nr("c")} = "{% comment %}\r{% endcomment %}"
 
-" Tagbar
-" Bundle 'majutsushi/tagbar'
-" map <C-t> :TagbarToggle<CR>
-
 " Highlight trailing whitespace
 Bundle 'bronson/vim-trailing-whitespace'
 
@@ -114,7 +110,7 @@ Bundle 'nathanaelkane/vim-indent-guides'
 
 " TextMate-like snippets
 Bundle 'SirVer/ultisnips'
-Bundle 'honza/vim-snippets'
+Bundle 'mattcaldwell/vim-snippets'
 let g:UltiSnipsSnippetsDir='~/.vim/bundle/vim-snippets/'
 let g:UltiSnipsSnippetDirectories=['UltiSnips']
 let g:UltiSnipsExpandTrigger="<tab>"
@@ -230,7 +226,7 @@ map <leader>gs :call Send_to_Tmux("git status\n")<CR>
 map <leader>+ :call ExpandTMux()<CR>
 map <leader>- :call CollapseTMux()<CR>
 " django
-
+map <leader>t :call Send_to_Tmux("python manage.py test\n")<CR>
 
 " Functions
 function! g:ToggleLineNumberMode()

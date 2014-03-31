@@ -17,12 +17,14 @@ pre_window: workon vim-ide
 
 windows:
   - shell: git status
-  - presentation: cd presentations/django; vimdeck 31mar2014.md
+  - tmuxinator: vi ~/.tmuxinator/vim-ide.yml
+  - vimrc: vi ~/.vimrc
   - editor:
       layout: 9302,195x49,0,0[195x42,0,0,1,195x6,0,43,3]
       panes:
           - vim
           - #empty (default shell)
+  - presentation: cd presentations/django; vimdeck 31mar2014.md
   - server: python manage.py runserver
-  - compass: grunt compass
+  - grunt_watch: grunt
   - sitepackages: cdsitepackages; ls
