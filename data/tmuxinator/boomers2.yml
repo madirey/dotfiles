@@ -1,6 +1,6 @@
-# ~/.tmuxinator/vim-ide.yml
+# ~/.tmuxinator/boomers.yml
 
-name: vim-ide
+name: boomers2
 root: ~/
 
 # Optional tmux socket
@@ -10,21 +10,19 @@ root: ~/
 # pre: sudo /etc/rc.d/mysqld start
 
 # Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
-pre_window: workon vim-ide
+pre_window: workon boomers-web-2
 
 # Pass command line options to tmux. Useful for specifying a different tmux.conf.
 # tmux_options: -f ~/.tmux.mac.conf
 
 windows:
-  - shell: git status
-  - tmuxinator: vi ~/.tmuxinator/vim-ide.yml
-  - vimrc: vi ~/.vimrc
+  - git: git status
+  - shell: python manage.py shell_plus
   - editor:
       layout: 9302,195x49,0,0[195x42,0,0,1,195x6,0,43,3]
       panes:
           - vim
-          - #empty (default shell)
-  - presentation: cd presentations/django; vimdeck 31mar2014.md
-  - server: python manage.py runserver 3000
-  - grunt_watch: grunt
+          - grunt
+  - server: vagrant up; vagrant ssh default -c "python manage.py runserver 0.0.0.0:8000"
+  - server_shell: vagrant up; vagrant ssh
   - sitepackages: cdsitepackages; ls

@@ -16,7 +16,7 @@ pre_window: workon teslacoil
 # tmux_options: -f ~/.tmux.mac.conf
 
 windows:
-  - shell: cd test_project; python manage.py shellplus
+  - shell: cd test_project; python manage.py shell_plus
   - editor:
       layout: 9302,195x49,0,0[195x42,0,0,1,195x6,0,43,3]
       panes:
