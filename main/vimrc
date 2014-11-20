@@ -166,6 +166,9 @@ Bundle 'jgdavey/tslime.vim'
 " Emmet (HTML/CSS expansion ... and more?)
 Bundle 'mattn/emmet-vim'
 
+" Golang
+Bundle 'fatih/vim-go'
+
 " Coffee script
 Bundle 'kchmck/vim-coffee-script'
 
@@ -256,6 +259,9 @@ colorscheme twilight
 highlight Pmenu ctermfg=0 ctermbg=2
 highlight PmenuSel ctermfg=0 ctermbg=7
 
+" filetypes
+au BufNewFile,BufRead *.html set filetype=htmldjango
+
 if has('autocmd')
     autocmd FileType python set expandtab tabstop=4 softtabstop=4 shiftwidth=4
     autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
@@ -296,12 +302,12 @@ set dir=~/tmp
 
 " HTML
 if has('autocmd')
-    autocmd FileType html set noexpandtab
-    autocmd FileType htmldjango set noexpandtab
+    autocmd FileType html set expandtab
+    autocmd FileType htmldjango set expandtab
 endif
 
 " Javascript
-autocmd FileType javascript set tabstop=3|set shiftwidth=3|set expandtab
+autocmd FileType javascript set tabstop=4|set shiftwidth=4|set expandtab
 
 " Ruby
 autocmd FileType ruby set tabstop=2|set shiftwidth=2|set expandtab
