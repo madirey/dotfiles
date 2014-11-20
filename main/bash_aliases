@@ -22,6 +22,8 @@ alias l='ls -CF'
 
 # cd aliases
 alias ..='cd ..'
+# Need to make the below faster
+#alias cd='delpyc 2>/dev/null; cd'
 alias dev='cd ~/Development'
 
 # human-readable df
@@ -40,7 +42,7 @@ fi
 alias gi='git init'
 alias gs='git status'
 alias gd='git diff'
-alias gl='git log'
+alias gl='git log --pretty=oneline'
 alias gc='git commit'
 
 # python aliases
